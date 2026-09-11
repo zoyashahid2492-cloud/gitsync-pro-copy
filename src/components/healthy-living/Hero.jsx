@@ -1,7 +1,7 @@
 import React from "react";
 
 const imgHeroBg =
-  "https://table-polo-97158241.figma.site/assets/b31e5a73d7a1666a91e50d6641bad98ac3ad5efd-CPCMhZpw.png";
+  "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/e56110ecf_generated_image.png";
 
 export default function Hero() {
   return (
@@ -10,7 +10,7 @@ export default function Hero() {
         src={imgHeroBg}
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: "60% center" }}
+        style={{ objectPosition: "center top" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/60" />
 
