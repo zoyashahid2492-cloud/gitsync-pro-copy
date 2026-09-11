@@ -128,10 +128,7 @@ export default function WellnessIntro() {
   return (
     <section
       style={{
-        backgroundColor: "#F7F6F2",
-        backgroundImage: "url('plate-02-wellness.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        background: "linear-gradient(90deg, #eef3e8 0%, #f2f5ee 45%, #faf9f6 100%)",
       }}
     >
       <div
@@ -145,7 +142,7 @@ export default function WellnessIntro() {
           gridTemplateColumns: isCompact ? "1fr" : "1.3925fr 1fr",
           columnGap: "4.214%",
           rowGap: isCompact ? "32px" : undefined,
-          alignItems: "start",
+          alignItems: "center",
         }}
       >
         <h2
@@ -169,7 +166,7 @@ export default function WellnessIntro() {
               fontSize: isCompact ? "17px" : "clamp(17px, 1.510vw, 29px)",
               lineHeight: 1.293,
               fontWeight: 300,
-              color: "#1F3A24",
+              color: "#4a4a4a",
               margin: 0,
             }}
           >
@@ -181,7 +178,7 @@ export default function WellnessIntro() {
               fontSize: isCompact ? "17px" : "clamp(17px, 1.510vw, 29px)",
               lineHeight: 1.293,
               fontWeight: 300,
-              color: "#1F3A24",
+              color: "#4a4a4a",
               margin: 0,
               marginTop: "1.293em",
             }}
