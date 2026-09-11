@@ -130,14 +130,16 @@ export default function WellnessIntro() {
             <span className="font-black block">by everyday life,</span>
             <span className="font-light block">not healthcare alone.</span>
           </h2>
-          <div className="font-heading font-light leading-relaxed pt-2" style={{ color: MUTED, fontSize: "0.95rem" }}>
+          <div className="font-heading font-light leading-relaxed pt-2" style={{ color: "#2E3A2E", fontSize: "0.95rem" }}>
             <p>
-              Healthy Living transforms the environments behind our daily decisions, making the healthier choice the
+              Healthy Living transforms the environments behind<br />
+              our daily decisions, making the healthier choice the<br />
               easier one, while always preserving freedom of choice.
             </p>
             <p className="mt-4">
-              By uniting government, business and communities, we build prevention into everyday life so everyone in
-              Abu Dhabi can live longer, healthier lives.
+              By uniting government, business and communities,<br />
+              we build prevention into everyday life so everyone<br />
+              in Abu Dhabi can live longer, healthier lives.
             </p>
           </div>
         </div>
