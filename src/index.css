@@ -1,7 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Inter:Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+}
+@font-face {
+  font-family: "Inter:Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+}
+@font-face {
+  font-family: "Inter:Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+}
+@font-face {
+  font-family: "Inter:Black";
+  font-style: normal;
+  font-weight: 900;
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+}
+@font-face {
+  font-family: "Inter:Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.wellness-bg {
+  background: linear-gradient(135deg, #f8faf5 0%, #e6ede0 35%, #c8d8be 100%);
+}
 
 @layer base {
   :root {
