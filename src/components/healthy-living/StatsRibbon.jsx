@@ -32,8 +32,8 @@ export default function StatsRibbon() {
               >
                 {s.value}
               </p>
-              <p className="font-heading font-bold text-white text-sm leading-snug mb-1.5">{s.label}</p>
-              <p className="font-heading font-normal text-xs text-white/80">
+              <p className="font-heading font-bold text-white text-sm leading-snug mb-1.5 min-h-[2.5rem] flex items-center">{s.label}</p>
+              <p className="font-heading font-normal text-xs text-white/80 min-h-[1.5rem]">
                 {s.sub}
               </p>
             </div>
