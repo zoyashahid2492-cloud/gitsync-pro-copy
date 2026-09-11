@@ -130,7 +130,7 @@ export default function WellnessIntro() {
             <span className="font-black block">by everyday life,</span>
             <span className="font-light block">not healthcare alone.</span>
           </h2>
-          <div className="font-heading font-light leading-relaxed flex flex-col justify-between" style={{ color: "#213328", fontSize: "0.82rem" }}>
+          <div className="font-heading font-light leading-[1.5] flex flex-col justify-between" style={{ color: "#213328", fontSize: "0.95rem" }}>
             <p>
               Healthy Living transforms the environments behind<br />
               our daily decisions, making the healthier choice the<br />
