@@ -42,7 +42,7 @@ export default function Navbar() {
             {l}
           </button>
         ))}
-        <button className="border border-white text-white text-[11px] font-heading font-bold tracking-widest uppercase px-5 py-1.5 hover:bg-white hover:text-[#1e2d1e] transition-colors">
+        <button className="rounded-full border border-[#A8C5A8] text-white text-[11px] font-heading font-bold tracking-widest uppercase px-5 py-1.5 bg-transparent hover:bg-[#A8C5A8]/15 transition-colors">
           Ask AI
         </button>
       </div>
