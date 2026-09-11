@@ -16,11 +16,7 @@ export default function Navbar() {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-2.5 transition-all duration-300"
-      style={
-        scrolled
-          ? { background: "rgba(15,22,15,0.82)", backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)" }
-          : { background: "rgba(0,0,0,0.35)" }
-      }
+      style={{ background: scrolled ? "#3f453f" : "#4E544E" }}
     >
       <div className="flex items-center gap-6 whitespace-nowrap">
         {NAV_LEFT.map((l) => (
@@ -44,7 +40,7 @@ export default function Navbar() {
             {l}
           </button>
         ))}
-        <button className="rounded-full border border-[#A8C5A8] text-white text-[11px] font-heading font-bold tracking-[0.18em] uppercase px-5 py-1.5 bg-transparent hover:bg-[#A8C5A8]/15 transition-colors">
+        <button className="rounded-full border border-white text-white text-[11px] font-heading font-bold tracking-[0.18em] uppercase px-5 py-1.5 bg-transparent hover:bg-white/10 transition-colors">
           Ask AI
         </button>
       </div>
