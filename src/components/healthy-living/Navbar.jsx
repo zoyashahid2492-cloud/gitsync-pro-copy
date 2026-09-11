@@ -38,7 +38,10 @@ export default function Navbar() {
               {l}
             </button>
           ))}
-          <button className="rounded-full border border-white text-white text-[11px] font-heading font-bold tracking-[0.18em] uppercase px-5 py-1.5 bg-transparent hover:bg-white/10 transition-colors whitespace-nowrap shrink-0">
+          <button
+            className="rounded-full text-white text-[11px] font-heading font-bold tracking-[0.18em] uppercase px-5 py-1.5 bg-white/5 hover:bg-white/15 transition-colors whitespace-nowrap shrink-0"
+            style={{ border: "1.5px solid #A5B39A" }}
+          >
             Ask AI
           </button>
         </div>
