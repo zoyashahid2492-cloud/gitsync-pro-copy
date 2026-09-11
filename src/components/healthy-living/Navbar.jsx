@@ -17,7 +17,8 @@ export default function Navbar() {
             <a
               key={l}
               href="#"
-              className="text-[10px] uppercase tracking-wide font-medium text-white/90 hover:text-white transition-colors whitespace-nowrap"
+              onClick={(e) => e.preventDefault()}
+              className="text-[10px] uppercase tracking-wide font-medium text-white/90 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
             >
               {l}
             </a>
@@ -25,7 +26,7 @@ export default function Navbar() {
         </div>
 
         {/* Center stacked logo */}
-        <a href="#" className="flex-1 lg:flex-none flex justify-center">
+        <a href="#" onClick={(e) => e.preventDefault()} className="flex-1 lg:flex-none flex justify-center cursor-pointer">
           <div className="flex flex-col items-center leading-none">
             <span className="text-[13px] lg:text-[15px] font-extrabold tracking-tight text-white">
               HEALTHY
@@ -45,7 +46,8 @@ export default function Navbar() {
             <a
               key={l}
               href="#"
-              className="text-[10px] uppercase tracking-wide font-medium text-white/90 hover:text-white transition-colors whitespace-nowrap"
+              onClick={(e) => e.preventDefault()}
+              className="text-[10px] uppercase tracking-wide font-medium text-white/90 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
             >
               {l}
             </a>
@@ -73,8 +75,8 @@ export default function Navbar() {
             <a
               key={l}
               href="#"
-              className="text-xs uppercase tracking-wide font-medium text-white py-1"
-              onClick={() => setOpen(false)}
+              className="text-xs uppercase tracking-wide font-medium text-white py-1 cursor-pointer"
+              onClick={(e) => { e.preventDefault(); setOpen(false); }}
             >
               {l}
             </a>
