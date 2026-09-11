@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="relative z-10 flex-1 flex flex-col items-center justify-start text-center px-10 pt-[41vh]">
         <h1
           className="font-heading font-black text-white leading-[1.05] tracking-tight"
-          style={{ fontSize: "clamp(2.4rem, 5vw, 5.2rem)" }}
+          style={{ fontSize: "clamp(2.7rem, 5.6vw, 5.8rem)" }}
         >
           Healthier choices.<br />
           Healthier lives.<br />
