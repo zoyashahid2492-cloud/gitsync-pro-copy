@@ -1,7 +1,7 @@
 import React from "react";
 
 const imgHeroBg =
-  "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/e56110ecf_generated_image.png";
+  "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/d8cd6fd09_welnessinADshore.png";
 
 export default function Hero() {
   return (
