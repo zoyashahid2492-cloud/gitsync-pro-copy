@@ -123,23 +123,24 @@ export default function WellnessIntro() {
         background: "#F7F6F2",
       }}
     >
-      <div className="max-w-6xl mx-auto px-10 pt-16 pb-20">
-        <div className="grid md:grid-cols-2 gap-16 items-stretch mb-14">
-          <h2 className="font-heading" style={{ color: INK, fontSize: "clamp(1.9rem, 3.4vw, 3rem)", lineHeight: 1.35 }}>
+      <div className="hlu-s2">
+        <div className="hlu-s2__inner">
+          <h2 className="hlu-s2__headline font-heading">
             <span className="font-black block whitespace-nowrap">Health is shaped</span>
             <span className="font-black block whitespace-nowrap">by everyday life,</span>
             <span className="font-light block whitespace-nowrap">not healthcare alone.</span>
           </h2>
-          <div className="font-heading font-light leading-snug pt-1 flex flex-col justify-between h-full" style={{ color: MUTED, fontSize: "clamp(0.95rem, 1.2vw, 1.15rem)" }}>
-            <p>
+          <div>
+            <p className="hlu-s2__body font-heading">
               Healthy Living transforms the environments behind our daily decisions, making the healthier choice the easier one, while always preserving freedom of choice.
             </p>
-            <p>
+            <p className="hlu-s2__body font-heading">
               By uniting government, business and communities, we build prevention into everyday life so everyone in Abu Dhabi can live longer, healthier lives.
             </p>
           </div>
         </div>
-
+      </div>
+      <div className="max-w-6xl mx-auto px-10 pt-16 pb-20">
         <div
           className="bg-white rounded-2xl p-8"
           style={{ boxShadow: "0 10px 40px 0 rgba(26,34,28,0.08), 0 2px 8px 0 rgba(26,34,28,0.04)" }}
