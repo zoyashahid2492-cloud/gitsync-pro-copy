@@ -19,14 +19,14 @@ export default function Hero() {
           <br />
           Healthier lives.
           <br />
-          <span className="text-[#BDE0C1]">Healthier futures.</span>
+          <span className="text-[#b3dbbb]">Healthier futures.</span>
         </h1>
 
         <div className="mt-9 flex flex-col sm:flex-row items-center gap-4">
-          <button className="bg-[#BDE0C1] text-black px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-[#a8d4ad] transition-colors">
+          <button className="bg-[#b3dbbb] text-black px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-[#9fc9a8] transition-colors">
             Choose healthier, every day
           </button>
-          <button className="bg-[#BDE0C1] text-black px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-[#a8d4ad] transition-colors">
+          <button className="bg-[#b3dbbb] text-black px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-[#9fc9a8] transition-colors">
             How we work
           </button>
         </div>
@@ -49,7 +49,7 @@ export default function Hero() {
               Continue your health journey in <span className="text-white font-medium">Sahatna</span>
             </p>
           </div>
-          <button className="inline-flex items-center gap-2 bg-[#BDE0C1] text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#a8d4ad] transition-colors">
+          <button className="inline-flex items-center gap-2 bg-[#b3dbbb] text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#9fc9a8] transition-colors">
             Connect to Sahatna <ExternalLink size={15} />
           </button>
         </div>
