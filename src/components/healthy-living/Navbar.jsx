@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 px-6 py-2.5 transition-colors duration-300"
-      style={{ background: scrolled ? "#3f453f" : "#4E544E" }}
+      style={{ background: scrolled ? "#4E544E" : "transparent" }}
     >
       <div className="flex items-center justify-between gap-4">
         <div className="flex-1 flex items-center justify-start gap-4 min-w-0">
