@@ -25,11 +25,11 @@ export default function Hero() {
           <span style={{ color: "#B0D5B5" }}>Healthier futures.</span>
         </h1>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-          <button className="bg-transparent text-white font-heading font-bold px-8 py-3.5 rounded-full text-sm border border-white hover:bg-white/10 active:scale-95 transition-all">
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-7">
+          <button className="bg-transparent text-white font-heading font-medium px-5 py-2 rounded-full text-[12px] border border-white hover:bg-white/10 active:scale-95 transition-all">
             Choose healthier, every day
           </button>
-          <button className="bg-transparent text-white font-heading font-bold px-8 py-3.5 rounded-full text-sm border border-white hover:bg-white/10 active:scale-95 transition-all">
+          <button className="bg-transparent text-white font-heading font-medium px-5 py-2 rounded-full text-[12px] border border-white hover:bg-white/10 active:scale-95 transition-all">
             How we work
           </button>
         </div>
