@@ -37,22 +37,46 @@ export default function Navbar() {
         </div>
 
         {/* Center logo */}
-        <a href="#" className="flex flex-col items-center justify-center leading-none flex-1 lg:flex-none">
-          <span
-            className={`text-lg lg:text-xl font-extrabold tracking-tight ${
-              scrolled ? "text-black" : "text-white"
-            }`}
-          >
-            HEALTHY LIVING
-          </span>
-          <span
-            className={`text-[10px] lg:text-[11px] font-medium mt-0.5 ${
-              scrolled ? "text-neutral-500" : "text-white/70"
-            }`}
-            dir="rtl"
-          >
-            الحياة الصحية
-          </span>
+        <a
+          href="#"
+          className={`flex flex-col items-center justify-center leading-none flex-1 lg:flex-none px-4 py-1.5 rounded ${
+            scrolled ? "" : ""
+          }`}
+        >
+          <div className="flex items-center justify-between gap-3 w-[150px] lg:w-[180px]">
+            <span
+              className={`text-[15px] lg:text-[17px] font-extrabold tracking-tight ${
+                scrolled ? "text-black" : "text-white"
+              }`}
+            >
+              HEALTHY
+            </span>
+            <span
+              className={`text-[15px] lg:text-[17px] font-bold ${
+                scrolled ? "text-black" : "text-white"
+              }`}
+              dir="rtl"
+            >
+              الحياة
+            </span>
+          </div>
+          <div className="flex items-center justify-between gap-3 w-[150px] lg:w-[180px] mt-0.5">
+            <span
+              className={`text-[15px] lg:text-[17px] font-extrabold tracking-tight ${
+                scrolled ? "text-black" : "text-white"
+              }`}
+            >
+              LIVING
+            </span>
+            <span
+              className={`text-[15px] lg:text-[17px] font-bold ${
+                scrolled ? "text-black" : "text-white"
+              }`}
+              dir="rtl"
+            >
+              الصحية
+            </span>
+          </div>
         </a>
 
         {/* Right links + ASK AI */}
