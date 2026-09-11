@@ -1,37 +1,37 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
-
-const cards = [
-  {
-    tag: "NUTRITION",
-    title: "Healthier eating. Everywhere.",
-    text: "From school canteens to restaurants and supermarkets, we work with partners to reformulate products, reduce sugar, and make nutritious options more available and affordable.",
-  },
-  {
-    tag: "EVIDENCE AND INSIGHT",
-    title: "Setting a global benchmark.",
-    text: "Our research and data-driven approach tracks outcomes, informs policy, and shares what works — building an evidence base that other cities and nations can learn from.",
-  },
-];
 
 export default function FocusAreas() {
   return (
-    <section className="bg-[#1A211D] py-20 lg:py-28 px-5 lg:px-10">
-      <div className="max-w-[1280px] mx-auto grid md:grid-cols-2 gap-6 lg:gap-8">
-        {cards.map((c) => (
-          <div key={c.tag} className="border border-white/20 rounded-2xl p-8 lg:p-10 flex flex-col">
-            <p className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#b3dbbb] mb-5">
-              {c.tag}
-            </p>
-            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-tight">
-              {c.title}
-            </h3>
-            <p className="text-base text-white/65 leading-relaxed flex-1">{c.text}</p>
-            <button className="mt-7 inline-flex items-center gap-2 text-white text-sm font-semibold hover:text-[#b3dbbb] transition-colors w-fit">
-              Learn more <ArrowRight size={16} />
-            </button>
-          </div>
-        ))}
+    <section className="bg-[#1e2b1e]">
+      <div className="max-w-6xl mx-auto px-10 py-20 grid md:grid-cols-2 gap-8">
+        <div className="border border-white/10 rounded-xl p-10 flex flex-col">
+          <p className="text-[#b3dbbb] text-[10px] uppercase tracking-widest font-heading font-medium mb-6">Nutrition</p>
+          <h3 className="font-heading font-bold text-white text-2xl leading-snug mb-4">
+            Healthier eating. Everywhere.
+          </h3>
+          <p className="font-heading font-light text-white/60 text-sm leading-relaxed flex-1">
+            Healthy Living is making the easy choice the everyday choice — in schools, supermarkets, workplaces, and
+            online.
+          </p>
+          <button className="mt-8 text-white text-sm font-heading font-medium flex items-center gap-1 hover:text-[#b3dbbb] transition-colors w-fit">
+            Learn more <span className="text-[#b3dbbb]">→</span>
+          </button>
+        </div>
+        <div className="border border-white/10 rounded-xl p-10 flex flex-col">
+          <p className="text-[#b3dbbb] text-[10px] uppercase tracking-widest font-heading font-medium mb-6">
+            Evidence and Insight
+          </p>
+          <h3 className="font-heading font-bold text-white text-2xl leading-snug mb-4">
+            Setting a global benchmark.
+          </h3>
+          <p className="font-heading font-light text-white/60 text-sm leading-relaxed flex-1">
+            Data, behavioural science, and evidence guide every action — helping Healthy Living measure what matters
+            most.
+          </p>
+          <button className="mt-8 text-white text-sm font-heading font-medium flex items-center gap-1 hover:text-[#b3dbbb] transition-colors w-fit">
+            Learn more <span className="text-[#b3dbbb]">→</span>
+          </button>
+        </div>
       </div>
     </section>
   );

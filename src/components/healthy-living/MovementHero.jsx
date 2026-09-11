@@ -1,23 +1,47 @@
 import React from "react";
 
-const moveImg = "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/33c18443b_generated_image.png";
+const imgMovementBg =
+  "https://table-polo-97158241.figma.site/assets/38d3ad8f054fdf37cc38e1b3ea84379c57dc7e25-CQOOf-VL.png";
 
 export default function MovementHero() {
   return (
-    <section className="relative h-[80vh] min-h-[560px] w-full flex items-center justify-center overflow-hidden">
-      <img src={moveImg} alt="People moving and being active outdoors" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-black/45" />
-      <div className="relative text-center px-5 max-w-2xl">
-        <p className="text-[11px] uppercase tracking-[0.25em] font-semibold text-white/70 mb-5">
+    <section className="relative overflow-hidden w-full" style={{ height: "100vh" }}>
+      <img
+        src={imgMovementBg}
+        alt="Movement — Abu Dhabi waterfront"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "center 20%" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
+
+      <div className="absolute left-1/2 -translate-x-1/2 z-20" style={{ top: "38%" }}>
+        <span className="inline-flex items-center px-5 py-1.5 rounded-full border border-white/70 text-white text-[11px] uppercase tracking-[0.2em] font-heading font-light bg-white/10 backdrop-blur-sm">
           Focus Area
-        </p>
-        <h2 className="text-white font-light tracking-[0.3em] text-4xl sm:text-5xl lg:text-6xl uppercase">
+        </span>
+      </div>
+
+      <div className="absolute left-0 right-0 z-10 text-center" style={{ top: "54%" }}>
+        <span
+          className="font-heading text-white uppercase block w-full"
+          style={{
+            fontSize: "clamp(4rem, 11.5vw, 11rem)",
+            letterSpacing: "0.55em",
+            lineHeight: 1,
+            paddingLeft: "0.55em",
+          }}
+        >
           Movement
-        </h2>
-        <p className="mt-6 text-white/90 text-base lg:text-lg max-w-xl mx-auto leading-relaxed">
-          Healthy Living makes movement a natural and accessible part of everyday life, shifting
-          activity beyond sport by embedding it into daily routines, neighbourhoods, workplaces,
-          schools, and public spaces.
+        </span>
+      </div>
+
+      <div className="absolute left-1/2 -translate-x-1/2 z-20 text-center" style={{ bottom: "8%" }}>
+        <p
+          className="font-heading font-light text-white/85 leading-relaxed"
+          style={{ fontSize: "0.9rem", maxWidth: "640px" }}
+        >
+          Healthy Living makes movement a natural and accessible part of everyday life, shifting activity
+          <br />
+          beyond sport by embedding it into daily routines, neighbourhoods, workplaces, schools, and public spaces.
         </p>
       </div>
     </section>

@@ -1,64 +1,59 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
 
-const heroImg = "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/7fb860583_generated_image.png";
+const imgHeroBg =
+  "https://table-polo-97158241.figma.site/assets/b31e5a73d7a1666a91e50d6641bad98ac3ad5efd-CPCMhZpw.png";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[640px] w-full flex flex-col">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img src={heroImg} alt="People walking on Abu Dhabi waterfront at sunset" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1109]/90 via-[#0b1109]/70 to-[#0b1109]/90" />
-      </div>
+    <section className="relative flex flex-col bg-[#1a2a1a] overflow-hidden" style={{ minHeight: "100svh" }}>
+      <img
+        src={imgHeroBg}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "60% center" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/55" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
 
-      {/* Main content - left aligned */}
-      <div className="relative flex-1 flex flex-col items-start justify-center text-left px-5 lg:px-10 pt-20 max-w-[1400px] mx-auto w-full">
-        <h1 className="text-white font-extrabold leading-[1.05] tracking-tight text-4xl sm:text-5xl lg:text-7xl">
-          Healthier choices.
-          <br />
-          Healthier lives.
-          <br />
-          <span className="text-[#a8c5a8]">Healthier futures.</span>
+      <div className="relative z-10 flex-1 flex flex-col justify-end px-10 pb-10 pt-16">
+        <h1
+          className="font-heading font-black text-white leading-[1.05]"
+          style={{ fontSize: "clamp(2.8rem, 5.8vw, 6rem)" }}
+        >
+          Healthier choices.<br />
+          Healthier lives.<br />
+          <span style={{ color: "#b3dbbb" }}>Healthier futures.</span>
         </h1>
 
-        <div className="mt-9 flex flex-col sm:flex-row items-start gap-4">
-          <button className="border border-white/80 text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-white/10 transition-colors">
+        <div className="flex flex-wrap gap-3 mt-8">
+          <button className="bg-[#1c2b1c]/90 text-white font-heading font-bold px-7 py-3 rounded-full text-sm border border-white/20 hover:bg-[#253926] active:scale-95 transition-all backdrop-blur-sm">
             Choose healthier, every day
           </button>
-          <button className="border border-white/80 text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-white/10 transition-colors">
+          <button className="bg-transparent text-white font-heading font-bold px-7 py-3 rounded-full text-sm border border-white/60 hover:bg-white/10 active:scale-95 transition-all">
             How we work
           </button>
         </div>
+
+        <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] mt-5 font-heading font-light">
+          Led by the Abu Dhabi Department of Health
+        </p>
       </div>
 
-      {/* Footer strip (Sahatna) */}
-      <div className="relative">
-        {/* LED BY text between two horizontal rules */}
-        <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
-          <div className="flex items-center gap-4 py-5">
-            <div className="h-px flex-1 bg-white/25" />
-            <p className="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/85 whitespace-nowrap">
-              Led by the Abu Dhabi Department of Health
-            </p>
-            <div className="h-px flex-1 bg-white/25" />
-          </div>
-        </div>
-
-        <div className="max-w-[1400px] mx-auto px-5 lg:px-10 pb-6 flex flex-col lg:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-3 text-center lg:text-left">
-            <p className="text-sm font-semibold text-white">
-              Personal health tracking, device sync &amp; health records
-            </p>
-            <span className="hidden lg:inline text-white/30">•</span>
-            <p className="text-sm text-white/70">
-              Continue your health journey in <span className="text-white font-medium">Sahatna</span>
-            </p>
-          </div>
-          <button className="inline-flex items-center gap-2 bg-white text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
-            Connect to Sahatna <ArrowUpRight size={15} />
-          </button>
-        </div>
+      <div className="relative z-10 border-t border-white/15 bg-black/35 backdrop-blur-md px-10 py-4 flex items-center justify-between gap-4 flex-wrap">
+        <p className="text-white text-sm font-heading leading-snug">
+          <span className="font-heading font-black">Personal health tracking, device sync &amp; health records</span>
+          <span className="text-white/65"> Continue your health journey in </span>
+          <span className="font-heading font-bold">Sahatna</span>
+        </p>
+        <button
+          onClick={() => window.open("https://sahatna.ae", "_blank")}
+          className="flex items-center gap-2 bg-[#b3dbbb] text-[#1c2b1c] font-heading font-bold text-sm px-6 py-2.5 rounded-full hover:bg-[#9fcca7] active:scale-95 transition-all whitespace-nowrap"
+        >
+          Connect to Sahatna
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 12L12 2M12 2H6M12 2V8" stroke="#1c2b1c" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
       </div>
     </section>
   );

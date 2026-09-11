@@ -1,36 +1,42 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
 
-const updates = [
-  { cat: "EVENTS", title: "Festival of Health returns to Abu Dhabi for its largest edition yet", date: "10 Jul 2026" },
-  { cat: "POLICY", title: "Nutri-Mark front-of-pack labelling prepares for federal rollout", date: "3 Jul 2026" },
-  { cat: "PROGRAMME", title: "Healthy Living reaches 466 schools across Abu Dhabi", date: "28 Jun 2026" },
-  { cat: "POLICY", title: "Out-of-home advertising policy now covers all public-facing government assets", date: "15 Jun 2026" },
+const NEWS = [
+  { tag: "Events", title: "Festival of Health returns to Abu Dhabi for its largest edition yet", date: "16 Jun 2025" },
+  { tag: "Policy", title: "Nutri-Mark front-of-pack labelling prepares for federal rollout", date: "16 Jun 2025" },
+  { tag: "Programmes", title: "Healthy Living reaches 466 schools across Abu Dhabi", date: "05 Jun 2025" },
+  {
+    tag: "Policy",
+    title: "Out-of-home advertising policy now covers all public-facing government assets",
+    date: "16 Oct 2024",
+  },
 ];
 
 export default function LatestUpdates() {
   return (
-    <section className="bg-[#F9FAF8] py-20 lg:py-28 px-5 lg:px-10">
-      <div className="max-w-[1280px] mx-auto">
-        <div className="flex items-center justify-between mb-10 lg:mb-14">
-          <h2 className="text-3xl lg:text-5xl font-extrabold tracking-tight text-[#1A211D]">
+    <section className="bg-white py-20 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-end justify-between mb-10 border-b border-[#dfe5d6] pb-6">
+          <h2 className="font-heading font-black text-[#253926]" style={{ fontSize: "clamp(1.8rem,3vw,2.8rem)" }}>
             Latest updates
           </h2>
-          <button className="inline-flex items-center gap-2 text-[#1A211D] text-sm font-semibold hover:text-[#1A211D]/70 transition-colors">
-            View all <ArrowRight size={16} />
+          <button className="text-[#253926] text-sm font-heading font-medium hover:text-[#b3dbbb] transition-colors">
+            View all →
           </button>
         </div>
-        <div className="divide-y divide-[#1A211D]/10">
-          {updates.map((u, i) => (
-            <div key={i} className="grid grid-cols-1 md:grid-cols-[140px_1fr_auto] items-center gap-3 md:gap-6 py-6 group cursor-pointer">
-              <p className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#1A211D]/50">
-                {u.cat}
-              </p>
-              <p className="text-lg lg:text-xl font-medium text-[#1A211D] group-hover:text-[#1A211D]/70 transition-colors">
-                {u.title}
-              </p>
-              <p className="text-sm text-[#1A211D]/50 md:text-right whitespace-nowrap">{u.date}</p>
-            </div>
+        <div className="divide-y divide-[#dfe5d6]">
+          {NEWS.map((n) => (
+            <button
+              key={n.title}
+              className="w-full text-left flex items-center gap-6 py-5 group hover:bg-[#f9faf7] -mx-3 px-3 rounded-lg transition-colors"
+            >
+              <span className="text-[10px] uppercase tracking-widest font-heading font-medium text-[#b3dbbb] min-w-[90px]">
+                {n.tag}
+              </span>
+              <span className="flex-1 font-heading text-[#253926] text-sm group-hover:underline underline-offset-2">
+                {n.title}
+              </span>
+              <span className="text-[#253926]/35 text-xs font-heading font-light whitespace-nowrap">{n.date}</span>
+            </button>
           ))}
         </div>
       </div>

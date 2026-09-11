@@ -1,62 +1,40 @@
 import React from "react";
 
-const statsDecor = "https://table-polo-97158241.figma.site/assets/4f4ed76c504e9f9a35d093d11549914b6bc91a68-fWZZzVm6.png";
+const imgStatsBg =
+  "https://raw.githubusercontent.com/zoyashahid2492-cloud/HLdesign/main/src/imports/WebsitePsd/9521ecafbba8d80a33854341a0d8bec3bd972c22.png";
 
 const stats = [
-  {
-    value: "466+",
-    color: "#b3dbbb",
-    line1: "Schools on unified nutrition guidelines",
-    line2: "Reaching 455.000 students",
-  },
-  {
-    value: "200+",
-    color: "#b3dbbb",
-    line1: "Activations every week and month",
-    line2: "Across 13 priority districts",
-  },
-  {
-    value: "10 - 25%",
-    color: "#cb7d5d",
-    line1: "Sugar cut by producers",
-    line2: "In key product categories",
-  },
-  {
-    value: "Zero",
-    color: "#b3dbbb",
-    line1: "Unhealthy food and drink ads",
-    line2: "Across Abu Dhabi public spaces",
-  },
+  { value: "466+", color: "#b3dbbb", label: "Schools on unified\nnutrition guidelines", sub: "Reaching 455,000 students" },
+  { value: "200+", color: "#b3dbbb", label: "Activations every week\nand month", sub: "Across 13 priority districts" },
+  { value: "10 - 25%", color: "#cb7d5d", label: "Sugar cut\nby producers", sub: "In key product categories" },
+  { value: "Zero", color: "#b3dbbb", label: "Unhealthy food\nand drink ads", sub: "Across Abu Dhabi public spaces" },
 ];
 
 export default function StatsRibbon() {
   return (
-    <section className="bg-[#1A211D] py-20 lg:py-28 px-5 lg:px-10 relative overflow-hidden">
-      {/* Decorative blend image */}
+    <section className="relative bg-[#1a2a1a] overflow-hidden py-20 px-6">
       <img
-        src={statsDecor}
+        src={imgStatsBg}
         alt=""
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1716px] h-auto opacity-60 mix-blend-screen pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-screen"
       />
-      <div className="relative max-w-[1280px] mx-auto">
-        <h2 className="text-[19px] font-light text-[#b3dbbb] text-center mb-16 lg:mb-24 tracking-[1.2px]">
-          REAL CHANGE, ALREADY UNDERWAY
-        </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6">
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <p className="text-[#b3dbbb] text-[10px] uppercase tracking-widest font-heading font-light text-center mb-14">
+          Real change, already underway
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {stats.map((s) => (
-            <div key={s.line1} className="text-center">
+            <div key={s.value} className="text-center">
               <p
-                className="font-black tracking-tight leading-none text-[56px] sm:text-[72px] lg:text-[94px]"
-                style={{ color: s.color }}
+                className="font-heading font-black mb-3"
+                style={{ color: s.color, fontSize: "clamp(2.5rem,4vw,4rem)" }}
               >
                 {s.value}
               </p>
-              <p className="mt-6 text-[20px] lg:text-[22px] font-medium text-white leading-snug max-w-[240px] mx-auto">
-                {s.line1}
+              <p className="font-heading font-medium text-white text-sm leading-snug mb-1 whitespace-pre-line">
+                {s.label}
               </p>
-              <p className="mt-2 text-[15px] lg:text-[16px] font-light text-white/60 max-w-[240px] mx-auto">
-                {s.line2}
-              </p>
+              <p className="font-heading font-light text-white/40 text-xs">{s.sub}</p>
             </div>
           ))}
         </div>

@@ -1,16 +1,22 @@
 import React from "react";
-import { ExternalLink } from "lucide-react";
 
 export default function SahatnaBanner() {
   return (
-    <section className="bg-white py-16 lg:py-20 px-5 lg:px-10">
-      <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
-        <p className="text-lg lg:text-xl text-[#1A211D] max-w-2xl">
-          Personal health tracking, device sync and health records. Continue your health journey in{" "}
-          <span className="font-semibold">Sahatna</span>.
-        </p>
-        <button className="inline-flex items-center gap-2 bg-[#1A211D] text-white px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-[#1A211D]/90 transition-colors shrink-0">
-          Connect to Sahatna <ExternalLink size={15} />
+    <section className="bg-[#f0f3ec]">
+      <div className="max-w-6xl mx-auto px-10 py-14 flex items-center justify-between gap-8 flex-wrap">
+        <div>
+          <p className="font-heading font-black text-[#253926] text-xl leading-snug">
+            Personal health tracking, device sync and health records.
+          </p>
+          <p className="font-heading font-light text-[#253926]/50 text-sm mt-1">
+            Continue your health journey in Sahatna
+          </p>
+        </div>
+        <button
+          onClick={() => window.open("https://sahatna.ae", "_blank")}
+          className="flex items-center gap-2 border border-[#253926] text-[#253926] font-heading font-bold text-sm px-7 py-3 rounded-full hover:bg-[#253926] hover:text-white active:scale-95 transition-all whitespace-nowrap"
+        >
+          Connect to Sahatna →
         </button>
       </div>
     </section>
