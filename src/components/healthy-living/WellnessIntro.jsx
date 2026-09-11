@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { ArrowRight, Moon, Zap, Cloud } from "lucide-react";
 
 const questions = [
-  { q: "HOW DID YOU SLEEP?", icon: Moon, options: ["Poor", "Okay", "Great"] },
-  { q: "HOW IS YOUR ENERGY?", icon: Zap, options: ["Low", "Normal", "High"] },
-  { q: "HOW STRESSED YOU FEEL?", icon: Cloud, options: ["Low", "Medium", "High"] },
+  { q: "how did you sleep?", icon: Moon, options: ["Poor", "Okay", "Great"] },
+  { q: "how is your energy?", icon: Zap, options: ["Low", "Normal", "High"] },
+  { q: "how stressed you feel?", icon: Cloud, options: ["Low", "Medium", "High"] },
 ];
 
 export default function WellnessIntro() {
@@ -38,7 +38,6 @@ export default function WellnessIntro() {
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8 lg:mb-10">
             <div>
               <h3 className="text-xl lg:text-2xl font-bold text-[#232A21]">Today's wellness plan</h3>
-              <p className="mt-1 text-sm text-[#888]">A simple plan based on how you're feeling today</p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
               <span className="text-[11px] font-semibold uppercase tracking-widest text-[#232A21]">
@@ -64,7 +63,7 @@ export default function WellnessIntro() {
                 <div className="w-11 h-11 rounded-full bg-[#E2E6DE] flex items-center justify-center mb-4">
                   <item.icon size={18} className="text-[#232A21]" />
                 </div>
-                <p className="text-[11px] font-semibold uppercase tracking-widest text-[#232A21] mb-3">
+                <p className="text-[13px] font-semibold tracking-wide text-[#232A21] mb-3">
                   {item.q}
                 </p>
                 <div className="flex flex-wrap gap-2">

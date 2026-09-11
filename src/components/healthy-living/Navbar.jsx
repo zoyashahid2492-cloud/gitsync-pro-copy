@@ -25,11 +25,11 @@ export default function Navbar() {
         {/* Center logo */}
         <a href="#" className="flex-1 lg:flex-none flex justify-center">
           <div className="flex flex-col items-center leading-none">
-            <span className="text-[12px] lg:text-[13px] font-medium text-white mb-1" dir="rtl">
-              الحياة الصحية
-            </span>
-            <span className="text-[14px] lg:text-[16px] font-extrabold tracking-tight text-white">
+            <span className="text-[15px] lg:text-[17px] font-extrabold tracking-tight text-white">
               HEALTHY LIVING
+            </span>
+            <span className="text-[11px] lg:text-[12px] font-medium text-white/90 mt-1" dir="rtl">
+              الحياة الصحية
             </span>
           </div>
         </a>
