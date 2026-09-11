@@ -12,46 +12,50 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: "60% center" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/55" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/60" />
 
-      <div className="relative z-10 flex-1 flex flex-col justify-end px-10 pb-10 pt-16">
+      {/* Centered hero content */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-10 pt-20">
         <h1
-          className="font-heading font-black text-white leading-[1.05]"
+          className="font-heading font-black text-white leading-[1.05] tracking-tight"
           style={{ fontSize: "clamp(2.8rem, 5.8vw, 6rem)" }}
         >
           Healthier choices.<br />
           Healthier lives.<br />
-          <span style={{ color: "#b3dbbb" }}>Healthier futures.</span>
+          <span style={{ color: "#A8C5A8" }}>Healthier futures.</span>
         </h1>
 
-        <div className="flex flex-wrap gap-3 mt-8">
-          <button className="bg-[#1c2b1c]/90 text-white font-heading font-bold px-7 py-3 rounded-full text-sm border border-white/20 hover:bg-[#253926] active:scale-95 transition-all backdrop-blur-sm">
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+          <button className="bg-transparent text-white font-heading font-bold px-8 py-3.5 rounded-full text-sm border border-white hover:bg-white/10 active:scale-95 transition-all">
             Choose healthier, every day
           </button>
-          <button className="bg-transparent text-white font-heading font-bold px-7 py-3 rounded-full text-sm border border-white/60 hover:bg-white/10 active:scale-95 transition-all">
+          <button className="bg-transparent text-white font-heading font-bold px-8 py-3.5 rounded-full text-sm border border-[#A8C5A8] hover:bg-[#A8C5A8]/10 active:scale-95 transition-all">
             How we work
           </button>
         </div>
 
-        <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] mt-5 font-heading font-light">
+        <p className="text-white text-[11px] uppercase tracking-[0.25em] mt-12 font-heading font-light">
           Led by the Abu Dhabi Department of Health
         </p>
       </div>
 
-      <div className="relative z-10 border-t border-white/15 bg-black/35 backdrop-blur-md px-10 py-4 flex items-center justify-between gap-4 flex-wrap">
+      {/* Divider + Sahatna footer bar */}
+      <div className="relative z-10 px-10">
+        <div className="h-px w-full bg-white/25" />
+      </div>
+      <div className="relative z-10 px-10 py-5 flex items-center justify-between gap-4 flex-wrap">
         <p className="text-white text-sm font-heading leading-snug">
-          <span className="font-heading font-black">Personal health tracking, device sync &amp; health records</span>
+          <span className="font-heading">Personal health tracking, device sync &amp; health records</span>
           <span className="text-white/65"> Continue your health journey in </span>
           <span className="font-heading font-bold">Sahatna</span>
         </p>
         <button
           onClick={() => window.open("https://sahatna.ae", "_blank")}
-          className="flex items-center gap-2 bg-[#b3dbbb] text-[#1c2b1c] font-heading font-bold text-sm px-6 py-2.5 rounded-full hover:bg-[#9fcca7] active:scale-95 transition-all whitespace-nowrap"
+          className="flex items-center gap-2 bg-[#A8C5A8] text-[#1A1A1A] font-heading font-bold text-sm px-6 py-2.5 rounded-full hover:bg-[#9bb89b] active:scale-95 transition-all whitespace-nowrap"
         >
           Connect to Sahatna
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 12L12 2M12 2H6M12 2V8" stroke="#1c2b1c" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M2 12L12 2M12 2H6M12 2V8" stroke="#1A1A1A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
       </div>
