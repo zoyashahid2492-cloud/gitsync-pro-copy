@@ -11,13 +11,13 @@ export default function WellnessIntro() {
   const [answers, setAnswers] = useState({});
 
   return (
-    <section className="bg-[#F4F4F4] py-20 lg:py-28 px-5 lg:px-10">
+    <section className="bg-[#E6F3E6] py-20 lg:py-28 px-5 lg:px-10">
       <div className="max-w-[1100px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <h2 className="text-3xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] text-black">
             Health is shaped by everyday life, not healthcare alone.
           </h2>
-          <p className="mt-6 text-base lg:text-lg text-neutral-600 leading-relaxed max-w-lg">
+          <p className="mt-6 text-base lg:text-lg text-[#4A4A4A] leading-relaxed max-w-lg">
             We work across schools, workplaces and communities to make healthier choices easier, more
             accessible and a natural part of everyday life for everyone in Abu Dhabi.
           </p>
@@ -51,7 +51,7 @@ export default function WellnessIntro() {
               </div>
             ))}
           </div>
-          <button className="mt-7 w-full bg-black text-white py-3.5 rounded-full text-sm font-medium flex items-center justify-center gap-2 hover:bg-neutral-800 transition-colors">
+          <button className="mt-7 w-full bg-[#2E7D32] text-white py-3.5 rounded-full text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#256628] transition-colors">
             Create My Plan <ArrowRight size={16} />
           </button>
         </div>

@@ -1,20 +1,21 @@
 import React from "react";
 
 const stats = [
-  { value: "466+", label: "Schools on unified nutrition guidelines" },
-  { value: "200+", label: "Activations every week and month" },
-  { value: "10–25%", label: "Sugar cut by producers" },
-  { value: "Zero", label: "Unhealthy food and drink ads" },
+  { value: "466+", line1: "Schools on unified nutrition guidelines", line2: "Reaching 455,000 students" },
+  { value: "200+", line1: "Activations every week and month", line2: "Across 13 priority districts" },
+  { value: "10 - 25%", line1: "Sugar cut by producers", line2: "In key product categories" },
+  { value: "Zero", line1: "Unhealthy food and drink ads", line2: "Across Abu Dhabi public spaces" },
 ];
 
 export default function StatsRibbon() {
   return (
-    <section className="bg-[#1A2B24] py-16 lg:py-20 px-5 lg:px-10">
+    <section className="bg-[#1A1A1A] py-16 lg:py-20 px-5 lg:px-10">
       <div className="max-w-[1200px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
         {stats.map((s) => (
-          <div key={s.label} className="text-center">
-            <p className="text-4xl lg:text-5xl font-extrabold text-white tracking-tight">{s.value}</p>
-            <p className="mt-3 text-xs lg:text-sm text-white/60 leading-snug max-w-[200px] mx-auto">{s.label}</p>
+          <div key={s.line1} className="text-center">
+            <p className="text-4xl lg:text-5xl font-extrabold text-[#8BC34A] tracking-tight">{s.value}</p>
+            <p className="mt-3 text-xs lg:text-sm text-white leading-snug max-w-[200px] mx-auto">{s.line1}</p>
+            <p className="mt-1 text-[11px] lg:text-xs text-white/50 max-w-[200px] mx-auto">{s.line2}</p>
           </div>
         ))}
       </div>

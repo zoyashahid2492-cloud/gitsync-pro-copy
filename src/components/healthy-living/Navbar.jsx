@@ -1,35 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const leftLinks = ["Healthy Living", "Schools & Children", "Global & Research"];
-const rightLinks = ["Work With Us", "Wellness Lab", "More"];
+const leftLinks = ["HEALTHY LIVING", "SCHOOLS & CHILDREN", "GLOBAL & RESEARCH"];
+const rightLinks = ["WORK WITH US", "WELLNESS LAB", "MORE"];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#1A1A1A]">
       <nav className="max-w-[1400px] mx-auto px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
         {/* Left links */}
-        <div className="hidden lg:flex items-center gap-7 flex-1">
+        <div className="hidden lg:flex items-center gap-6 flex-1">
           {leftLinks.map((l) => (
             <a
               key={l}
               href="#"
-              className={`text-[12px] uppercase tracking-wide font-medium transition-colors ${
-                scrolled ? "text-black hover:text-neutral-500" : "text-white/90 hover:text-white"
-              }`}
+              className="text-[11px] uppercase tracking-wide font-medium text-white/90 hover:text-white transition-colors"
             >
               {l}
             </a>
@@ -37,57 +24,36 @@ export default function Navbar() {
         </div>
 
         {/* Center logo */}
-        <a
-          href="#"
-          className="flex-1 lg:flex-none flex justify-center"
-        >
-          <div className="bg-black px-5 py-2 rounded-md flex flex-col gap-1 leading-none">
-            <div className="flex items-center justify-between gap-4 w-[150px] lg:w-[172px]">
-              <span className="text-[15px] lg:text-[16px] font-extrabold tracking-tight text-white">
-                HEALTHY
-              </span>
-              <span className="text-[15px] lg:text-[16px] font-bold text-white" dir="rtl">
-                الحياة
-              </span>
-            </div>
-            <div className="flex items-center justify-between gap-4 w-[150px] lg:w-[172px]">
-              <span className="text-[15px] lg:text-[16px] font-extrabold tracking-tight text-white">
-                LIVING
-              </span>
-              <span className="text-[15px] lg:text-[16px] font-bold text-white" dir="rtl">
-                الصحية
-              </span>
-            </div>
+        <a href="#" className="flex-1 lg:flex-none flex justify-center">
+          <div className="flex flex-col items-center leading-none">
+            <span className="text-[15px] lg:text-[17px] font-extrabold tracking-tight text-white">
+              HEALTHY LIVING
+            </span>
+            <span className="text-[12px] lg:text-[13px] font-medium text-white/85 mt-0.5" dir="rtl">
+              الحياة الصحية
+            </span>
           </div>
         </a>
 
         {/* Right links + ASK AI */}
-        <div className="hidden lg:flex items-center gap-7 flex-1 justify-end">
+        <div className="hidden lg:flex items-center gap-6 flex-1 justify-end">
           {rightLinks.map((l) => (
             <a
               key={l}
               href="#"
-              className={`text-[12px] uppercase tracking-wide font-medium transition-colors ${
-                scrolled ? "text-black hover:text-neutral-500" : "text-white/90 hover:text-white"
-              }`}
+              className="text-[11px] uppercase tracking-wide font-medium text-white/90 hover:text-white transition-colors"
             >
               {l}
             </a>
           ))}
-          <button
-            className={`rounded-full px-5 py-2 text-[12px] uppercase tracking-wide font-medium border transition-all ${
-              scrolled
-                ? "border-black text-black hover:bg-black hover:text-white"
-                : "border-white text-white hover:bg-white hover:text-black"
-            }`}
-          >
+          <button className="rounded-full px-5 py-2 text-[11px] uppercase tracking-wide font-medium border border-white text-white hover:bg-white hover:text-black transition-all">
             Ask AI
           </button>
         </div>
 
         {/* Mobile toggle */}
         <button
-          className={`lg:hidden ${scrolled ? "text-black" : "text-white"}`}
+          className="lg:hidden text-white"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -97,18 +63,18 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-neutral-200 px-5 py-4 flex flex-col gap-3">
+        <div className="lg:hidden bg-[#1A1A1A] border-t border-white/10 px-5 py-4 flex flex-col gap-3">
           {[...leftLinks, ...rightLinks].map((l) => (
             <a
               key={l}
               href="#"
-              className="text-sm uppercase tracking-wide font-medium text-black py-1"
+              className="text-xs uppercase tracking-wide font-medium text-white py-1"
               onClick={() => setOpen(false)}
             >
               {l}
             </a>
           ))}
-          <button className="mt-2 rounded-full px-5 py-2 text-[12px] uppercase tracking-wide font-medium border border-black text-black w-fit">
+          <button className="mt-2 rounded-full px-5 py-2 text-[11px] uppercase tracking-wide font-medium border border-white text-white w-fit">
             Ask AI
           </button>
         </div>

@@ -16,7 +16,7 @@ const cards = [
 
 export default function TwoCards() {
   return (
-    <section className="bg-[#F4F4F4] py-20 lg:py-28 px-5 lg:px-10">
+    <section className="bg-[#E6F3E6] py-20 lg:py-28 px-5 lg:px-10">
       <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-6 lg:gap-8">
         {cards.map((c) => (
           <div

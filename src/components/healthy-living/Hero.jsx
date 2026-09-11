@@ -19,25 +19,25 @@ export default function Hero() {
           Healthier futures.
         </h1>
         <div className="mt-9 flex flex-col sm:flex-row gap-3">
-          <button className="bg-black text-white px-7 py-3.5 rounded-full text-sm font-medium hover:bg-neutral-800 transition-colors">
+          <button className="border border-white text-white px-7 py-3.5 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">
             Choose healthier, every day
           </button>
-          <button className="border border-white/80 text-white px-7 py-3.5 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">
+          <button className="border border-white text-white px-7 py-3.5 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">
             How we work
           </button>
         </div>
       </div>
 
       {/* Footer strip */}
-      <div className="relative bg-white/95 backdrop-blur-sm border-t border-white/20">
+      <div className="relative bg-[#1A1A1A]">
         <div className="max-w-[1400px] mx-auto px-5 lg:px-10 py-4 flex flex-col lg:flex-row items-center justify-between gap-3">
-          <p className="text-[11px] uppercase tracking-wider font-semibold text-black">
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-white/80">
             Led by the Abu Dhabi Department of Health
           </p>
-          <p className="text-[13px] text-neutral-600 text-center max-w-md">
+          <p className="text-[13px] text-white/70 text-center max-w-md">
             Personal health tracking, device sync &amp; health records — continue your health journey in Sahatna
           </p>
-          <button className="bg-white border border-black text-black px-6 py-2.5 rounded-full text-sm font-medium hover:bg-black hover:text-white transition-colors">
+          <button className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-medium hover:bg-neutral-200 transition-colors">
             Connect to Sahatna
           </button>
         </div>

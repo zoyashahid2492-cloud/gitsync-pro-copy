@@ -2,10 +2,10 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 const updates = [
-  { tag: "EVENTS", title: "Festival of Health returns to Abu Dhabi", date: "10 Jul 2026" },
-  { tag: "POLICY", title: "Nutri-Mark front-of-pack labelling adopted", date: "3 Jul 2026" },
-  { tag: "PROGRAMME", title: "Healthy Living reaches 466 schools", date: "28 Jun 2026" },
-  { tag: "POLICY", title: "Out-of-home advertising policy approved", date: "15 Jun 2026" },
+  { tag: "EVENTS", title: "Festival of Health returns to Abu Dhabi for its largest edition yet", date: "10 Jul 2026" },
+  { tag: "POLICY", title: "Nutri-Mark front-of-pack labelling prepares for federal rollout", date: "3 Jul 2026" },
+  { tag: "PROGRAMME", title: "Healthy Living reaches 466 schools across Abu Dhabi", date: "28 Jun 2026" },
+  { tag: "POLICY", title: "Out-of-home advertising policy now covers all public-facing government assets", date: "15 Jun 2026" },
 ];
 
 export default function UpdatesFooter() {
