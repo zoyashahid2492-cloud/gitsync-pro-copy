@@ -10,7 +10,7 @@ export default function Hero() {
         src={imgHeroBg}
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: "center top", transform: "scale(1.3)", transformOrigin: "center top" }}
+        style={{ objectPosition: "center top", transform: "scale(1.3) translateY(-6%)", transformOrigin: "center top" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/60" />
 
