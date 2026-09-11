@@ -25,7 +25,7 @@ export default function StatsRibbon() {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           {stats.map((s) => (
-            <div key={s.value} className="flex flex-col">
+            <div key={s.value} className="flex flex-col items-center text-center">
               <p
                 className="font-heading font-bold mb-3 leading-none"
                 style={{ color: s.color, fontSize: "clamp(2.6rem,4.2vw,4rem)" }}
