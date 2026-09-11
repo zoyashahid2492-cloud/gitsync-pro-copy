@@ -29,7 +29,7 @@ export default function Hero() {
           <button className="bg-transparent text-white font-heading font-bold px-8 py-3.5 rounded-full text-sm border border-white hover:bg-white/10 active:scale-95 transition-all">
             Choose healthier, every day
           </button>
-          <button className="bg-transparent text-white font-heading font-bold px-8 py-3.5 rounded-full text-sm border border-[#A8C5A8] hover:bg-[#A8C5A8]/10 active:scale-95 transition-all">
+          <button className="bg-transparent text-[#A8C5A8] font-heading font-bold px-8 py-3.5 rounded-full text-sm border border-[#A8C5A8] hover:bg-[#A8C5A8]/10 active:scale-95 transition-all">
             How we work
           </button>
         </div>
@@ -43,8 +43,8 @@ export default function Hero() {
       <div className="relative z-10 px-10">
         <div className="h-px w-full bg-white/25" />
       </div>
-      <div className="relative z-10 px-10 py-5 flex items-center justify-between gap-4 flex-wrap">
-        <p className="text-white text-sm font-heading leading-snug">
+      <div className="relative z-10 px-10 py-6 flex flex-col items-center gap-4 text-center">
+        <p className="text-white text-sm font-heading leading-snug max-w-2xl">
           <span className="font-heading">Personal health tracking, device sync &amp; health records</span>
           <span className="text-white/65"> Continue your health journey in </span>
           <span className="font-heading font-bold">Sahatna</span>
