@@ -32,11 +32,11 @@ export default function FocusAreas() {
           >
             <span
               className="inline-flex items-center self-start px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.18em] font-heading font-medium mb-7"
-              style={{ background: PILL, color: GREEN }}
+              style={{ background: PILL, color: "#FFFFFF" }}
             >
               {c.tag}
             </span>
-            <h3 className="font-heading font-bold text-white text-2xl leading-snug mb-4">{c.title}</h3>
+            <h3 className="font-heading font-bold text-white text-[1.65rem] leading-snug mb-4">{c.title}</h3>
             <p className="font-heading font-normal text-sm leading-relaxed flex-1" style={{ color: MUTED }}>
               {c.body}
             </p>

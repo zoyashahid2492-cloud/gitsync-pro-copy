@@ -27,13 +27,13 @@ export default function StatsRibbon() {
           {stats.map((s) => (
             <div key={s.value} className="flex flex-col">
               <p
-                className="font-heading font-light mb-3 leading-none"
+                className="font-heading font-bold mb-3 leading-none"
                 style={{ color: s.color, fontSize: "clamp(2.6rem,4.2vw,4rem)" }}
               >
                 {s.value}
               </p>
-              <p className="font-heading font-medium text-white text-sm leading-snug mb-1.5">{s.label}</p>
-              <p className="font-heading font-light text-xs" style={{ color: MUTED }}>
+              <p className="font-heading font-bold text-white text-sm leading-snug mb-1.5">{s.label}</p>
+              <p className="font-heading font-normal text-xs text-white/80">
                 {s.sub}
               </p>
             </div>
