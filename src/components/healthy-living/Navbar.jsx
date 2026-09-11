@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 
 const NAV_LEFT = ["Healthy Living", "Schools & Children", "Global & Research"];
 const NAV_RIGHT = ["Work with us", "Wellness Lab", "More"];
-const imgLogo =
-  "https://raw.githubusercontent.com/zoyashahid2492-cloud/HLdesign/main/src/imports/WebsitePsd/05a7212f171115943cedfdbfeb36c95138e834d3.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,34 +13,41 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-3.5 transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-3 transition-all duration-300"
       style={
         scrolled
-          ? { background: "rgba(20,30,20,0.72)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }
-          : {}
+          ? { background: "rgba(15,22,15,0.82)", backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)" }
+          : { background: "rgba(0,0,0,0.35)" }
       }
     >
-      <div className="flex items-center gap-8">
+      <div className="flex items-center gap-7">
         {NAV_LEFT.map((l) => (
           <button
             key={l}
-            className="text-[11px] font-heading font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors"
+            className="text-white text-[12px] font-heading font-medium tracking-[0.14em] uppercase hover:text-white/70 transition-colors"
           >
             {l}
           </button>
         ))}
       </div>
-      <img src={imgLogo} alt="Healthy Living" className="h-9 object-contain" />
-      <div className="flex items-center gap-8">
+
+      <div className="flex flex-col items-center justify-center text-center leading-none select-none">
+        <span className="text-white text-[13px] font-heading font-bold tracking-[0.22em] uppercase">Healthy Living</span>
+        <span className="text-white text-[14px] font-heading tracking-[0.08em] mt-1" style={{ direction: "rtl" }}>
+          الحياة الصحية
+        </span>
+      </div>
+
+      <div className="flex items-center gap-7">
         {NAV_RIGHT.map((l) => (
           <button
             key={l}
-            className="text-[11px] font-heading font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors"
+            className="text-white text-[12px] font-heading font-medium tracking-[0.14em] uppercase hover:text-white/70 transition-colors"
           >
             {l}
           </button>
         ))}
-        <button className="rounded-full border border-[#A8C5A8] text-white text-[11px] font-heading font-bold tracking-widest uppercase px-5 py-1.5 bg-transparent hover:bg-[#A8C5A8]/15 transition-colors">
+        <button className="rounded-full border border-[#A8C5A8] text-white text-[11px] font-heading font-bold tracking-[0.18em] uppercase px-5 py-1.5 bg-transparent hover:bg-[#A8C5A8]/15 transition-colors">
           Ask AI
         </button>
       </div>
