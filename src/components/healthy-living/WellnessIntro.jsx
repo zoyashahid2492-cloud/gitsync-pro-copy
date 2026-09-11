@@ -130,11 +130,11 @@ export default function WellnessIntro() {
             <span className="font-black block whitespace-nowrap">by everyday life,</span>
             <span className="font-light block whitespace-nowrap">not healthcare alone.</span>
           </h2>
-          <div className="font-heading font-light leading-snug pt-2 flex flex-col justify-between" style={{ color: MUTED, fontSize: "0.8rem" }}>
-            <p style={{ maxWidth: "320px" }}>
+          <div className="font-heading font-light leading-snug pt-1 flex flex-col justify-between h-full" style={{ color: MUTED, fontSize: "clamp(0.85rem, 1.05vw, 1.05rem)" }}>
+            <p>
               Healthy Living transforms the environments behind our daily decisions, making the healthier choice the easier one, while always preserving freedom of choice.
             </p>
-            <p style={{ maxWidth: "320px" }}>
+            <p>
               By uniting government, business and communities, we build prevention into everyday life so everyone in Abu Dhabi can live longer, healthier lives.
             </p>
           </div>
