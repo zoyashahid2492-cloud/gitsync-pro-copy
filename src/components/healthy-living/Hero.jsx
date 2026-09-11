@@ -10,9 +10,9 @@ export default function Hero() {
         src={imgHeroBg}
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: "55% 22%" }}
+        style={{ objectPosition: "60% center" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/55" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/60" />
 
       {/* Hero content — anchored low so it clears the subjects' faces */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-10 pb-6">
