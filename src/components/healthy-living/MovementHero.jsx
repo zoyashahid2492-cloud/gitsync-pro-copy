@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 const imgMovementBg =
   "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/c879eedb6_generated_image.png";
 
 export default function MovementHero() {
+  const wordRef = useRef(null);
+  const [fs, setFs] = useState(null);
+
+  useEffect(() => {
+    const el = wordRef.current;
+    if (!el) return;
+    const parent = el.parentElement;
+    const fit = () => {
+      const target = parent.clientWidth * 0.78;
+      el.style.fontSize = "100px";
+      const w100 = el.offsetWidth;
+      if (!w100) return;
+      setFs(target / (w100 / 100));
+    };
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(parent);
+    return () => ro.disconnect();
+  }, []);
+
   return (
     <section className="relative overflow-hidden w-full" style={{ height: "118vh" }}>
       <img
@@ -22,29 +42,33 @@ export default function MovementHero() {
 
       <div className="absolute left-0 right-0 z-10 text-center" style={{ top: "46%" }}>
         <span
-          className="font-heading font-light text-white uppercase w-full text-center"
+          ref={wordRef}
+          className="font-heading font-light text-white uppercase inline-block"
           style={{
-            fontSize: "clamp(2rem, 7vw, 6rem)",
-            letterSpacing: "clamp(0.5em, 2.6vw, 0.95em)",
+            fontSize: fs ? `${fs}px` : undefined,
+            letterSpacing: "0.5em",
             lineHeight: 1,
-            display: "inline-block",
-            paddingLeft: "clamp(0.5em, 2.6vw, 0.95em)",
+            paddingLeft: "0.5em",
+            opacity: fs ? 1 : 0,
+            transition: "opacity 0.2s",
           }}
         >
           Movement
         </span>
       </div>
 
-      <div className="absolute left-1/2 -translate-x-1/2 z-20 text-center" style={{ bottom: "6%" }}>
+      <div className="absolute left-1/2 -translate-x-1/2 z-20 text-center w-full px-6" style={{ bottom: "9%" }}>
         <p
-          className="font-heading font-light text-white/85 leading-relaxed"
-          style={{ fontSize: "0.9rem", maxWidth: "640px" }}
+          className="font-heading font-normal text-white leading-[1.35] mx-auto"
+          style={{ fontSize: "0.92rem", maxWidth: "600px" }}
         >
           Healthy Living makes movement a natural and accessible part of everyday life, shifting activity
           <br />
           beyond sport by embedding it into daily routines, neighbourhoods, workplaces, schools, and public spaces.
         </p>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 z-20" style={{ height: 28, background: "#1A201A" }} />
     </section>
   );
 }
