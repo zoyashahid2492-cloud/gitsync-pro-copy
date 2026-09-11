@@ -7,7 +7,7 @@ const SLEEP = ["Poor", "Okay", "Great"];
 const ENERGY = ["Low", "Normal", "High"];
 const STRESS = ["Low", "Medium", "High"];
 
-const INK = "#203126";
+const INK = "#2D3E32";
 const MUTED = "#737974";
 const ICON = "#5e7062";
 const HELPER = "#8e968f";
@@ -120,15 +120,15 @@ export default function WellnessIntro() {
   return (
     <section
       style={{
-        background: "#F5F5F2",
+        background: "#F7F7F2",
       }}
     >
       <div className="max-w-6xl mx-auto px-10 pt-16 pb-20">
         <div className="grid md:grid-cols-2 gap-16 items-start mb-14">
-          <h2 className="font-heading font-black" style={{ color: INK, fontSize: "clamp(2.2rem, 4.2vw, 3.8rem)", lineHeight: 1.08 }}>
-            <span className="block">Health is shaped</span>
-            <span className="block">by everyday life,</span>
-            <span className="block">not healthcare alone.</span>
+          <h2 className="font-heading" style={{ color: "#2D3E32", fontSize: "clamp(2.2rem, 4.2vw, 3.8rem)", lineHeight: 1.08 }}>
+            <span className="font-black block">Health is shaped</span>
+            <span className="font-black block">by everyday life,</span>
+            <span className="font-light block">not healthcare alone.</span>
           </h2>
           <div className="font-heading font-light leading-relaxed pt-2" style={{ color: MUTED, fontSize: "0.95rem" }}>
             <p>
