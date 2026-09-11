@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Moon, Zap, Flower2 } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import WellnessPlanResult from "./WellnessPlanResult";
@@ -64,6 +64,14 @@ export default function WellnessIntro() {
   const [w, setW] = useState({ sleep: "", energy: "", stress: "" });
   const [plan, setPlan] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [isCompact, setIsCompact] = useState(false);
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 900px)");
+    const onChange = () => setIsCompact(mql.matches);
+    mql.addEventListener("change", onChange);
+    setIsCompact(mql.matches);
+    return () => mql.removeEventListener("change", onChange);
+  }, []);
   const done = !!(w.sleep && w.energy && w.stress);
   const answered = Object.values(w).filter(Boolean).length;
 
@@ -120,24 +128,66 @@ export default function WellnessIntro() {
   return (
     <section
       style={{
-        background: "#F7F6F2",
+        backgroundColor: "#F7F6F2",
+        backgroundImage: "url('plate-02-wellness.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      <div className="hlu-s2">
-        <div className="hlu-s2__inner">
-          <h2 className="hlu-s2__headline font-heading">
-            <span className="font-black block whitespace-nowrap">Health is shaped</span>
-            <span className="font-black block whitespace-nowrap">by everyday life,</span>
-            <span className="font-light block whitespace-nowrap">not healthcare alone.</span>
-          </h2>
-          <div>
-            <p className="hlu-s2__body font-heading">
-              Healthy Living transforms the environments behind our daily decisions, making the healthier choice the easier one, while always preserving freedom of choice.
-            </p>
-            <p className="hlu-s2__body font-heading">
-              By uniting government, business and communities, we build prevention into everyday life so everyone in Abu Dhabi can live longer, healthier lives.
-            </p>
-          </div>
+      <div
+        style={{
+          maxWidth: "1920px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          paddingLeft: isCompact ? "24px" : "5.885%",
+          paddingRight: isCompact ? "24px" : "7.604%",
+          display: "grid",
+          gridTemplateColumns: isCompact ? "1fr" : "1.3925fr 1fr",
+          columnGap: "4.214%",
+          rowGap: isCompact ? "32px" : undefined,
+          alignItems: "start",
+        }}
+      >
+        <h2
+          className="font-heading"
+          style={{
+            fontSize: "clamp(38px, 6.094vw, 117px)",
+            lineHeight: 0.803,
+            letterSpacing: "-0.03em",
+            color: "#1F3A24",
+            margin: 0,
+          }}
+        >
+          <span className="font-black block whitespace-nowrap">Health is shaped</span>
+          <span className="font-black block whitespace-nowrap">by everyday life,</span>
+          <span className="font-light block whitespace-nowrap">not healthcare alone.</span>
+        </h2>
+        <div>
+          <p
+            className="font-heading"
+            style={{
+              fontSize: isCompact ? "17px" : "clamp(17px, 1.510vw, 29px)",
+              lineHeight: 1.293,
+              fontWeight: 300,
+              color: "#1F3A24",
+              margin: 0,
+            }}
+          >
+            Healthy Living transforms the environments behind our daily decisions, making the healthier choice the easier one, while always preserving freedom of choice.
+          </p>
+          <p
+            className="font-heading"
+            style={{
+              fontSize: isCompact ? "17px" : "clamp(17px, 1.510vw, 29px)",
+              lineHeight: 1.293,
+              fontWeight: 300,
+              color: "#1F3A24",
+              margin: 0,
+              marginTop: "1.293em",
+            }}
+          >
+            By uniting government, business and communities, we build prevention into everyday life so everyone in Abu Dhabi can live longer, healthier lives.
+          </p>
         </div>
       </div>
       <div className="max-w-6xl mx-auto px-10 pt-16 pb-20">

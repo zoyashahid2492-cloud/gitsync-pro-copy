@@ -42,57 +42,6 @@ html, body, #root {
   background: linear-gradient(135deg, #f8faf5 0%, #e6ede0 35%, #c8d8be 100%);
 }
 
-/* ---- Section 2: Health is shaped ---- */
-
-.hlu-s2 {
-  background-image: url('plate-02-wellness.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.hlu-s2__inner {
-  max-width: 1920px;
-  margin-inline: auto;
-  padding-left: 5.885%;
-  padding-right: 7.604%;
-  display: grid;
-  grid-template-columns: 1.3925fr 1fr;
-  column-gap: 4.214%;
-  align-items: start;
-}
-
-.hlu-s2__headline {
-  font-size: clamp(38px, 6.094vw, 117px);
-  line-height: 0.803;
-  letter-spacing: -0.03em;
-  color: #1F3A24;
-  margin: 0;
-}
-
-.hlu-s2__body {
-  font-size: clamp(17px, 1.510vw, 29px);
-  line-height: 1.293;
-  font-weight: 300;
-  color: #1F3A24;
-  margin: 0;
-}
-
-.hlu-s2__body + .hlu-s2__body {
-  margin-top: 1.293em;
-}
-
-@media (max-width: 900px) {
-  .hlu-s2__inner {
-    grid-template-columns: 1fr;
-    row-gap: 32px;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  .hlu-s2__body {
-    font-size: 17px;
-  }
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
