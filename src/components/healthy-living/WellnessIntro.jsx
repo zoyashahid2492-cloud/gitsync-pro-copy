@@ -138,6 +138,8 @@ export default function WellnessIntro() {
           marginRight: "auto",
           paddingLeft: isCompact ? "24px" : "5.885%",
           paddingRight: isCompact ? "24px" : "7.604%",
+          paddingTop: isCompact ? "40px" : "10%",
+          paddingBottom: isCompact ? "40px" : "7%",
           display: "grid",
           gridTemplateColumns: isCompact ? "1fr" : "1.3925fr 1fr",
           columnGap: "4.214%",
