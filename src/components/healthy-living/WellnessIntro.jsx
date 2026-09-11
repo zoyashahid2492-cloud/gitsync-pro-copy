@@ -120,17 +120,17 @@ export default function WellnessIntro() {
   return (
     <section
       style={{
-        background: "#F7F7F2",
+        background: "#e8ebe3",
       }}
     >
       <div className="max-w-6xl mx-auto px-10 pt-16 pb-20">
         <div className="grid md:grid-cols-2 gap-16 items-stretch mb-14">
-          <h2 className="font-heading flex flex-col justify-center" style={{ color: "#2D3E32", fontSize: "clamp(1.8rem, 3.4vw, 3rem)", lineHeight: 1.08 }}>
+          <h2 className="font-heading flex flex-col justify-center" style={{ color: "#213328", fontSize: "clamp(2.4rem, 5.2vw, 4.5rem)", lineHeight: 1.08 }}>
             <span className="font-black block">Health is shaped</span>
             <span className="font-black block">by everyday life,</span>
             <span className="font-light block">not healthcare alone.</span>
           </h2>
-          <div className="font-heading font-light leading-relaxed flex flex-col justify-between" style={{ color: "#2E3A2E", fontSize: "0.95rem" }}>
+          <div className="font-heading font-light leading-relaxed flex flex-col justify-between" style={{ color: "#213328", fontSize: "0.82rem" }}>
             <p>
               Healthy Living transforms the environments behind<br />
               our daily decisions, making the healthier choice the<br />
