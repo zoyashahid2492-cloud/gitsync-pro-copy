@@ -13,7 +13,7 @@ export default function WellnessIntro() {
   const allAnswered = answeredCount === 3;
 
   return (
-    <section className="bg-[#F4F5EF] py-20 lg:py-28 px-5 lg:px-10">
+    <section className="bg-[#F9FAF8] py-20 lg:py-28 px-5 lg:px-10">
       <div className="max-w-[1100px] mx-auto">
         {/* Text area */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 mb-14 lg:mb-20">

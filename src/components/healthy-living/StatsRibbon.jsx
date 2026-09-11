@@ -1,11 +1,13 @@
 import React from "react";
 
+const statsDecor = "https://table-polo-97158241.figma.site/assets/4f4ed76c504e9f9a35d093d11549914b6bc91a68-fWZZzVm6.png";
+
 const stats = [
   {
     value: "466+",
     color: "#b3dbbb",
     line1: "Schools on unified nutrition guidelines",
-    line2: "Reaching 455,000 students",
+    line2: "Reaching 455.000 students",
   },
   {
     value: "200+",
@@ -29,8 +31,14 @@ const stats = [
 
 export default function StatsRibbon() {
   return (
-    <section className="bg-[#1A211D] py-20 lg:py-28 px-5 lg:px-10">
-      <div className="max-w-[1280px] mx-auto">
+    <section className="bg-[#1A211D] py-20 lg:py-28 px-5 lg:px-10 relative overflow-hidden">
+      {/* Decorative blend image */}
+      <img
+        src={statsDecor}
+        alt=""
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1716px] h-auto opacity-60 mix-blend-screen pointer-events-none"
+      />
+      <div className="relative max-w-[1280px] mx-auto">
         <h2 className="text-[19px] font-light text-[#b3dbbb] text-center mb-16 lg:mb-24 tracking-[1.2px]">
           REAL CHANGE, ALREADY UNDERWAY
         </h2>
