@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Moon, Zap, Flower2 } from "lucide-react";
+import { base44 } from "@/api/base44Client";
 
 const SLEEP = ["Poor", "Okay", "Great"];
 const ENERGY = ["Low", "Normal", "High"];
@@ -61,13 +62,22 @@ function ProgressDots({ answered }) {
 export default function WellnessIntro() {
   const [w, setW] = useState({ sleep: "", energy: "", stress: "" });
   const [plan, setPlan] = useState(null);
+  const [loading, setLoading] = useState(false);
   const done = !!(w.sleep && w.energy && w.stress);
   const answered = Object.values(w).filter(Boolean).length;
 
-  const handleCreate = () => {
-    setPlan(
-      `Based on ${w.sleep.toLowerCase()} sleep, ${w.energy.toLowerCase()} energy, and ${w.stress.toLowerCase()} stress — we recommend light movement, mindful eating, and a short rest period today.`
-    );
+  const handleCreate = async () => {
+    setLoading(true);
+    setPlan(null);
+    try {
+      const prompt = `You are a wellness coach. Create a short, practical day plan to improve the user's day based on how they're feeling right now. Sleep quality: ${w.sleep}. Energy level: ${w.energy}. Stress level: ${w.stress}. Give 4-6 concise, actionable tips covering morning, movement, nutrition, mindset and rest. Keep it warm, encouraging and under 120 words. Do not use headings or markdown — just plain sentences.`;
+      const res = await base44.integrations.Core.InvokeLLM({ prompt });
+      setPlan(typeof res === "string" ? res : res?.response || JSON.stringify(res));
+    } catch (e) {
+      setPlan("Sorry, we couldn't generate your plan right now. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -114,8 +124,13 @@ export default function WellnessIntro() {
           <div className="grid md:grid-cols-3 divide-x divide-[#ECEEEC] border-t border-[#ECEEEC] pt-8">
             {QUESTIONS.map(({ key, label, options, Icon }) => (
               <div key={key} className="px-6 first:pl-0 last:pr-0 flex flex-col items-center text-center">
-                <Icon size={26} strokeWidth={1.5} style={{ color: ICON }} />
-                <p className="font-heading font-bold text-[11px] uppercase tracking-[0.14em] mt-3 mb-5" style={{ color: INK }}>
+                <span
+                  className="flex items-center justify-center rounded-full"
+                  style={{ width: 56, height: 56, background: "#D9E4D9" }}
+                >
+                  <Icon size={26} strokeWidth={1.5} style={{ color: ICON }} />
+                </span>
+                <p className="font-heading font-bold text-[11px] uppercase tracking-[0.14em] mt-4 mb-5" style={{ color: INK }}>
                   {label}
                 </p>
                 <div className="flex gap-2 flex-wrap justify-center">
@@ -141,14 +156,14 @@ export default function WellnessIntro() {
 
           <div className="mt-8 flex items-center gap-4 flex-wrap">
             <button
-              disabled={!done}
+              disabled={!done || loading}
               onClick={handleCreate}
               className={`flex items-center gap-2 font-heading font-bold text-sm px-7 py-3 rounded-full transition-all ${
-                done ? "hover:opacity-90 active:scale-95 cursor-pointer" : "opacity-40 cursor-not-allowed"
+                done && !loading ? "hover:opacity-90 active:scale-95 cursor-pointer" : "opacity-40 cursor-not-allowed"
               }`}
               style={{ background: INK, color: "#fff" }}
             >
-              Create My Plan →
+              {loading ? "Creating…" : "Create My Plan →"}
             </button>
             {!done && (
               <span className="text-[13px] font-heading font-light" style={{ color: HELPER }}>
