@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const heroImg = "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/7fb860583_generated_image.png";
 
@@ -12,17 +12,17 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0b1109]/90 via-[#0b1109]/70 to-[#0b1109]/90" />
       </div>
 
-      {/* Main content - centered */}
-      <div className="relative flex-1 flex flex-col items-center justify-center text-center px-5 pt-20">
+      {/* Main content - left aligned */}
+      <div className="relative flex-1 flex flex-col items-start justify-center text-left px-5 lg:px-10 pt-20 max-w-[1400px] mx-auto w-full">
         <h1 className="text-white font-extrabold leading-[1.05] tracking-tight text-4xl sm:text-5xl lg:text-7xl">
           Healthier choices.
           <br />
           Healthier lives.
           <br />
-          <span className="text-[#b4d1b8]">Healthier futures.</span>
+          <span className="text-[#a8c5a8]">Healthier futures.</span>
         </h1>
 
-        <div className="mt-9 flex flex-col sm:flex-row items-center gap-4">
+        <div className="mt-9 flex flex-col sm:flex-row items-start gap-4">
           <button className="border border-white/80 text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-white/10 transition-colors">
             Choose healthier, every day
           </button>
@@ -55,8 +55,8 @@ export default function Hero() {
               Continue your health journey in <span className="text-white font-medium">Sahatna</span>
             </p>
           </div>
-          <button className="inline-flex items-center gap-2 bg-[#85b5a2] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#74a591] transition-colors">
-            Connect to Sahatna <ExternalLink size={15} />
+          <button className="inline-flex items-center gap-2 bg-white text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
+            Connect to Sahatna <ArrowUpRight size={15} />
           </button>
         </div>
       </div>
