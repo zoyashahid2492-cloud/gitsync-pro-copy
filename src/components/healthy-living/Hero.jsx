@@ -12,9 +12,9 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
       </div>
 
-      {/* Main content */}
-      <div className="relative flex-1 flex flex-col items-center justify-center text-center px-5 pt-20">
-        <h1 className="text-white font-extrabold leading-[1.05] tracking-tight text-4xl sm:text-5xl lg:text-7xl max-w-4xl">
+      {/* Main content - left aligned */}
+      <div className="relative flex-1 flex flex-col items-start justify-center text-left px-5 lg:px-10 pt-20 max-w-[1400px] mx-auto w-full">
+        <h1 className="text-white font-extrabold leading-[1.05] tracking-tight text-4xl sm:text-5xl lg:text-7xl max-w-2xl">
           Healthier choices.
           <br />
           Healthier lives.
