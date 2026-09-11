@@ -163,8 +163,8 @@ export default function WellnessIntro() {
           <p
             className="font-heading"
             style={{
-              fontSize: isCompact ? "17px" : "clamp(17px, 1.510vw, 29px)",
-              lineHeight: 1.55,
+              fontSize: isCompact ? "17px" : "clamp(13px, 1.510vw, 29px)",
+              lineHeight: 1.2,
               fontWeight: 300,
               color: "#4a4a4a",
               margin: 0,
@@ -175,12 +175,12 @@ export default function WellnessIntro() {
           <p
             className="font-heading"
             style={{
-              fontSize: isCompact ? "17px" : "clamp(17px, 1.510vw, 29px)",
-              lineHeight: 1.55,
+              fontSize: isCompact ? "17px" : "clamp(13px, 1.510vw, 29px)",
+              lineHeight: 1.2,
               fontWeight: 300,
               color: "#4a4a4a",
               margin: 0,
-              marginTop: "1.4em",
+              marginTop: "0.3em",
             }}
           >
             By uniting government, business and communities, we build prevention into everyday life so everyone in Abu Dhabi can live longer, healthier lives.
