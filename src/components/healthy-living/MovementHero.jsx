@@ -1,7 +1,7 @@
 import React from "react";
 
 const imgMovementBg =
-  "https://table-polo-97158241.figma.site/assets/38d3ad8f054fdf37cc38e1b3ea84379c57dc7e25-CQOOf-VL.png";
+  "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/5bacd26f5_generated_image.png";
 
 export default function MovementHero() {
   return (
@@ -22,12 +22,12 @@ export default function MovementHero() {
 
       <div className="absolute left-0 right-0 z-10 text-center" style={{ top: "54%" }}>
         <span
-          className="font-heading text-white uppercase block w-full"
+          className="font-heading font-light text-white uppercase block w-full"
           style={{
-            fontSize: "clamp(4rem, 11.5vw, 11rem)",
-            letterSpacing: "0.55em",
+            fontSize: "clamp(3.5rem, 11vw, 10.5rem)",
+            letterSpacing: "0.5em",
             lineHeight: 1,
-            paddingLeft: "0.55em",
+            paddingLeft: "0.5em",
           }}
         >
           Movement
