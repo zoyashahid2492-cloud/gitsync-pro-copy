@@ -22,13 +22,13 @@ export default function MovementHero() {
 
       <div className="absolute left-0 right-0 z-10 text-center" style={{ top: "54%" }}>
         <span
-          className="font-heading font-light text-white uppercase block w-full text-center"
+          className="font-heading font-light text-white uppercase w-full text-center"
           style={{
-            fontSize: "clamp(2.2rem, 8vw, 7.5rem)",
-            letterSpacing: "0.32em",
+            fontSize: "clamp(2rem, 7vw, 6rem)",
+            letterSpacing: "clamp(0.5em, 2.6vw, 0.95em)",
             lineHeight: 1,
-            paddingLeft: "0.32em",
-            paddingRight: "0.32em",
+            display: "inline-block",
+            paddingLeft: "clamp(0.5em, 2.6vw, 0.95em)",
           }}
         >
           Movement
