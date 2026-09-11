@@ -1,16 +1,11 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
 
-const heroImg = "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/fd7663fad_generated_image.png";
-
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[640px] w-full flex flex-col">
       {/* Background */}
-      <div className="absolute inset-0">
-        <img src={heroImg} alt="People walking on Abu Dhabi waterfront at sunset" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0b1109] to-[#1c2617]" />
 
       {/* Main content - centered */}
       <div className="relative flex-1 flex flex-col items-center justify-center text-center px-5 pt-20">
@@ -19,7 +14,7 @@ export default function Hero() {
           <br />
           Healthier lives.
           <br />
-          <span className="text-[#a8c4a4]">Healthier futures.</span>
+          <span className="text-[#b4d1b8]">Healthier futures.</span>
         </h1>
 
         <div className="mt-9 flex flex-col sm:flex-row items-center gap-4">
