@@ -12,7 +12,6 @@ export default function UpdatesFooter() {
   return (
     <section className="bg-white py-20 lg:py-28 px-5 lg:px-10">
       <div className="max-w-[1200px] mx-auto">
-        {/* Updates table */}
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-2xl font-bold text-black">Latest updates</h3>
           <button className="inline-flex items-center gap-2 text-sm font-medium text-black border border-black rounded-full px-5 py-2 hover:bg-black hover:text-white transition-colors">
@@ -23,7 +22,7 @@ export default function UpdatesFooter() {
           {updates.map((u, i) => (
             <div key={i} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 py-5 hover:bg-neutral-50 transition-colors px-2">
               <span className="text-xs text-neutral-500 w-24 shrink-0">{u.date}</span>
-              <span className="text-xs uppercase tracking-widest text-[#2B5B49] font-semibold w-28 shrink-0">{u.tag}</span>
+              <span className="text-xs uppercase tracking-widest text-[#232A21] font-semibold w-28 shrink-0">{u.tag}</span>
               <p className="text-sm lg:text-base text-black flex-1">{u.title}</p>
             </div>
           ))}

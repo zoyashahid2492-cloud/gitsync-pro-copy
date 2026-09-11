@@ -6,36 +6,50 @@ const heroImg = "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[640px] w-full flex flex-col">
+      {/* Background */}
       <div className="absolute inset-0">
         <img src={heroImg} alt="People walking outdoors in Abu Dhabi" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
       </div>
 
+      {/* Main content */}
       <div className="relative flex-1 flex flex-col items-center justify-center text-center px-5 pt-20">
         <h1 className="text-white font-extrabold leading-[1.05] tracking-tight text-4xl sm:text-5xl lg:text-7xl max-w-4xl">
           Healthier choices.
           <br />
           Healthier lives.
           <br />
-          Healthier futures.
+          <span className="text-[#B5D9BD]">Healthier futures.</span>
         </h1>
-        <div className="mt-9 flex flex-col items-center gap-5">
-          <button className="bg-[#B2D8C3] text-[#1A2621] px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-[#9fc9bd] transition-colors">
-            Explore our plans
+
+        <div className="mt-9 flex flex-col sm:flex-row items-center gap-4">
+          <button className="bg-[#B5D9BD] text-black px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-[#a3ccb3] transition-colors">
+            Choose healthier, every day
           </button>
-          <p className="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/85">
-            Led by the Abu Dhabi Department of Health
-          </p>
+          <button className="bg-[#B5D9BD] text-black px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-[#a3ccb3] transition-colors">
+            How we work
+          </button>
         </div>
+
+        <p className="mt-8 text-[11px] uppercase tracking-[0.2em] font-semibold text-white/85">
+          Led by the Abu Dhabi Department of Health
+        </p>
       </div>
 
-      {/* Footer strip */}
-      <div className="relative bg-[#1A2621]">
-        <div className="max-w-[1400px] mx-auto px-5 lg:px-10 py-4 flex flex-col lg:flex-row items-center justify-between gap-3">
-          <p className="text-[13px] text-white/75 text-center max-w-md lg:text-left">
-            Personal health tracking, device sync &amp; health records — continue your health journey in Sahatna
-          </p>
-          <button className="inline-flex items-center gap-2 bg-[#B2D8C3] text-[#1A2621] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#9fc9bd] transition-colors">
+      {/* Footer strip (Sahatna) */}
+      <div className="relative">
+        <div className="h-px w-full bg-white/25" />
+        <div className="max-w-[1400px] mx-auto px-5 lg:px-10 py-6 flex flex-col lg:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-3 text-center lg:text-left">
+            <p className="text-sm font-semibold text-white">
+              Personal health tracking, device sync &amp; health records
+            </p>
+            <span className="hidden lg:inline text-white/30">•</span>
+            <p className="text-sm text-white/70">
+              Continue your health journey in <span className="text-white font-medium">Sahatna</span>
+            </p>
+          </div>
+          <button className="inline-flex items-center gap-2 bg-[#B5D9BD] text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#a3ccb3] transition-colors">
             Connect to Sahatna <ExternalLink size={15} />
           </button>
         </div>
