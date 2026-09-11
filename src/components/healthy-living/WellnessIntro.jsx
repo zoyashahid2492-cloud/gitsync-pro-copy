@@ -120,26 +120,24 @@ export default function WellnessIntro() {
   return (
     <section
       style={{
-        background: "#F8F8F7",
+        background: "#F7F7F2",
       }}
     >
       <div className="max-w-6xl mx-auto px-10 pt-16 pb-20">
-        <div className="grid md:grid-cols-2 gap-16 items-stretch mb-14">
-          <h2 className="font-heading font-black flex flex-col justify-center" style={{ color: "#1A2B1D", fontSize: "clamp(2.4rem, 5.2vw, 4.5rem)", lineHeight: 1.05 }}>
-            <span className="block">Health is shaped</span>
-            <span className="block">by everyday life,</span>
-            <span className="block">not healthcare alone.</span>
+        <div className="grid md:grid-cols-2 gap-16 items-start mb-14">
+          <h2 className="font-heading" style={{ color: "#2D3E32", fontSize: "clamp(2.2rem, 4.2vw, 3.8rem)", lineHeight: 1.08 }}>
+            <span className="font-black block">Health is shaped</span>
+            <span className="font-black block">by everyday life,</span>
+            <span className="font-light block">not healthcare alone.</span>
           </h2>
-          <div className="font-heading font-light leading-[1.5] flex flex-col justify-between" style={{ color: "#1A2B1D", fontSize: "0.95rem" }}>
+          <div className="font-heading font-light leading-relaxed pt-2" style={{ color: MUTED, fontSize: "0.95rem" }}>
             <p>
-              Healthy Living transforms the environments behind<br />
-              our daily decisions, making the healthier choice the<br />
+              Healthy Living transforms the environments behind our daily decisions, making the healthier choice the
               easier one, while always preserving freedom of choice.
             </p>
-            <p>
-              By uniting government, business and communities,<br />
-              we build prevention into everyday life so everyone<br />
-              in Abu Dhabi can live longer, healthier lives.
+            <p className="mt-4">
+              By uniting government, business and communities, we build prevention into everyday life so everyone in
+              Abu Dhabi can live longer, healthier lives.
             </p>
           </div>
         </div>
