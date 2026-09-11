@@ -71,7 +71,7 @@ export default function WellnessIntro() {
   return (
     <section
       style={{
-        background: "radial-gradient(circle at 50% 40%, #F5F7F5 0%, #E8F0E6 75%)",
+        background: "linear-gradient(160deg, #E8F0E6 0%, #F5F7F5 45%, #E8F0E6 100%)",
       }}
     >
       <div className="max-w-6xl mx-auto px-10 pt-16 pb-20">
