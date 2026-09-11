@@ -5,11 +5,13 @@ const SLEEP = ["Poor", "Okay", "Great"];
 const ENERGY = ["Low", "Normal", "High"];
 const STRESS = ["Low", "Medium", "High"];
 
-const INK = "#1A221C";
-const MUTED = "#4E544E";
-const HELPER = "#7A807A";
-const BORDER = "#D1D6D2";
-const DOT_EMPTY = "#C6CCC7";
+const INK = "#1f3d2a";
+const MUTED = "#4a5d4f";
+const ICON = "#5e7062";
+const HELPER = "#8e968f";
+const PROGRESS_TEXT = "#a0a8a2";
+const BORDER = "#d1d6d2";
+const DOT_EMPTY = "#c6ccc7";
 
 const QUESTIONS = [
   { key: "sleep", label: "How did you sleep?", options: SLEEP, Icon: Moon },
@@ -23,8 +25,8 @@ function Chip({ label, active, onClick }) {
       onClick={onClick}
       className={`px-5 py-2 rounded-full text-[13px] font-heading font-medium transition-all border ${
         active
-          ? "bg-[#1A221C] text-white border-[#1A221C]"
-          : "bg-white text-[#1A221C] border-[#D1D6D2] hover:border-[#4E544E]"
+          ? "bg-[#1f3d2a] text-white border-[#1f3d2a]"
+          : "bg-white text-[#4a5d4f] border-[#d1d6d2] hover:border-[#5e7062]"
       }`}
     >
       {label}
@@ -35,7 +37,7 @@ function Chip({ label, active, onClick }) {
 function ProgressDots({ answered }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="text-[10px] uppercase tracking-[0.18em] font-heading font-medium" style={{ color: HELPER }}>
+      <span className="text-[10px] uppercase tracking-[0.18em] font-heading font-medium" style={{ color: PROGRESS_TEXT }}>
         Answer 3 Questions
       </span>
       <div className="flex items-center gap-1.5">
@@ -71,7 +73,7 @@ export default function WellnessIntro() {
   return (
     <section
       style={{
-        background: "linear-gradient(160deg, #E8F0E6 0%, #F5F7F5 45%, #E8F0E6 100%)",
+        background: "radial-gradient(circle at 50% 38%, #f7f9f7 0%, #e2e8e0 100%)",
       }}
     >
       <div className="max-w-6xl mx-auto px-10 pt-16 pb-20">
@@ -112,7 +114,7 @@ export default function WellnessIntro() {
           <div className="grid md:grid-cols-3 divide-x divide-[#ECEEEC] border-t border-[#ECEEEC] pt-8">
             {QUESTIONS.map(({ key, label, options, Icon }) => (
               <div key={key} className="px-6 first:pl-0 last:pr-0 flex flex-col items-center text-center">
-                <Icon size={26} strokeWidth={1.5} style={{ color: MUTED }} />
+                <Icon size={26} strokeWidth={1.5} style={{ color: ICON }} />
                 <p className="font-heading font-bold text-[11px] uppercase tracking-[0.14em] mt-3 mb-5" style={{ color: INK }}>
                   {label}
                 </p>
