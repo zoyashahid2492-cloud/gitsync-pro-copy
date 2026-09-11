@@ -27,12 +27,12 @@ export default function StatsRibbon() {
           {stats.map((s) => (
             <div key={s.value} className="flex flex-col items-center text-center">
               <p
-                className="font-heading font-bold mb-3 leading-none"
+                className="font-heading font-bold mb-3 leading-none whitespace-nowrap"
                 style={{ color: s.color, fontSize: "clamp(2.6rem,4.2vw,4rem)" }}
               >
                 {s.value}
               </p>
-              <p className="font-heading font-bold text-white text-sm leading-snug mb-1.5 min-h-[2.5rem] flex items-center">{s.label}</p>
+              <p className="font-heading font-bold text-white text-sm leading-snug mb-1.5 min-h-[2.5rem] flex items-start">{s.label}</p>
               <p className="font-heading font-normal text-xs text-white/80 min-h-[1.5rem]">
                 {s.sub}
               </p>
