@@ -19,11 +19,11 @@ export default function MovementHero() {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
         running = false;
-        const target = parent.clientWidth * 0.9;
+        const target = parent.clientWidth * 0.85;
         el.style.fontSize = "100px";
         const w100 = el.offsetWidth;
         if (!w100) return;
-        setFs(target / (w100 / 100));
+        setFs(Math.max(28, target / (w100 / 100)));
       });
     };
     fit();
@@ -70,8 +70,8 @@ export default function MovementHero() {
 
       <div className="absolute left-1/2 -translate-x-1/2 z-20 text-center w-full px-6" style={{ bottom: "9%" }}>
         <p
-          className="font-heading font-normal text-white leading-[1.35] mx-auto whitespace-nowrap"
-          style={{ fontSize: "0.95rem", maxWidth: "820px" }}
+          className="font-heading font-normal text-white leading-[1.35] mx-auto"
+          style={{ fontSize: "0.95rem", maxWidth: "min(820px, 92vw)" }}
         >
           Healthy Living makes movement a natural and accessible part of everyday life, shifting activity
           <br />
