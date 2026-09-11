@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { base44 } from "@/api/base44Client";
 
 const questions = [
   { id: "sleep", q: "How did you sleep?", options: ["Poor", "Okay", "Great"] },
@@ -9,6 +10,8 @@ const questions = [
 
 export default function WellnessPlan() {
   const [answers, setAnswers] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [plan, setPlan] = useState(null);
 
   const allAnswered = questions.every((q) => answers[q.id]);
 
@@ -16,9 +19,25 @@ export default function WellnessPlan() {
     setAnswers((prev) => ({ ...prev, [qid]: opt }));
   };
 
-  const handleCreate = () => {
-    if (!allAnswered) return;
-    alert("Your wellness plan is being created!");
+  const handleCreate = async () => {
+    if (!allAnswered || loading) return;
+    setLoading(true);
+    setPlan(null);
+    try {
+      const prompt = `You are a wellness coach for the Abu Dhabi Healthy Living initiative. Based on the user's check-in, create a concise, actionable "Today's wellness plan". Keep it warm and motivating. Use short bullet points grouped under 3 headings: Movement, Nutrition, Mind. End with one encouraging sentence.
+
+User check-in:
+- Sleep: ${answers.sleep}
+- Energy: ${answers.energy}
+- Stress: ${answers.stress}`;
+
+      const res = await base44.integrations.Core.InvokeLLM({ prompt });
+      setPlan(typeof res === "string" ? res : res.response || JSON.stringify(res));
+    } catch (e) {
+      setPlan("Sorry, we couldn't generate your plan right now. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -57,16 +76,31 @@ export default function WellnessPlan() {
 
           <button
             onClick={handleCreate}
-            disabled={!allAnswered}
+            disabled={!allAnswered || loading}
             className={`mt-8 w-full py-3.5 rounded-full text-sm font-medium flex items-center justify-center gap-2 transition-all ${
-              allAnswered
+              allAnswered && !loading
                 ? "bg-[#2E7D32] text-white hover:bg-[#256628]"
                 : "bg-[#E0E0E0] text-[#757575] cursor-not-allowed"
             }`}
           >
-            Create My Plan <ArrowRight size={16} />
+            {loading ? (
+              <>
+                <Loader2 size={16} className="animate-spin" /> Creating your plan...
+              </>
+            ) : (
+              <>
+                Create My Plan <ArrowRight size={16} />
+              </>
+            )}
           </button>
         </div>
+
+        {plan && (
+          <div className="mt-5 bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.18)] p-7 lg:p-9">
+            <h2 className="text-lg font-bold text-[#1A1A1A] mb-3">Your plan</h2>
+            <div className="text-sm text-[#4A4A4A] leading-relaxed whitespace-pre-line">{plan}</div>
+          </div>
+        )}
       </div>
     </div>
   );
