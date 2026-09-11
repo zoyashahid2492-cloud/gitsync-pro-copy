@@ -23,10 +23,10 @@ export default function Hero() {
         </h1>
 
         <div className="mt-9 flex flex-col sm:flex-row items-center gap-4">
-          <button className="bg-[#b3dbbb] text-black px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-[#9fc9a8] transition-colors">
+          <button className="bg-white text-black px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
             Choose healthier, every day
           </button>
-          <button className="bg-[#b3dbbb] text-black px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-[#9fc9a8] transition-colors">
+          <button className="border border-white/80 text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-white/10 transition-colors">
             How we work
           </button>
         </div>

@@ -11,7 +11,7 @@ export default function MovementHero() {
         <p className="text-[11px] uppercase tracking-[0.25em] font-semibold text-white/70 mb-5">
           Focus Area
         </p>
-        <h2 className="text-white font-extrabold tracking-tight text-5xl sm:text-6xl lg:text-7xl">
+        <h2 className="text-white font-light tracking-[0.3em] text-4xl sm:text-5xl lg:text-6xl uppercase">
           Movement
         </h2>
         <p className="mt-6 text-white/90 text-base lg:text-lg max-w-xl mx-auto leading-relaxed">

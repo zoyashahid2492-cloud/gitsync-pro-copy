@@ -29,7 +29,7 @@ const stats = [
 
 export default function StatsRibbon() {
   return (
-    <section className="bg-[#232A21] py-20 lg:py-28 px-5 lg:px-10">
+    <section className="bg-[#1A211D] py-20 lg:py-28 px-5 lg:px-10">
       <div className="max-w-[1280px] mx-auto">
         <h2 className="text-[19px] font-light text-[#b3dbbb] text-center mb-16 lg:mb-24 tracking-[1.2px]">
           REAL CHANGE, ALREADY UNDERWAY
