@@ -39,43 +39,25 @@ export default function Navbar() {
         {/* Center logo */}
         <a
           href="#"
-          className={`flex flex-col items-center justify-center leading-none flex-1 lg:flex-none px-4 py-1.5 rounded ${
-            scrolled ? "" : ""
-          }`}
+          className="flex-1 lg:flex-none flex justify-center"
         >
-          <div className="flex items-center justify-between gap-3 w-[150px] lg:w-[180px]">
-            <span
-              className={`text-[15px] lg:text-[17px] font-extrabold tracking-tight ${
-                scrolled ? "text-black" : "text-white"
-              }`}
-            >
-              HEALTHY
-            </span>
-            <span
-              className={`text-[15px] lg:text-[17px] font-bold ${
-                scrolled ? "text-black" : "text-white"
-              }`}
-              dir="rtl"
-            >
-              الحياة
-            </span>
-          </div>
-          <div className="flex items-center justify-between gap-3 w-[150px] lg:w-[180px] mt-0.5">
-            <span
-              className={`text-[15px] lg:text-[17px] font-extrabold tracking-tight ${
-                scrolled ? "text-black" : "text-white"
-              }`}
-            >
-              LIVING
-            </span>
-            <span
-              className={`text-[15px] lg:text-[17px] font-bold ${
-                scrolled ? "text-black" : "text-white"
-              }`}
-              dir="rtl"
-            >
-              الصحية
-            </span>
+          <div className="bg-black px-5 py-2 rounded-md flex flex-col gap-1 leading-none">
+            <div className="flex items-center justify-between gap-4 w-[150px] lg:w-[172px]">
+              <span className="text-[15px] lg:text-[16px] font-extrabold tracking-tight text-white">
+                HEALTHY
+              </span>
+              <span className="text-[15px] lg:text-[16px] font-bold text-white" dir="rtl">
+                الحياة
+              </span>
+            </div>
+            <div className="flex items-center justify-between gap-4 w-[150px] lg:w-[172px]">
+              <span className="text-[15px] lg:text-[16px] font-extrabold tracking-tight text-white">
+                LIVING
+              </span>
+              <span className="text-[15px] lg:text-[16px] font-bold text-white" dir="rtl">
+                الصحية
+              </span>
+            </div>
           </div>
         </a>
 
