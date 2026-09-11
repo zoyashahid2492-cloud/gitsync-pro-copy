@@ -14,11 +14,11 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/60" />
 
-      {/* Hero content — anchored low so it clears the subjects' faces */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-10 pb-6">
+      {/* Hero content — centered in the torso gap, below the subjects' faces */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-10 pt-[10vh]">
         <h1
           className="font-heading font-black text-white leading-[1.05] tracking-tight"
-          style={{ fontSize: "clamp(2.2rem, 4.8vw, 5rem)" }}
+          style={{ fontSize: "clamp(2.4rem, 5vw, 5.2rem)" }}
         >
           Healthier choices.<br />
           Healthier lives.<br />
