@@ -1,7 +1,7 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
 
-const heroImg = "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/affb1acd2_image.png";
+const heroImg = "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/fd7663fad_generated_image.png";
 
 export default function Hero() {
   return (
