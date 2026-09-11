@@ -29,7 +29,7 @@ export default function Hero() {
           <button className="bg-transparent text-white font-heading font-medium px-5 py-2 rounded-full text-[12px] border border-white hover:bg-white/10 active:scale-95 transition-all">
             Choose healthier, every day
           </button>
-          <button className="bg-transparent text-white font-heading font-medium px-5 py-2 rounded-full text-[12px] border border-white hover:bg-white/10 active:scale-95 transition-all">
+          <button className="bg-transparent font-heading font-medium px-5 py-2 rounded-full text-[12px] border border-white hover:bg-white/10 active:scale-95 transition-all" style={{ color: "#B0D0B5" }}>
             How we work
           </button>
         </div>
