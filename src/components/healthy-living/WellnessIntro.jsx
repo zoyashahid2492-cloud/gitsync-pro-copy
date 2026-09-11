@@ -24,7 +24,7 @@ export default function WellnessIntro() {
         </div>
 
         {/* Wellness Plan Widget */}
-        <div className="bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.18)] p-7 lg:p-8">
+        <div className="bg-[#f9f7f2] rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.18)] p-7 lg:p-8">
           <h3 className="text-lg font-bold text-black mb-6">Today's wellness plan</h3>
           <div className="space-y-5">
             {questions.map((item, i) => (
@@ -39,8 +39,8 @@ export default function WellnessIntro() {
                         onClick={() => setAnswers((p) => ({ ...p, [i]: opt }))}
                         className={`px-4 py-2 rounded-full text-xs font-medium border transition-all ${
                           active
-                            ? "bg-black text-white border-black"
-                            : "bg-white text-black border-neutral-200 hover:border-black"
+                            ? "bg-[#cce8dd] text-[#2d2d2d] border-[#cce8dd]"
+                            : "bg-white text-[#2d2d2d] border-[#E0E0E0] hover:border-[#2d2d2d]"
                         }`}
                       >
                         {opt}
@@ -51,7 +51,7 @@ export default function WellnessIntro() {
               </div>
             ))}
           </div>
-          <button className="mt-7 w-full bg-[#2E7D32] text-white py-3.5 rounded-full text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#256628] transition-colors">
+          <button className="mt-7 w-full bg-[#cce8dd] text-[#2d2d2d] py-3.5 rounded-full text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#b9dccd] transition-colors">
             Create My Plan <ArrowRight size={16} />
           </button>
         </div>

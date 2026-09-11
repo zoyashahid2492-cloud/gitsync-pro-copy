@@ -19,7 +19,7 @@ export default function Hero() {
           Healthier futures.
         </h1>
         <div className="mt-9 flex flex-col sm:flex-row gap-3">
-          <button className="border border-white text-white px-7 py-3.5 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">
+          <button className="bg-[#cce8dd] text-[#2d2d2d] px-7 py-3.5 rounded-full text-sm font-medium hover:bg-[#b9dccd] transition-colors">
             Choose healthier, every day
           </button>
           <button className="border border-white text-white px-7 py-3.5 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">

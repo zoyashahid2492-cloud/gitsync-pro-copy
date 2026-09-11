@@ -41,9 +41,9 @@ User check-in:
   };
 
   return (
-    <div className="min-h-screen bg-[#E6F3E6] flex items-center justify-center p-5 lg:p-10">
+    <div className="min-h-screen bg-[#f9f7f2] flex items-center justify-center p-5 lg:p-10">
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.18)] p-7 lg:p-9">
+        <div className="bg-[#f9f7f2] rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.18)] p-7 lg:p-9">
           <h1 className="text-xl lg:text-2xl font-bold text-[#1A1A1A] mb-1">Today's wellness plan</h1>
           <p className="text-sm text-[#4A4A4A] mb-7">Answer a few questions to build your plan.</p>
 
@@ -60,8 +60,8 @@ User check-in:
                         onClick={() => handleSelect(item.id, opt)}
                         className={`px-4 py-2.5 rounded-full text-xs font-medium border transition-all flex items-center gap-1.5 ${
                           active
-                            ? "bg-[#2E7D32] text-white border-[#2E7D32]"
-                            : "bg-white text-[#4A4A4A] border-[#E0E0E0] hover:border-[#2E7D32] hover:text-[#1A1A1A]"
+                            ? "bg-[#cce8dd] text-[#2d2d2d] border-[#cce8dd]"
+                            : "bg-white text-[#4A4A4A] border-[#E0E0E0] hover:border-[#2d2d2d] hover:text-[#1A1A1A]"
                         }`}
                       >
                         {active && <Check size={13} />}
@@ -79,7 +79,7 @@ User check-in:
             disabled={!allAnswered || loading}
             className={`mt-8 w-full py-3.5 rounded-full text-sm font-medium flex items-center justify-center gap-2 transition-all ${
               allAnswered && !loading
-                ? "bg-[#2E7D32] text-white hover:bg-[#256628]"
+                ? "bg-[#cce8dd] text-[#2d2d2d] hover:bg-[#b9dccd]"
                 : "bg-[#E0E0E0] text-[#757575] cursor-not-allowed"
             }`}
           >
@@ -96,7 +96,7 @@ User check-in:
         </div>
 
         {plan && (
-          <div className="mt-5 bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.18)] p-7 lg:p-9">
+          <div className="mt-5 bg-[#f9f7f2] rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.18)] p-7 lg:p-9">
             <h2 className="text-lg font-bold text-[#1A1A1A] mb-3">Your plan</h2>
             <div className="text-sm text-[#4A4A4A] leading-relaxed whitespace-pre-line">{plan}</div>
           </div>
