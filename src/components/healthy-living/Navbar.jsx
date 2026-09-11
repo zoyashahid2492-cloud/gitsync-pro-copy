@@ -16,7 +16,7 @@ export default function Navbar() {
             <a
               key={l}
               href="#"
-              className="text-[11px] uppercase tracking-wide font-medium text-[#1A261F] hover:text-[#1A261F]/70 transition-colors"
+              className="text-[11px] uppercase tracking-wide font-medium text-[#333] hover:text-[#2B5B49] transition-colors"
             >
               {l}
             </a>
@@ -26,10 +26,10 @@ export default function Navbar() {
         {/* Center logo */}
         <a href="#" className="flex-1 lg:flex-none flex justify-center">
           <div className="flex flex-col items-center leading-none">
-            <span className="text-[13px] lg:text-[15px] font-medium text-[#1A261F] mb-1" dir="rtl">
+            <span className="text-[13px] lg:text-[15px] font-medium text-[#2B5B49] mb-1" dir="rtl">
               الحياة الصحية
             </span>
-            <span className="text-[15px] lg:text-[17px] font-extrabold tracking-tight text-[#1A261F]">
+            <span className="text-[15px] lg:text-[17px] font-extrabold tracking-tight text-[#2B5B49]">
               HEALTHY LIVING
             </span>
           </div>
@@ -41,22 +41,22 @@ export default function Navbar() {
             <a
               key={l}
               href="#"
-              className="text-[11px] uppercase tracking-wide font-medium text-[#1A261F] hover:text-[#1A261F]/70 transition-colors"
+              className="text-[11px] uppercase tracking-wide font-medium text-[#333] hover:text-[#2B5B49] transition-colors"
             >
               {l}
             </a>
           ))}
-          <button className="rounded-full px-5 py-2 text-[11px] uppercase tracking-wide font-medium border border-[#1A261F] text-[#1A261F] hover:bg-[#1A261F] hover:text-white transition-all">
+          <button className="rounded-full px-5 py-2 text-[11px] uppercase tracking-wide font-medium border border-[#2B5B49] text-[#2B5B49] hover:bg-[#2B5B49] hover:text-white transition-all">
             Ask AI
           </button>
-          <button aria-label="Search" className="text-[#1A261F] hover:text-[#1A261F]/70 transition-colors">
+          <button aria-label="Search" className="text-[#333] hover:text-[#2B5B49] transition-colors">
             <Search size={18} />
           </button>
         </div>
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-[#1A261F]"
+          className="lg:hidden text-[#333]"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -71,13 +71,13 @@ export default function Navbar() {
             <a
               key={l}
               href="#"
-              className="text-xs uppercase tracking-wide font-medium text-[#1A261F] py-1"
+              className="text-xs uppercase tracking-wide font-medium text-[#333] py-1"
               onClick={() => setOpen(false)}
             >
               {l}
             </a>
           ))}
-          <button className="mt-2 rounded-full px-5 py-2 text-[11px] uppercase tracking-wide font-medium border border-[#1A261F] text-[#1A261F] w-fit">
+          <button className="mt-2 rounded-full px-5 py-2 text-[11px] uppercase tracking-wide font-medium border border-[#2B5B49] text-[#2B5B49] w-fit">
             Ask AI
           </button>
         </div>

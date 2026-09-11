@@ -4,7 +4,9 @@ import Hero from "@/components/healthy-living/Hero";
 import WellnessIntro from "@/components/healthy-living/WellnessIntro";
 import ThreePillars from "@/components/healthy-living/ThreePillars";
 import MovementHero from "@/components/healthy-living/MovementHero";
+import TwoCards from "@/components/healthy-living/TwoCards";
 import StatsRibbon from "@/components/healthy-living/StatsRibbon";
+import SahatnaBar from "@/components/healthy-living/SahatnaBar";
 import UpdatesFooter from "@/components/healthy-living/UpdatesFooter";
 
 export default function HealthyLiving() {
@@ -16,7 +18,9 @@ export default function HealthyLiving() {
         <WellnessIntro />
         <ThreePillars />
         <MovementHero />
+        <TwoCards />
         <StatsRibbon />
+        <SahatnaBar />
         <UpdatesFooter />
       </main>
     </div>

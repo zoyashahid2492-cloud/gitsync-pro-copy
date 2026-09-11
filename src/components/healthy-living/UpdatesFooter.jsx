@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const updates = [
   { tag: "EVENTS", title: "Festival of Health returns to Abu Dhabi for its largest edition yet", date: "10 Jul 2026" },
-  { tag: "POLICY", title: "Nutri-Mark front-of-pack labelling prepares for federal rollout", date: "3 Jul 2026" },
+  { tag: "POLICY", title: "Nutri-Mark front-of-pack labelling prepares for federal rollout", date: "03 Jul 2026" },
   { tag: "PROGRAMME", title: "Healthy Living reaches 466 schools across Abu Dhabi", date: "28 Jun 2026" },
   { tag: "POLICY", title: "Out-of-home advertising policy now covers all public-facing government assets", date: "15 Jun 2026" },
 ];
@@ -22,9 +22,9 @@ export default function UpdatesFooter() {
         <div className="divide-y divide-neutral-200 border-t border-b border-neutral-200">
           {updates.map((u, i) => (
             <div key={i} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 py-5 hover:bg-neutral-50 transition-colors px-2">
-              <span className="text-xs uppercase tracking-widest text-[#2E8B57] font-semibold w-28 shrink-0">{u.tag}</span>
+              <span className="text-xs text-neutral-500 w-24 shrink-0">{u.date}</span>
+              <span className="text-xs uppercase tracking-widest text-[#2B5B49] font-semibold w-28 shrink-0">{u.tag}</span>
               <p className="text-sm lg:text-base text-black flex-1">{u.title}</p>
-              <span className="text-xs text-neutral-500 sm:text-right">{u.date}</span>
             </div>
           ))}
         </div>
