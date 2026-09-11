@@ -14,8 +14,8 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/60" />
 
-      {/* Centered hero content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-10 pt-20">
+      {/* Hero content — positioned lower to avoid overlapping faces */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-10 pb-12">
         <h1
           className="font-heading font-black text-white leading-[1.05] tracking-tight"
           style={{ fontSize: "clamp(2.8rem, 5.8vw, 6rem)" }}
