@@ -26,7 +26,7 @@ export default function Navbar() {
         {NAV_LEFT.map((l) => (
           <button
             key={l}
-            className="text-white text-[12px] font-heading font-medium tracking-[0.14em] uppercase hover:text-white/70 transition-colors"
+            className="text-white text-[10px] font-heading font-medium tracking-[0.14em] uppercase hover:text-white/70 transition-colors"
           >
             {l}
           </button>
@@ -39,7 +39,7 @@ export default function Navbar() {
         {NAV_RIGHT.map((l) => (
           <button
             key={l}
-            className="text-white text-[12px] font-heading font-medium tracking-[0.14em] uppercase hover:text-white/70 transition-colors"
+            className="text-white text-[10px] font-heading font-medium tracking-[0.14em] uppercase hover:text-white/70 transition-colors"
           >
             {l}
           </button>
