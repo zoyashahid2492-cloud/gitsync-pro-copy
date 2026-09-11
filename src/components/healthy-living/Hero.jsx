@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/60" />
 
       {/* Hero content — centered in the torso gap, below the subjects' faces */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-start text-center px-10 pt-[41vh]">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-start text-center px-10 pt-[33vh]">
         <h1
           className="font-heading font-black text-white leading-[1.05] tracking-tight"
           style={{ fontSize: "clamp(2.7rem, 5.6vw, 5.8rem)" }}
