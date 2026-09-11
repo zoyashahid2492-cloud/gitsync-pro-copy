@@ -48,7 +48,7 @@ export default function Navbar() {
           <button className="rounded-full px-5 py-2 text-[10px] uppercase tracking-wide font-medium border border-white text-white hover:bg-white hover:text-black transition-all">
             Ask AI
           </button>
-          <button aria-label="Search" className="text-white hover:text-[#B5D9BD] transition-colors">
+          <button aria-label="Search" className="text-white hover:text-[#BDE0C1] transition-colors">
             <Search size={18} />
           </button>
         </div>
