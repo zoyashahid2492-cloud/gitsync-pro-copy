@@ -1,11 +1,16 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
 
+const heroImg = "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/7fb860583_generated_image.png";
+
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[640px] w-full flex flex-col">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0b1109] to-[#1c2617]" />
+      <div className="absolute inset-0">
+        <img src={heroImg} alt="People walking on Abu Dhabi waterfront at sunset" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1109]/90 via-[#0b1109]/70 to-[#0b1109]/90" />
+      </div>
 
       {/* Main content - centered */}
       <div className="relative flex-1 flex flex-col items-center justify-center text-center px-5 pt-20">
