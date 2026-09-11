@@ -11,17 +11,28 @@ export default function MovementHero() {
     const el = wordRef.current;
     if (!el) return;
     const parent = el.parentElement;
+    let raf = 0;
+    let running = false;
     const fit = () => {
-      const target = parent.clientWidth * 0.9;
-      el.style.fontSize = "100px";
-      const w100 = el.offsetWidth;
-      if (!w100) return;
-      setFs(target / (w100 / 100));
+      if (running) return;
+      running = true;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        running = false;
+        const target = parent.clientWidth * 0.9;
+        el.style.fontSize = "100px";
+        const w100 = el.offsetWidth;
+        if (!w100) return;
+        setFs(target / (w100 / 100));
+      });
     };
     fit();
     const ro = new ResizeObserver(fit);
     ro.observe(parent);
-    return () => ro.disconnect();
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+    };
   }, []);
 
   return (
