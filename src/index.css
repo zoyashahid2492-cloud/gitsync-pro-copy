@@ -1,4 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+@font-face {
+  font-family: "Gramatika";
+  font-style: normal;
+  font-weight: 200;
+  font-display: block;
+  src: url("/fonts/Gramatika-200.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Gramatika";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url("/fonts/Gramatika-300.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Gramatika";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url("/fonts/Gramatika-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Gramatika";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url("/fonts/Gramatika-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Gramatika";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("/fonts/Gramatika-900.woff2") format("woff2");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -69,9 +106,9 @@ html, body, #root {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --font-heading: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-heading: 'Gramatika', ui-sans-serif, system-ui, sans-serif;
     --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Gramatika', ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

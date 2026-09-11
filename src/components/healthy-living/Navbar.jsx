@@ -6,7 +6,8 @@ const imgLogo =
   "https://raw.githubusercontent.com/zoyashahid2492-cloud/HLdesign/main/src/imports/WebsitePsd/05a7212f171115943cedfdbfeb36c95138e834d3.png";
 
 const linkClass =
-  "text-white text-[10px] font-heading font-medium tracking-[0.14em] uppercase text-center leading-[1.15] whitespace-normal max-w-[110px] min-w-0 lg:whitespace-nowrap lg:max-w-none hover:text-white/70 transition-colors";
+  "text-white font-heading hover:text-white/70 transition-colors";
+const linkStyle = { fontSize: "13px", fontWeight: 300, letterSpacing: ".12em", whiteSpace: "nowrap" };
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,13 +19,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 px-6 py-2.5 transition-colors duration-300"
-      style={{ background: scrolled ? "#4E544E" : "transparent" }}
+      className="fixed left-0 right-0 z-50 px-6 transition-colors duration-300"
+      style={{ top: 36, background: scrolled ? "#4E544E" : "transparent" }}
     >
       <div className="flex items-center justify-between gap-4">
         <div className="flex-1 flex items-center justify-start gap-4 min-w-0">
           {NAV_LEFT.map((l) => (
-            <button key={l} className={linkClass}>
+            <button key={l} className={linkClass + " uppercase"} style={linkStyle}>
               {l}
             </button>
           ))}
@@ -34,7 +35,7 @@ export default function Navbar() {
 
         <div className="flex-1 flex items-center justify-end gap-4 min-w-0">
           {NAV_RIGHT.map((l) => (
-            <button key={l} className={linkClass}>
+            <button key={l} className={linkClass + " uppercase"} style={linkStyle}>
               {l}
             </button>
           ))}
