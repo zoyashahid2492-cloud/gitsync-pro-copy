@@ -126,9 +126,9 @@ export default function WellnessIntro() {
       <div className="max-w-6xl mx-auto px-10 pt-16 pb-20">
         <div className="grid md:grid-cols-2 gap-16 items-start mb-14">
           <h2 className="font-heading" style={{ color: INK, fontSize: "clamp(2.2rem, 4.2vw, 3.8rem)", lineHeight: 1.35 }}>
-            <span className="font-black block">Health is shaped</span>
-            <span className="font-black block">by everyday life,</span>
-            <span className="font-light block">not healthcare alone.</span>
+            <span className="font-black block whitespace-nowrap">Health is shaped</span>
+            <span className="font-black block whitespace-nowrap">by everyday life,</span>
+            <span className="font-light block whitespace-nowrap">not healthcare alone.</span>
           </h2>
           <div className="font-heading font-light leading-snug pt-2" style={{ color: MUTED, fontSize: "0.8rem" }}>
             <p style={{ maxWidth: "320px" }}>
