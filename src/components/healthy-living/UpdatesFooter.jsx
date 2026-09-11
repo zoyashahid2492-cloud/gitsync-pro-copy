@@ -12,25 +12,12 @@ export default function UpdatesFooter() {
   return (
     <section className="bg-white py-20 lg:py-28 px-5 lg:px-10">
       <div className="max-w-[1200px] mx-auto">
-        {/* Sahatna CTA */}
-        <div className="bg-[#F4F4F4] rounded-2xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 mb-16 lg:mb-20">
-          <div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-black">
-              Personal health tracking, device sync and health records.
-            </h3>
-            <p className="mt-2 text-sm text-neutral-600">Continue your health journey in Sahatna.</p>
-          </div>
-          <button className="bg-white border border-black text-black px-7 py-3.5 rounded-full text-sm font-medium hover:bg-black hover:text-white transition-colors shrink-0">
-            Connect to Sahatna
-          </button>
-        </div>
-
         {/* Updates table */}
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-2xl font-bold text-black">Latest updates</h3>
-          <a href="#" className="inline-flex items-center gap-2 text-sm font-medium text-black hover:gap-3 transition-all">
+          <button className="inline-flex items-center gap-2 text-sm font-medium text-black border border-black rounded-full px-5 py-2 hover:bg-black hover:text-white transition-colors">
             View all <ArrowRight size={16} />
-          </a>
+          </button>
         </div>
         <div className="divide-y divide-neutral-200 border-t border-b border-neutral-200">
           {updates.map((u, i) => (

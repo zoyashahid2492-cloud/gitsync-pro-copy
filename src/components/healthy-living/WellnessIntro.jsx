@@ -11,7 +11,7 @@ export default function WellnessIntro() {
   const [answers, setAnswers] = useState({});
 
   return (
-    <section className="bg-[#E6F3E6] py-20 lg:py-28 px-5 lg:px-10">
+    <section className="bg-white py-20 lg:py-28 px-5 lg:px-10">
       <div className="max-w-[1100px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <h2 className="text-3xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] text-black">
