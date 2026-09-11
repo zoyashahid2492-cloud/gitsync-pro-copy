@@ -1,7 +1,7 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
 
-const heroImg = "https://table-polo-97158241.figma.site/assets/6445f087e1750ec6878fa2656d6dddde95431f29-AVJqJ15Q.png";
+const heroImg = "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/b1af8a569_generated_image.png";
 
 export default function Hero() {
   return (

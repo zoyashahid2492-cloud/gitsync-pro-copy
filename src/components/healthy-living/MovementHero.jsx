@@ -1,6 +1,6 @@
 import React from "react";
 
-const moveImg = "https://table-polo-97158241.figma.site/assets/6de03593f1c4a3343bcce953e3e57244243d541d-DwrZTmVT.png";
+const moveImg = "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/8e113ad14_generated_image.png";
 
 export default function MovementHero() {
   return (
