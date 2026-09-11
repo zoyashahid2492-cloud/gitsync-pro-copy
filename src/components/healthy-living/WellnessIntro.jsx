@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Moon, Zap, Flower2 } from "lucide-react";
 import { base44 } from "@/api/base44Client";
+import WellnessPlanResult from "./WellnessPlanResult";
 
 const SLEEP = ["Poor", "Okay", "Great"];
 const ENERGY = ["Low", "Normal", "High"];
@@ -70,14 +71,50 @@ export default function WellnessIntro() {
     setLoading(true);
     setPlan(null);
     try {
-      const prompt = `You are a wellness coach. Create a short, practical day plan to improve the user's day based on how they're feeling right now. Sleep quality: ${w.sleep}. Energy level: ${w.energy}. Stress level: ${w.stress}. Give 4-6 concise, actionable tips covering morning, movement, nutrition, mindset and rest. Keep it warm, encouraging and under 120 words. Do not use headings or markdown — just plain sentences.`;
-      const res = await base44.integrations.Core.InvokeLLM({ prompt });
-      setPlan(typeof res === "string" ? res : res?.response || JSON.stringify(res));
+      const prompt = `You are a wellness coach. The user feels: sleep ${w.sleep}, energy ${w.energy}, stress ${w.stress}. Create a personalized day plan. Return a one-word focus theme, a short encouraging tagline, and exactly 4 goals across Mindfulness, Nutrition, Hydration and Movement. Each goal: category name, a one-sentence action, and a single capital letter for its icon (M, N, H, M).`;
+      const res = await base44.integrations.Core.InvokeLLM({
+        prompt,
+        response_json_schema: {
+          type: "object",
+          properties: {
+            focus: { type: "string" },
+            tagline: { type: "string" },
+            goals: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  category: { type: "string" },
+                  action: { type: "string" },
+                  letter: { type: "string" },
+                },
+                required: ["category", "action", "letter"],
+              },
+            },
+          },
+          required: ["focus", "tagline", "goals"],
+        },
+      });
+      setPlan(res);
     } catch (e) {
-      setPlan("Sorry, we couldn't generate your plan right now. Please try again.");
+      setPlan({
+        focus: "Balance",
+        tagline: "Maintain momentum and feel your best today.",
+        goals: [
+          { category: "Mindfulness", action: "Try a 5-minute breathing exercise at midday.", letter: "M" },
+          { category: "Nutrition", action: "Eat a balanced meal with plenty of vegetables.", letter: "N" },
+          { category: "Hydration", action: "Aim for 8 glasses of water before tonight.", letter: "H" },
+          { category: "Movement", action: "Take a 20-minute walk — even a short one counts.", letter: "M" },
+        ],
+      });
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleReset = () => {
+    setPlan(null);
+    setW({ sleep: "", energy: "", stress: "" });
   };
 
   return (
@@ -118,59 +155,63 @@ export default function WellnessIntro() {
                 A simple plan based on how you're feeling today.
               </p>
             </div>
-            <ProgressDots answered={answered} />
-          </div>
-
-          <div className="grid md:grid-cols-3 divide-x divide-[#ECEEEC] border-t border-[#ECEEEC] pt-8">
-            {QUESTIONS.map(({ key, label, options, Icon }) => (
-              <div key={key} className="px-6 first:pl-0 last:pr-0 flex flex-col items-center text-center">
-                <span
-                  className="flex items-center justify-center rounded-full"
-                  style={{ width: 56, height: 56, background: "#D9E4D9" }}
-                >
-                  <Icon size={26} strokeWidth={1.5} style={{ color: ICON }} />
-                </span>
-                <p className="font-heading font-bold text-[11px] uppercase tracking-[0.14em] mt-4 mb-5" style={{ color: INK }}>
-                  {label}
-                </p>
-                <div className="flex gap-2 flex-wrap justify-center">
-                  {options.map((o) => (
-                    <Chip key={o} label={o} active={w[key] === o} onClick={() => setW((s) => ({ ...s, [key]: o }))} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {plan && (
-            <div
-              className="mt-8 rounded-xl p-5 text-sm font-heading font-light leading-relaxed"
-              style={{ background: "#F5F7F5", color: INK, border: `1px solid ${BORDER}` }}
-            >
-              <p className="font-heading font-bold mb-1 text-[10px] uppercase tracking-widest" style={{ color: HELPER }}>
-                Your plan for today
-              </p>
-              {plan}
-            </div>
-          )}
-
-          <div className="mt-8 flex items-center gap-4 flex-wrap">
-            <button
-              disabled={!done || loading}
-              onClick={handleCreate}
-              className={`flex items-center gap-2 font-heading font-bold text-sm px-7 py-3 rounded-full transition-all ${
-                done && !loading ? "hover:opacity-90 active:scale-95 cursor-pointer" : "opacity-40 cursor-not-allowed"
-              }`}
-              style={{ background: INK, color: "#fff" }}
-            >
-              {loading ? "Creating…" : "Create My Plan →"}
-            </button>
-            {!done && (
-              <span className="text-[13px] font-heading font-light" style={{ color: HELPER }}>
-                Answer all 3 questions to continue
-              </span>
+            {plan ? (
+              <button
+                onClick={handleReset}
+                className="rounded-full px-4 py-1.5 text-[11px] font-heading font-bold uppercase tracking-[0.14em] text-white"
+                style={{ background: "#5e7062" }}
+              >
+                New check-in
+              </button>
+            ) : (
+              <ProgressDots answered={answered} />
             )}
           </div>
+
+          {plan ? (
+            <WellnessPlanResult plan={plan} onAskAi={() => window.alert("AI assistant coming soon")} />
+          ) : (
+            <>
+              <div className="grid md:grid-cols-3 divide-x divide-[#ECEEEC] border-t border-[#ECEEEC] pt-8">
+                {QUESTIONS.map(({ key, label, options, Icon }) => (
+                  <div key={key} className="px-6 first:pl-0 last:pr-0 flex flex-col items-center text-center">
+                    <span
+                      className="flex items-center justify-center rounded-full"
+                      style={{ width: 56, height: 56, background: "#D9E4D9" }}
+                    >
+                      <Icon size={26} strokeWidth={1.5} style={{ color: ICON }} />
+                    </span>
+                    <p className="font-heading font-bold text-[11px] uppercase tracking-[0.14em] mt-4 mb-5" style={{ color: INK }}>
+                      {label}
+                    </p>
+                    <div className="flex gap-2 flex-wrap justify-center">
+                      {options.map((o) => (
+                        <Chip key={o} label={o} active={w[key] === o} onClick={() => setW((s) => ({ ...s, [key]: o }))} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex items-center gap-4 flex-wrap">
+                <button
+                  disabled={!done || loading}
+                  onClick={handleCreate}
+                  className={`flex items-center gap-2 font-heading font-bold text-sm px-7 py-3 rounded-full transition-all ${
+                    done && !loading ? "hover:opacity-90 active:scale-95 cursor-pointer" : "opacity-40 cursor-not-allowed"
+                  }`}
+                  style={{ background: INK, color: "#fff" }}
+                >
+                  {loading ? "Creating…" : "Create My Plan →"}
+                </button>
+                {!done && (
+                  <span className="text-[13px] font-heading font-light" style={{ color: HELPER }}>
+                    Answer all 3 questions to continue
+                  </span>
+                )}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
