@@ -5,7 +5,7 @@ const imgMovementBg =
 
 export default function MovementHero() {
   return (
-    <section className="relative overflow-hidden w-full" style={{ height: "100vh" }}>
+    <section className="relative overflow-hidden w-full" style={{ height: "118vh" }}>
       <img
         src={imgMovementBg}
         alt="Movement — Abu Dhabi waterfront"
@@ -14,13 +14,13 @@ export default function MovementHero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
 
-      <div className="absolute left-1/2 -translate-x-1/2 z-20" style={{ top: "38%" }}>
+      <div className="absolute left-1/2 -translate-x-1/2 z-20" style={{ top: "32%" }}>
         <span className="inline-flex items-center px-5 py-1.5 rounded-full border border-white/70 text-white text-[11px] uppercase tracking-[0.2em] font-heading font-light bg-white/10 backdrop-blur-sm">
           Focus Area
         </span>
       </div>
 
-      <div className="absolute left-0 right-0 z-10 text-center" style={{ top: "54%" }}>
+      <div className="absolute left-0 right-0 z-10 text-center" style={{ top: "46%" }}>
         <span
           className="font-heading font-light text-white uppercase w-full text-center"
           style={{
@@ -35,7 +35,7 @@ export default function MovementHero() {
         </span>
       </div>
 
-      <div className="absolute left-1/2 -translate-x-1/2 z-20 text-center" style={{ bottom: "8%" }}>
+      <div className="absolute left-1/2 -translate-x-1/2 z-20 text-center" style={{ bottom: "6%" }}>
         <p
           className="font-heading font-light text-white/85 leading-relaxed"
           style={{ fontSize: "0.9rem", maxWidth: "640px" }}
