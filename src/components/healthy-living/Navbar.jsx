@@ -8,7 +8,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40">
       <nav className="max-w-[1400px] mx-auto px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between gap-4">
         {/* Left links */}
         <div className="hidden lg:flex items-center gap-5 flex-1">
