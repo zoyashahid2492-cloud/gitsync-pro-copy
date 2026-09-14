@@ -9,6 +9,13 @@ import ScrollToTop from './components/ScrollToTop';
 // Add page imports here
 import HealthyLiving from './pages/HealthyLiving';
 import RepoImport from './pages/RepoImport';
+import Schools from './pages/Schools';
+import GlobalResearch from './pages/GlobalResearch';
+import WorkWithUs from './pages/WorkWithUs';
+import WellnessLab from './pages/WellnessLab';
+import AskAi from './pages/AskAi';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -38,6 +45,13 @@ const AuthenticatedApp = () => {
     <Routes>
       {/* Add your page Route elements here */}
       <Route path="/" element={<HealthyLiving />} />
+      <Route path="/schools" element={<Schools />} />
+      <Route path="/global" element={<GlobalResearch />} />
+      <Route path="/work-with-us" element={<WorkWithUs />} />
+      <Route path="/wellness-lab" element={<WellnessLab />} />
+      <Route path="/ask-ai" element={<AskAi />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="/repo-import" element={<RepoImport />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
