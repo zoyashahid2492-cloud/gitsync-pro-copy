@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Apple, ClipboardCheck, Activity, Users, ArrowRight } from "lucide-react";
+import {
+  Apple, ClipboardCheck, Activity, Users, ArrowRight,
+  Megaphone, Target, PartyPopper, Tag,
+} from "lucide-react";
 import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
@@ -13,6 +16,13 @@ const CARDS = [
   { Icon: ClipboardCheck, title: "Nutrition Guidelines", desc: "A single, evidence-based standard covering what's served and sold in schools." },
   { Icon: Activity, title: "Active Schools", desc: "Daily movement built into the school day — from break-time activity to PE." },
   { Icon: Users, title: "Parent Resources", desc: "Practical tools and guidance to help families build healthier habits at home." },
+];
+
+const INITIATIVES = [
+  { Icon: Megaphone, title: "OOH Healthy Policy", desc: "Removing unhealthy food and drink advertising from public-facing spaces across Abu Dhabi." },
+  { Icon: Target, title: "Degayeg Initiative", desc: "Precise, data-led targets that help producers cut sugar and salt in key product categories." },
+  { Icon: PartyPopper, title: "Festival of Health", desc: "An annual city-wide celebration of healthier living for families and communities." },
+  { Icon: Tag, title: "Nutri-Mark Label", desc: "Front-of-pack labelling that makes healthier choices clearer at a glance." },
 ];
 
 const STATS = [
@@ -57,6 +67,21 @@ export default function Schools() {
         title="Active learning, every day."
         desc="Break-time activity, daily PE and walk-to-school routes bring movement naturally into the school day — so healthier habits start young."
       />
+
+      <section className="py-16 md:py-24" style={{ background: "#F7F6F2" }}>
+        <div className="max-w-6xl mx-auto px-6 md:px-10">
+          <p className="text-[11px] uppercase tracking-[0.22em] font-heading font-medium mb-3" style={{ color: "#1D7945" }}>
+            Related initiatives
+          </p>
+          <h2 className="font-heading font-bold text-2xl md:text-3xl mb-3" style={{ color: "#1f3d2a" }}>
+            Initiatives supporting healthier schools
+          </h2>
+          <p className="font-heading font-light max-w-3xl leading-relaxed mb-12" style={{ color: "#6b7a70" }}>
+            Part of 25 strategic initiatives underway across Abu Dhabi — the first phase focusing on food and physical activity.
+          </p>
+          <CardGrid items={INITIATIVES} columns={4} />
+        </div>
+      </section>
 
       <section className="py-16" style={{ background: "#0F1914" }}>
         <div className="max-w-6xl mx-auto px-6 md:px-10">

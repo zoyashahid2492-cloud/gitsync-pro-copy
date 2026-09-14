@@ -1,15 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Sparkles, Heart, ArrowRight } from "lucide-react";
+import { Sparkles, Heart, ArrowRight, Dumbbell, Brain, Apple, Moon } from "lucide-react";
 import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
 import WellnessCheckIn from "@/components/healthy-living/WellnessCheckIn";
 import ClosingSections from "@/components/healthy-living/ClosingSections";
 
-const FEATURES = [
-  { Icon: Sparkles, title: "AI-personalised", desc: "A plan built around how you feel today — not a one-size-fits-all routine." },
-  { Icon: Heart, title: "Four pillars", desc: "Mindfulness, nutrition, hydration and movement in one simple check-in." },
+const PILLARS = [
+  { Icon: Dumbbell, title: "Physical Activity", desc: "When movement is part of daily routines, it supports better health, higher energy and an improved quality of life." },
+  { Icon: Brain, title: "Mental Well-being", desc: "Prioritising mental well-being strengthens overall health — shaped by how we cope, connect and manage stress." },
+  { Icon: Apple, title: "Nutrition", desc: "Healthier eating becomes easier when nutritious food is affordable, available and clearly understood." },
+  { Icon: Moon, title: "Sleep", desc: "Good sleep supports physical health, focus and resilience, helping other healthy routines stay consistent." },
 ];
 
 export default function WellnessLab() {
@@ -29,29 +31,31 @@ export default function WellnessLab() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {FEATURES.map((f) => {
-            const Icon = f.Icon;
-            return (
-              <div
-                key={f.title}
-                className="flex items-start gap-4 rounded-2xl p-6"
-                style={{ background: "#fff", border: "1px solid #e0e5de" }}
-              >
-                <span
-                  className="flex items-center justify-center rounded-full shrink-0"
-                  style={{ width: 48, height: 48, background: "#D9E4D9" }}
-                >
-                  <Icon size={22} strokeWidth={1.5} style={{ color: "#5e7062" }} />
-                </span>
-                <div>
-                  <h3 className="font-heading font-bold text-lg" style={{ color: "#1f3d2a" }}>{f.title}</h3>
-                  <p className="font-heading font-light text-sm leading-relaxed mt-1" style={{ color: "#6b7a70" }}>{f.desc}</p>
+      <section className="py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-6 md:px-10">
+          <p className="text-[11px] uppercase tracking-[0.22em] font-heading font-medium mb-3" style={{ color: "#1D7945" }}>
+            One integrated approach
+          </p>
+          <h2 className="font-heading font-bold text-2xl md:text-3xl mb-3" style={{ color: "#1f3d2a" }}>
+            Built on four pillars
+          </h2>
+          <p className="font-heading font-light max-w-3xl leading-relaxed mb-12" style={{ color: "#6b7a70" }}>
+            Your plan draws on the four interconnected pillars of healthy living — addressed together, not in isolation.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {PILLARS.map((p) => {
+              const Icon = p.Icon;
+              return (
+                <div key={p.title} className="rounded-2xl p-6" style={{ background: "#fff", border: "1px solid #e0e5de" }}>
+                  <span className="flex items-center justify-center rounded-full mb-4" style={{ width: 48, height: 48, background: "#D9E4D9" }}>
+                    <Icon size={22} strokeWidth={1.5} style={{ color: "#5e7062" }} />
+                  </span>
+                  <h3 className="font-heading font-bold text-base mb-2" style={{ color: "#1f3d2a" }}>{p.title}</h3>
+                  <p className="font-heading font-light text-sm leading-relaxed" style={{ color: "#6b7a70" }}>{p.desc}</p>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
 
