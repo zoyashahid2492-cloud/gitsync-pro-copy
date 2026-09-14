@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Sparkles, Heart, ArrowRight, Dumbbell, Brain, Apple, Moon } from "lucide-react";
+import { ArrowRight, Dumbbell, Brain, Apple, Moon } from "lucide-react";
 import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
