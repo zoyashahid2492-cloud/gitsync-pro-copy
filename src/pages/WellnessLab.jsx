@@ -5,6 +5,7 @@ import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
 import WellnessCheckIn from "@/components/healthy-living/WellnessCheckIn";
+import ClosingSections from "@/components/healthy-living/ClosingSections";
 
 const FEATURES = [
   { Icon: Sparkles, title: "AI-personalised", desc: "A plan built around how you feel today — not a one-size-fits-all routine." },
@@ -67,6 +68,7 @@ export default function WellnessLab() {
         </div>
       </section>
 
+      <ClosingSections />
       <Footer />
     </div>
   );

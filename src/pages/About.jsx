@@ -3,6 +3,7 @@ import { Sprout, ShieldCheck, HandHeart } from "lucide-react";
 import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
+import ClosingSections from "@/components/healthy-living/ClosingSections";
 
 const PILLARS = [
   { Icon: Sprout, title: "Healthier Choices", desc: "Creating environments that make healthier choices easier, more accessible and part of everyday life." },
@@ -68,6 +69,7 @@ export default function About() {
         </div>
       </section>
 
+      <ClosingSections />
       <Footer />
     </div>
   );

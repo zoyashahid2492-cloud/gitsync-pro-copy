@@ -5,6 +5,7 @@ import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
 import CardGrid from "@/components/healthy-living/CardGrid";
+import ClosingSections from "@/components/healthy-living/ClosingSections";
 
 const CARDS = [
   { Icon: Landmark, title: "Government", desc: "Align policy, regulation and public assets to make healthier environments the default." },
@@ -61,6 +62,7 @@ export default function WorkWithUs() {
         </div>
       </section>
 
+      <ClosingSections />
       <Footer />
     </div>
   );

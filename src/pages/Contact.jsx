@@ -3,6 +3,7 @@ import { Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
+import ClosingSections from "@/components/healthy-living/ClosingSections";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -115,6 +116,7 @@ export default function Contact() {
         </div>
       </section>
 
+      <ClosingSections />
       <Footer />
     </div>
   );

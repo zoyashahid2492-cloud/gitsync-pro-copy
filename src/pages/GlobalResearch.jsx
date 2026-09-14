@@ -4,6 +4,8 @@ import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
 import CardGrid from "@/components/healthy-living/CardGrid";
+import FocusBand from "@/components/healthy-living/FocusBand";
+import ClosingSections from "@/components/healthy-living/ClosingSections";
 
 const CARDS = [
   { Icon: BarChart3, title: "Data & Insight", desc: "Live data on diet, activity and wellbeing across Abu Dhabi, guiding where effort is needed most." },
@@ -34,6 +36,12 @@ export default function GlobalResearch() {
         </div>
       </section>
 
+      <FocusBand
+        eyebrow="In focus"
+        title="Evidence that scales."
+        desc="What we learn in Abu Dhabi informs prevention far beyond — a model built to travel, measured against the best in the world."
+      />
+
       <section className="py-20" style={{ background: "linear-gradient(135deg, #eef3e8 0%, #d8e8d8 100%)" }}>
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <p className="text-[11px] uppercase tracking-[0.22em] font-heading font-medium mb-6" style={{ color: "#1D7945" }}>
@@ -48,6 +56,7 @@ export default function GlobalResearch() {
         </div>
       </section>
 
+      <ClosingSections />
       <Footer />
     </div>
   );

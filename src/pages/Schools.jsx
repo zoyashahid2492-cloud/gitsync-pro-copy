@@ -5,6 +5,8 @@ import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
 import CardGrid from "@/components/healthy-living/CardGrid";
+import FocusBand from "@/components/healthy-living/FocusBand";
+import ClosingSections from "@/components/healthy-living/ClosingSections";
 
 const CARDS = [
   { Icon: Apple, title: "School Meals", desc: "Nutritious, balanced meals that meet unified nutrition guidelines across every school cafeteria." },
@@ -50,6 +52,12 @@ export default function Schools() {
         </div>
       </section>
 
+      <FocusBand
+        eyebrow="In practice"
+        title="Active learning, every day."
+        desc="Break-time activity, daily PE and walk-to-school routes bring movement naturally into the school day — so healthier habits start young."
+      />
+
       <section className="py-16" style={{ background: "#0F1914" }}>
         <div className="max-w-6xl mx-auto px-6 md:px-10">
           <p className="text-[11px] uppercase tracking-[0.22em] font-heading font-light text-center mb-10" style={{ color: "#6E7A75" }}>
@@ -71,6 +79,7 @@ export default function Schools() {
         </div>
       </section>
 
+      <ClosingSections withStats={false} />
       <Footer />
     </div>
   );
