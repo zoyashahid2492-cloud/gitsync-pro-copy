@@ -8,7 +8,6 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 // Add page imports here
 import HealthyLiving from './pages/HealthyLiving';
-import RepoImport from './pages/RepoImport';
 import Schools from './pages/Schools';
 import GlobalResearch from './pages/GlobalResearch';
 import WorkWithUs from './pages/WorkWithUs';
@@ -20,7 +19,6 @@ import Press from './pages/Press';
 import FAQ from './pages/FAQ';
 import AskAi from './pages/AskAi';
 import About from './pages/About';
-import Phase2 from './pages/Phase2';
 import AiChatBubble from './components/healthy-living/AiChatBubble';
 
 const AuthenticatedApp = () => {
@@ -51,25 +49,17 @@ const AuthenticatedApp = () => {
     <Routes>
       {/* Add your page Route elements here */}
       <Route path="/" element={<HealthyLiving />} />
-      <Route path="/schools" element={<Schools />} />
-      <Route path="/global" element={<GlobalResearch />} />
-      <Route path="/work-with-us" element={<WorkWithUs />} />
-      <Route path="/wellness-lab" element={<WellnessLab />} />
       <Route path="/approach" element={<OurApproach />} />
+      <Route path="/schools" element={<Schools />} />
+      <Route path="/research" element={<GlobalResearch />} />
+      <Route path="/collaborate" element={<WorkWithUs />} />
+      <Route path="/lab" element={<WellnessLab />} />
       <Route path="/updates" element={<LatestUpdates />} />
+      <Route path="/about" element={<About />} />
       <Route path="/partners" element={<Partners />} />
       <Route path="/press" element={<Press />} />
       <Route path="/faq" element={<FAQ />} />
-      <Route path="/ask-ai" element={<AskAi />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/repo-import" element={<RepoImport />} />
-      <Route path="/tools" element={<Phase2 />} />
-      <Route path="/meal-plans" element={<Phase2 />} />
-      <Route path="/workout" element={<Phase2 />} />
-      <Route path="/wellness-check" element={<Phase2 />} />
-      <Route path="/rewards" element={<Phase2 />} />
-      <Route path="/communities" element={<Phase2 />} />
-      <Route path="/scanner" element={<Phase2 />} />
+      <Route path="/ai" element={<AskAi />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

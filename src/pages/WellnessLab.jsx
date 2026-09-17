@@ -39,7 +39,7 @@ export default function WellnessLab() {
           <p className="text-[11px] uppercase tracking-[0.22em] font-heading font-medium mb-3" style={{ color: GREEN }}>Build My Better Day</p>
           <h2 className="font-heading font-bold text-2xl md:text-3xl mb-3" style={{ color: INK }}>A plan based on how you feel today</h2>
           <p className="font-heading font-light mb-8" style={{ color: MUTED }}>Answer three quick questions and we'll generate a simple plan across mindfulness, nutrition, hydration and movement.</p>
-          <WellnessCheckIn onAskAi={() => navigate("/ask-ai")} />
+          <WellnessCheckIn onAskAi={() => navigate("/ai")} />
         </div>
       </section>
 
@@ -76,7 +76,7 @@ export default function WellnessLab() {
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <p className="font-heading font-light text-white/85 mb-5">Want to go deeper with a conversation?</p>
           <button
-            onClick={() => navigate("/ask-ai")}
+            onClick={() => navigate("/ai")}
             className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-heading font-bold transition-all hover:opacity-90 active:scale-95"
             style={{ background: "#B0D5B5", color: "#1A2A1A" }}
           >

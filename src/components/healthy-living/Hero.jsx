@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import SahatnaSignInModal from "./SahatnaSignInModal";
 
 const imgHeroBg =
   "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/d8cd6fd09_welnessinADshore.png";
 
 export default function Hero() {
-  const [sahatnaOpen, setSahatnaOpen] = useState(false);
   return (
     <section className="relative flex flex-col bg-[#1a2a1a] overflow-hidden" style={{ minHeight: "100svh" }}>
       <img
@@ -29,7 +27,7 @@ export default function Hero() {
 
         <div className="flex flex-wrap items-center justify-center gap-3 mt-7">
           <Link
-            to="/wellness-lab"
+            to="/lab"
             className="bg-transparent text-white font-heading font-medium px-5 py-2 rounded-full text-[12px] border border-white hover:bg-white/10 active:scale-95 transition-all"
           >
             Choose healthier, every day
@@ -57,18 +55,19 @@ export default function Hero() {
           <span className="text-white/75"> Continue your health journey in </span>
           <span className="font-bold">Sahatna</span>
         </p>
-        <button
-          onClick={() => setSahatnaOpen(true)}
+        <a
+          href="https://sahatna.gov.ae"
+          target="_blank"
+          rel="noreferrer"
           className="flex items-center gap-2 bg-[#B0D5B5] text-[#1A1A1A] font-heading font-bold text-sm px-6 py-2.5 rounded-full hover:bg-[#a3c9a8] active:scale-95 transition-all whitespace-nowrap"
         >
           Connect to Sahatna
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 12L12 2M12 2H6M12 2V8" stroke="#1A1A1A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </button>
+        </a>
       </div>
 
-      <SahatnaSignInModal open={sahatnaOpen} onClose={() => setSahatnaOpen(false)} />
     </section>
   );
 }

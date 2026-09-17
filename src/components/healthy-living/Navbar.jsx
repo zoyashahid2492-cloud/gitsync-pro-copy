@@ -2,27 +2,24 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Sparkles } from "lucide-react";
 
-const imgLogo =
-  "https://raw.githubusercontent.com/zoyashahid2492-cloud/HLdesign/main/src/imports/WebsitePsd/05a7212f171115943cedfdbfeb36c95138e834d3.png";
-
 // Phase 1 site map — exact order
 const NAV = [
   ["Home", "/"],
   ["Our Approach", "/approach"],
   ["Schools & Children", "/schools"],
-  ["Global & Research", "/global"],
-  ["Collaborate With Us", "/work-with-us"],
-  ["Wellness Lab", "/wellness-lab"],
+  ["Global & Research", "/research"],
+  ["Collaborate With Us", "/collaborate"],
+  ["Wellness Lab", "/lab"],
   ["Updates", "/updates"],
   ["About Us", "/about"],
   ["Partners", "/partners"],
   ["Press", "/press"],
   ["FAQ", "/faq"],
-  ["Ask AI", "/ask-ai"],
+  ["Ask AI", "/ai"],
 ];
 
 const linkBase =
-  "text-white text-[10px] font-heading font-medium tracking-[0.12em] uppercase whitespace-nowrap hover:text-white/60 transition-colors";
+  "text-white text-[9px] xl:text-[10px] font-heading font-medium tracking-[0.12em] uppercase whitespace-nowrap hover:text-white/60 transition-colors";
 
 export default function Navbar({ solid }) {
   const [scrolled, setScrolled] = useState(false);
@@ -46,11 +43,14 @@ export default function Navbar({ solid }) {
       >
         <div className="flex items-center justify-between gap-4">
           <Link to="/" className="shrink-0">
-            <img src={imgLogo} alt="Healthy Living" className="h-9 object-contain" />
+            <div className="leading-none">
+              <div className="font-heading font-bold text-white text-[12px] tracking-[0.16em]">HEALTHY LIVING</div>
+              <div className="font-heading font-medium text-white/80 text-[10px] tracking-[0.08em] mt-0.5" dir="rtl">الحياة الصحية</div>
+            </div>
           </Link>
 
           {/* Desktop horizontal nav (xl+) */}
-          <div className="hidden xl:flex flex-1 items-center justify-center gap-5 min-w-0">
+          <div className="hidden md:flex flex-1 items-center justify-start gap-2 xl:gap-5 min-w-0 overflow-x-auto [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
             {main.map(([label, to]) => (
               <Link key={label} to={to} className={linkBase}>
                 {label}
@@ -61,14 +61,14 @@ export default function Navbar({ solid }) {
           <div className="flex items-center gap-3 shrink-0">
             <Link
               to={askAi[1]}
-              className="hidden xl:inline-flex items-center gap-1.5 rounded-full text-white text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-5 py-1.5 bg-white/5 hover:bg-white/15 transition-colors whitespace-nowrap"
+              className="hidden md:inline-flex items-center gap-1.5 rounded-full text-white text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-5 py-1.5 bg-white/5 hover:bg-white/15 transition-colors whitespace-nowrap"
               style={{ border: "1.5px solid #A5B39A" }}
             >
               <Sparkles size={12} /> {askAi[0]}
             </Link>
             <button
               onClick={() => setOpen(true)}
-              className="xl:hidden text-white p-1"
+              className="md:hidden text-white p-1"
               aria-label="Open menu"
             >
               <Menu size={22} />
@@ -79,14 +79,17 @@ export default function Navbar({ solid }) {
 
       {/* Mobile / tablet drawer */}
       {open && (
-        <div className="fixed inset-0 z-[60] xl:hidden">
+        <div className="fixed inset-0 z-[60] md:hidden">
           <div className="absolute inset-0 bg-black/50" onClick={() => setOpen(false)} />
           <div
             className="absolute right-0 top-0 h-full w-[82%] max-w-sm overflow-y-auto px-6 py-6"
             style={{ background: "#3A403A" }}
           >
             <div className="flex items-center justify-between mb-8">
-              <img src={imgLogo} alt="Healthy Living" className="h-8 object-contain" />
+              <div className="leading-none">
+                <div className="font-heading font-bold text-white text-[12px] tracking-[0.16em]">HEALTHY LIVING</div>
+                <div className="font-heading font-medium text-white/80 text-[10px] tracking-[0.08em] mt-0.5" dir="rtl">الحياة الصحية</div>
+              </div>
               <button onClick={() => setOpen(false)} className="text-white p-1" aria-label="Close menu">
                 <X size={22} />
               </button>

@@ -74,13 +74,13 @@ export default function WellnessExperiments() {
             <input
               value={ask}
               onChange={(e) => setAsk(e.target.value)}
-              onKeyDown={(e) => { if (e.key === "Enter") navigate("/ask-ai"); }}
+              onKeyDown={(e) => { if (e.key === "Enter") navigate("/ai"); }}
               placeholder="Ask about sleep, nutrition, movement…"
               className="flex-1 rounded-full px-5 py-3 text-sm font-heading outline-none"
               style={{ background: "#fff", color: INK }}
             />
             <button
-              onClick={() => navigate("/ask-ai")}
+              onClick={() => navigate("/ai")}
               className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-heading font-bold transition-all hover:opacity-90"
               style={{ background: "#B0D5B5", color: "#1A2A1A" }}
             >
@@ -91,7 +91,7 @@ export default function WellnessExperiments() {
             {CHIPS.map((c) => (
               <button
                 key={c}
-                onClick={() => navigate("/ask-ai")}
+                onClick={() => navigate("/ai")}
                 className="text-xs px-3.5 py-2 rounded-full font-heading font-medium text-white/85 transition-all hover:bg-white/10"
                 style={{ border: "1px solid #ffffff33" }}
               >

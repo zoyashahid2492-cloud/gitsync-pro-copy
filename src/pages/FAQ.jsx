@@ -98,7 +98,7 @@ export default function FAQ() {
           <div className="pt-10 flex items-center justify-between flex-wrap gap-4">
             <p className="text-sm font-heading font-light" style={{ color: MUTED }}>Still have a question?</p>
             <Link
-              to="/ask-ai"
+              to="/ai"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm rounded-full font-heading font-bold transition-all hover:opacity-90"
               style={{ background: GREEN_BG, color: GREEN }}
             >

@@ -60,7 +60,7 @@ export default function Partners() {
           <h2 className="font-heading font-bold tracking-tight mb-4" style={{ fontSize: "clamp(1.8rem,4vw,2.8rem)", color: INK }}>Become a Partner</h2>
           <p className="font-heading font-light text-sm mb-6" style={{ color: MUTED }}>Join the coalition shaping healthier lives across Abu Dhabi.</p>
           <Link
-            to="/work-with-us"
+            to="/collaborate"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm rounded-full font-heading font-bold text-white transition-all hover:opacity-90"
             style={{ background: GREEN }}
           >

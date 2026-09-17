@@ -46,7 +46,7 @@ export default function Schools() {
         subtitle="Healthy Living brings unified nutrition guidelines, active school days and practical family resources into every classroom — making the healthier choice the easy choice for Abu Dhabi's children."
       >
         <Link
-          to="/work-with-us"
+          to="/collaborate"
           className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-heading font-bold text-white transition-all hover:opacity-90 active:scale-95"
           style={{ background: "#1D7945" }}
         >
@@ -156,14 +156,14 @@ export default function Schools() {
           <div className="rounded-2xl p-8" style={{ background: "#1f3d2a" }}>
             <h3 className="font-heading font-bold text-xl text-white mb-3">Is your school involved?</h3>
             <p className="font-heading font-light text-sm text-white/80 mb-6">Join the programme and bring unified nutrition guidelines and active school days to your students.</p>
-            <Link to="/work-with-us" className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-heading font-bold transition-all hover:opacity-90" style={{ background: "#B0D5B5", color: "#1A2A1A" }}>
+            <Link to="/collaborate" className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-heading font-bold transition-all hover:opacity-90" style={{ background: "#B0D5B5", color: "#1A2A1A" }}>
               Get your school involved <ArrowRight size={14} />
             </Link>
           </div>
           <div className="rounded-2xl p-8" style={{ background: "#E6F2EC" }}>
             <h3 className="font-heading font-bold text-xl mb-3" style={{ color: "#1f3d2a" }}>School research</h3>
             <p className="font-heading font-light text-sm mb-6" style={{ color: "#6b7a70" }}>Partner with us on school health research and evaluation.</p>
-            <Link to="/global" className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-heading font-bold text-white transition-all hover:opacity-90" style={{ background: "#1D7945" }}>
+            <Link to="/research" className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-heading font-bold text-white transition-all hover:opacity-90" style={{ background: "#1D7945" }}>
               Explore research <ArrowRight size={14} />
             </Link>
           </div>

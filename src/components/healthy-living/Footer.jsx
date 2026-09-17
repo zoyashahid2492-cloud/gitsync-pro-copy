@@ -1,39 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const imgLogo =
-  "https://raw.githubusercontent.com/zoyashahid2492-cloud/HLdesign/main/src/imports/WebsitePsd/05a7212f171115943cedfdbfeb36c95138e834d3.png";
-
 const COLS = [
   {
     title: "Explore",
     links: [
-      ["Home", "/"],
       ["Our Approach", "/approach"],
+      ["About", "/about"],
       ["Schools & Children", "/schools"],
-      ["Global & Research", "/global"],
+      ["Evidence & Insight", "/research"],
     ],
   },
   {
     title: "Focus Areas",
     links: [
-      ["Collaborate With Us", "/work-with-us"],
-      ["Wellness Lab", "/wellness-lab"],
-      ["Updates", "/updates"],
-      ["About Us", "/about"],
+      ["Nutrition", "/lab"],
+      ["Movement", "/lab"],
+      ["Mental Health", "/lab"],
+      ["Sleep", "/lab"],
     ],
   },
   {
     title: "Connect",
     links: [
+      ["Work with us", "/collaborate"],
       ["Partners", "/partners"],
       ["Press", "/press"],
       ["FAQ", "/faq"],
-      ["Ask AI", "/ask-ai"],
-      ["Sahatna", "https://sahatna.ae"],
     ],
   },
 ];
+
+function Logo() {
+  return (
+    <div className="leading-none">
+      <div className="font-heading font-bold text-white text-[13px] tracking-[0.16em]">HEALTHY LIVING</div>
+      <div className="font-heading font-medium text-white/80 text-[11px] tracking-[0.08em] mt-0.5" dir="rtl">الحياة الصحية</div>
+    </div>
+  );
+}
 
 export default function Footer() {
   return (
@@ -41,8 +46,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 md:px-10 pt-16 pb-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <div>
-            <img src={imgLogo} alt="Healthy Living" className="h-10 object-contain mb-4" />
-            <p className="font-heading font-light text-sm text-white/70 leading-relaxed max-w-xs">
+            <Logo />
+            <p className="font-heading font-light text-sm text-white/70 leading-relaxed max-w-xs mt-4">
               Making healthier choices easier, more accessible and part of everyday life across Abu Dhabi.
             </p>
           </div>
@@ -57,23 +62,12 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {c.links.map(([label, href]) => (
                   <li key={label}>
-                    {href.startsWith("http") ? (
-                      <a
-                        href={href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-sm font-heading font-light text-white/75 hover:text-white transition-colors"
-                      >
-                        {label}
-                      </a>
-                    ) : (
-                      <Link
-                        to={href}
-                        className="text-sm font-heading font-light text-white/75 hover:text-white transition-colors"
-                      >
-                        {label}
-                      </Link>
-                    )}
+                    <Link
+                      to={href}
+                      className="text-sm font-heading font-light text-white/75 hover:text-white transition-colors"
+                    >
+                      {label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -84,10 +78,10 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
           <p className="text-[11px] font-heading font-light text-white/55">
-            Led by the Abu Dhabi Department of Health
+            © 2026 Healthy Living
           </p>
           <p className="text-[11px] font-heading font-light text-white/55">
-            © {new Date().getFullYear()} Healthy Living. All rights reserved.
+            Privacy policy <span className="mx-2 text-white/30">|</span> Terms &amp; conditions
           </p>
         </div>
       </div>

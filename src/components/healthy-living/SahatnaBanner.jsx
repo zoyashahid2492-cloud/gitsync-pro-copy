@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import SahatnaSignInModal from "./SahatnaSignInModal";
+import React from "react";
 
 export default function SahatnaBanner({ label, desc }) {
-  const [open, setOpen] = useState(false);
   return (
     <section className="bg-white">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-14 flex items-center justify-between gap-8 flex-wrap">
@@ -14,8 +12,10 @@ export default function SahatnaBanner({ label, desc }) {
             {desc || "Continue your health journey in Sahatna."}
           </p>
         </div>
-        <button
-          onClick={() => setOpen(true)}
+        <a
+          href="https://sahatna.gov.ae"
+          target="_blank"
+          rel="noreferrer"
           className="flex items-center gap-2 text-white font-heading font-medium text-sm px-7 py-3 rounded-full hover:opacity-90 active:scale-95 transition-all whitespace-nowrap"
           style={{ background: "#0E1D13" }}
         >
@@ -24,9 +24,8 @@ export default function SahatnaBanner({ label, desc }) {
             <path d="M5 2H2v10h10V9" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M8 2h4v4M12 2L6.5 7.5" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </button>
+        </a>
       </div>
-      <SahatnaSignInModal open={open} onClose={() => setOpen(false)} />
     </section>
   );
 }

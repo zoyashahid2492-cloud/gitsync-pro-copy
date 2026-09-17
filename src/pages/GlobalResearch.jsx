@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FileText, ArrowRight, Download } from "lucide-react";
 import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
@@ -119,13 +120,13 @@ export default function GlobalResearch() {
           <p className="font-heading font-light text-white/80 mb-8 max-w-2xl mx-auto">
             Collaborating with universities and institutions keeps our practice grounded in evidence. Tell us how you'd like to collaborate.
           </p>
-          <a
-            href="/work-with-us"
+          <Link
+            to="/collaborate"
             className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-heading font-bold transition-all hover:opacity-90 active:scale-95"
             style={{ background: "#B0D5B5", color: "#1A2A1A" }}
           >
             Collaborate on research with us <ArrowRight size={14} />
-          </a>
+          </Link>
         </div>
       </section>
 
