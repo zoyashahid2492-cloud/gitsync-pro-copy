@@ -19,9 +19,6 @@ export default function ProgrammeImpact() {
     <section className="py-16 md:py-24" style={{ background: "#1f3d2a" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <p className="text-[11px] uppercase tracking-[0.22em] font-heading font-medium mb-3" style={{ color: "#b3dbbb" }}>Programme Impact</p>
-        <h2 className="font-heading font-bold text-2xl md:text-3xl mb-4 max-w-2xl" style={{ color: "#ffffff" }}>
-          Abu Dhabi is building the healthiest city in the region.
-        </h2>
         <p className="font-heading font-light max-w-2xl leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.7)" }}>
           Every organisation that partners with Healthy Living Abu Dhabi becomes part of a measurable, government-backed health movement with reach across the entire emirate.
         </p>

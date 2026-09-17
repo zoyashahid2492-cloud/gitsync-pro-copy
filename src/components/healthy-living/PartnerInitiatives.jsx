@@ -11,8 +11,8 @@ const HERO_STATS = [
 ];
 
 const STORIES = [
-  { title: "Healthy Living — Our Story", time: "3 min 42 sec", img: "https://images.unsplash.com/photo-1526129314478-62edf7e43495?w=900&h=600&fit=crop&auto=format" },
-  { title: "Festival of Health 2025", time: "2 min 18 sec", img: "https://images.unsplash.com/photo-1540039155739-5e0e5c4d0a8b?w=900&h=600&fit=crop&auto=format" },
+  { title: "Healthy Living — Our Story", time: "3 min 42 sec", img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&h=600&fit=crop&auto=format" },
+  { title: "Festival of Health 2025", time: "2 min 18 sec", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=900&h=600&fit=crop&auto=format" },
   { title: "The Degayeg Initiative", time: "1 min 55 sec", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&h=600&fit=crop&auto=format" },
 ];
 
@@ -26,7 +26,7 @@ const INITIATIVES = [
     badge: "Active Lifestyles · 40K+ monthly users",
     title: "Degayeg Initiative",
     desc: "Abu Dhabi's flagship trail network — over 18km of walking and cycling paths connecting parks, communities, and coastline. Partner brands activate at trail nodes reaching 40,000+ monthly users.",
-    img: "https://images.unsplash.com/photo-1502228306759-3946d9f9e4d7?w=1200&h=700&fit=crop&auto=format",
+    img: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1200&h=700&fit=crop&auto=format",
   },
   {
     badge: "Flagship Event · 50K+ attendees",
@@ -44,7 +44,7 @@ const INITIATIVES = [
     badge: "Policy · Government-mandated",
     title: "OOH Healthy Advertising",
     desc: "The UAE's first government-mandated healthy advertising policy, requiring out-of-home advertisers in Abu Dhabi to allocate inventory to public health messages.",
-    img: "https://images.unsplash.com/photo-1556912172-6838-c80f2d6a35f?w=1200&h=700&fit=crop&auto=format",
+    img: "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?w=1200&h=700&fit=crop&auto=format",
   },
 ];
 
