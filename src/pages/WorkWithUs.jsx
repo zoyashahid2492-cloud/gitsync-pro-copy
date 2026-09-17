@@ -38,6 +38,12 @@ export default function WorkWithUs() {
         subtitle="Healthy Living unites government, businesses, healthcare, academia and communities to shape the everyday environments that make healthier choices the default."
       />
 
+      <PartnerInitiatives />
+      <ProgrammeImpact />
+      <PartnerCoalition />
+      <PartnershipTiers />
+      <WhoIsNext />
+
       <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-6 md:px-10">
           <h2 className="font-heading font-bold text-2xl md:text-3xl mb-3" style={{ color: INK }}>Who can collaborate?</h2>
@@ -60,12 +66,6 @@ export default function WorkWithUs() {
           </div>
         </div>
       </section>
-
-      <PartnerInitiatives />
-      <ProgrammeImpact />
-      <PartnerCoalition />
-      <PartnershipTiers />
-      <WhoIsNext />
 
       <section id="partner-form" className="py-16 md:py-24" style={{ background: BG_ALT }}>
         <div className="max-w-3xl mx-auto px-6 md:px-10">
