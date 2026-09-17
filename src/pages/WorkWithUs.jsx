@@ -4,7 +4,6 @@ import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
 import PartnerInitiatives from "@/components/healthy-living/PartnerInitiatives";
-import ProgrammeImpact from "@/components/healthy-living/ProgrammeImpact";
 import PartnerCoalition from "@/components/healthy-living/PartnerCoalition";
 import WhoIsNext from "@/components/healthy-living/WhoIsNext";
 
@@ -38,7 +37,6 @@ export default function WorkWithUs() {
       />
 
       <PartnerInitiatives />
-      <ProgrammeImpact />
       <PartnerCoalition />
       <WhoIsNext />
 
