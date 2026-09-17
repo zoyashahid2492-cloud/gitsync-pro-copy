@@ -27,7 +27,7 @@ const linkBase =
 export default function Navbar({ solid }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const isSolid = solid || scrolled;
+  const isSolid = true;
 
   React.useEffect(() => {
     const h = () => setScrolled(window.scrollY > 40);
