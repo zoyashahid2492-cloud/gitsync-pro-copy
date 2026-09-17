@@ -10,6 +10,9 @@ import PageHero from "@/components/healthy-living/PageHero";
 import CardGrid from "@/components/healthy-living/CardGrid";
 import FocusBand from "@/components/healthy-living/FocusBand";
 import ClosingSections from "@/components/healthy-living/ClosingSections";
+import ProgrammeInsights from "@/components/healthy-living/ProgrammeInsights";
+import SchoolChallenges from "@/components/healthy-living/SchoolChallenges";
+import LunchboxCalendar from "@/components/healthy-living/LunchboxCalendar";
 
 const CARDS = [
   { Icon: Apple, title: "School Meals", desc: "Nutritious, balanced meals that meet unified nutrition guidelines across every school cafeteria." },
@@ -83,6 +86,9 @@ export default function Schools() {
         </div>
       </section>
 
+      <ProgrammeInsights />
+      <SchoolChallenges />
+      <LunchboxCalendar />
       <section className="py-16" style={{ background: "#0F1914" }}>
         <div className="max-w-6xl mx-auto px-6 md:px-10">
           <p className="text-[11px] uppercase tracking-[0.22em] font-heading font-light text-center mb-10" style={{ color: "#6E7A75" }}>

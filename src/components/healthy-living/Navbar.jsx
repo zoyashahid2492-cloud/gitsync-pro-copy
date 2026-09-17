@@ -14,6 +14,13 @@ const ROUTES = {
 const NAV_LEFT = ["Healthy Living", "Schools & Children", "Global & Research"];
 const NAV_RIGHT = ["Work with us", "Wellness Lab", "More"];
 const MORE_ITEMS = [
+  ["Wellness Tools", "/tools"],
+  ["Meal Plan", "/meal-plans"],
+  ["Workout Plan", "/workout"],
+  ["Wellness Check", "/wellness-check"],
+  ["Rewards", "/rewards"],
+  ["Communities", "/communities"],
+  ["Food Scanner", "/scanner"],
   ["Our Approach", "/approach"],
   ["Updates", "/updates"],
   ["Partners", "/partners"],
@@ -88,7 +95,7 @@ export default function Navbar({ solid }) {
             </button>
             {moreOpen && (
               <div
-                className="absolute right-0 top-full mt-2 w-44 rounded-xl py-2"
+                className="absolute right-0 top-full mt-2 w-48 rounded-xl py-2 max-h-[70vh] overflow-y-auto"
                 style={{ background: "#4E544E", border: "1px solid #6b7a6b" }}
               >
                 {MORE_ITEMS.map(([label, to]) => (

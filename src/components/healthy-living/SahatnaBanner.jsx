@@ -1,19 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import SahatnaSignInModal from "./SahatnaSignInModal";
 
-export default function SahatnaBanner() {
+export default function SahatnaBanner({ label, desc }) {
+  const [open, setOpen] = useState(false);
   return (
     <section className="bg-white">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-14 flex items-center justify-between gap-8 flex-wrap">
         <div>
           <p className="font-heading font-bold text-[#1A1A1A] text-xl leading-snug">
-            Personal health tracking, device sync and health records.
+            {label || "Personal health tracking, device sync and health records."}
           </p>
           <p className="font-heading font-normal text-sm mt-1.5" style={{ color: "#757575" }}>
-            Continue your health journey in Sahatna.
+            {desc || "Continue your health journey in Sahatna."}
           </p>
         </div>
         <button
-          onClick={() => window.open("https://sahatna.ae", "_blank")}
+          onClick={() => setOpen(true)}
           className="flex items-center gap-2 text-white font-heading font-medium text-sm px-7 py-3 rounded-full hover:opacity-90 active:scale-95 transition-all whitespace-nowrap"
           style={{ background: "#0E1D13" }}
         >
@@ -24,6 +26,7 @@ export default function SahatnaBanner() {
           </svg>
         </button>
       </div>
+      <SahatnaSignInModal open={open} onClose={() => setOpen(false)} />
     </section>
   );
 }
