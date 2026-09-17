@@ -1,23 +1,18 @@
 import React, { useState, useRef } from "react";
-import { Sparkles, Download, Loader2, Heart, Leaf, Smile, ThumbsUp, ArrowRight, Printer } from "lucide-react";
+import { Download, Loader2, Heart, Leaf, Smile, ThumbsUp, ArrowRight, Printer, Check, Sandwich, Carrot, Apple, Grape, Cookie, Droplet, Utensils } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
-const INK = "#1f3d2a", MUTED = "#6b7a70", GREEN = "#1D7945", SAGE = "#8DB594", CREAM = "#F5F7F4", BORDER = "#e0e5de", SAGE_BG = "#EAF1EC";
+const FOREST = "#1D3627", SAGE = "#A0B9A7", SAGE_DEEP = "#7d9a86";
+const OFFWHITE = "#FDFDFB", LIGHTSAGE = "#EAF1EB", INK = "#1D3627", MUTED = "#6b7a70", BORDER = "#E3E9E4";
+
+const BENTO_PHOTO =
+  "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/8a75a06c1_generated_image.png";
 
 const AGE_BANDS = ["3-5", "6-8", "9-12"];
 const DIET_NEEDS = ["Nut-free", "Dairy-free", "Gluten-free", "Vegetarian", "No sesame", "Low sugar"];
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-
-const COMPARTMENTS = [
-  { key: "main", label: "Main", emoji: "🥪", bg: "#EAF1EC", ink: "#1f3d2a" },
-  { key: "veg", label: "Veg", emoji: "🥕", bg: "#F0E8D6", ink: "#5a4a2a" },
-  { key: "fruit", label: "Fruit", emoji: "🍎", bg: "#F5E0E0", ink: "#5a2a2a" },
-  { key: "snack", label: "Snack", emoji: "🍇", bg: "#ECE3F0", ink: "#4a3a5a" },
-  { key: "treat", label: "Treat", emoji: "🍪", bg: "#F0E6E0", ink: "#5a3a2a" },
-  { key: "drink", label: "Drink", emoji: "💧", bg: "#DDE8F0", ink: "#2a3a5a" },
-];
 
 const BADGES = [
   { Icon: Leaf, label: "Balanced nutrition" },
@@ -32,6 +27,49 @@ const FALLBACK = [
   { day: "Thursday", main: "Egg & spinach muffin", main_desc: "Baked, fluffy.", veg: "Cherry tomatoes", veg_desc: "On the side.", fruit: "Pear", fruit_desc: "Sliced.", snack: "Yoghurt pot", snack_desc: "Low-fat.", drink: "Water", treat: "Melon" },
   { day: "Friday", main: "Tuna pasta salad", main_desc: "Wholegrain pasta.", veg: "Sweetcorn", veg_desc: "In the salad.", fruit: "Watermelon", fruit_desc: "Chilled.", snack: "Trail mix", snack_desc: "Nut-free.", drink: "Water", treat: "Fruit kebab" },
 ];
+
+/* Hand-drawn annotation arrow — a wobbly curved line with an arrowhead, rotated per corner. */
+function ScribbleArrow({ rotate = 0, color = FOREST }) {
+  return (
+    <svg
+      width="48"
+      height="30"
+      viewBox="0 0 48 30"
+      fill="none"
+      style={{ transform: `rotate(${rotate}deg)`, display: "block" }}
+    >
+      <path
+        d="M3 25 C 12 7, 30 5, 43 9"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M43 9 L 35 6 M43 9 L 40 17"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </svg>
+  );
+}
+
+function PhotoAnnotation({ label, pos, rotate }) {
+  return (
+    <div className="absolute" style={pos}>
+      <p
+        className="font-hand leading-none"
+        style={{ fontSize: 21, color: INK, textShadow: "0 1px 0 rgba(253,253,251,0.9)" }}
+      >
+        {label}
+      </p>
+      <ScribbleArrow rotate={rotate} />
+    </div>
+  );
+}
 
 export default function LunchboxCalendar() {
   const [age, setAge] = useState("6-8");
@@ -107,13 +145,24 @@ export default function LunchboxCalendar() {
 
   const day = plan ? plan[activeDay] : null;
 
+  const meals = day
+    ? [
+        { Icon: Sandwich, cat: "Main", name: day.main, desc: day.main_desc },
+        { Icon: Carrot, cat: "Veg", name: day.veg, desc: day.veg_desc },
+        { Icon: Apple, cat: "Fruit", name: day.fruit, desc: day.fruit_desc },
+        { Icon: Grape, cat: "Snack", name: day.snack, desc: day.snack_desc },
+        { Icon: Cookie, cat: "Treat", name: day.treat, desc: null },
+        { Icon: Droplet, cat: "Drink", name: day.drink, desc: "Water keeps me strong!" },
+      ]
+    : [];
+
   return (
-    <div className="w-full" style={{ background: CREAM }}>
+    <div className="w-full" style={{ background: OFFWHITE }}>
       {/* HERO */}
       <section className="pt-28 pb-14 md:pt-36 md:pb-20">
         <div className="max-w-6xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.24em] font-heading font-bold mb-4" style={{ color: GREEN }}>
+            <p className="text-[11px] uppercase tracking-[0.24em] font-heading font-bold mb-4" style={{ color: SAGE_DEEP }}>
               Healthy kids. Brighter tomorrows.
             </p>
             <h1 className="font-heading font-black leading-[1.05] tracking-tight mb-5" style={{ fontSize: "clamp(2rem, 4.4vw, 3.2rem)", color: INK }}>
@@ -122,40 +171,37 @@ export default function LunchboxCalendar() {
             <p className="font-heading font-light leading-relaxed max-w-md mb-8" style={{ color: MUTED, fontSize: "clamp(15px, 1.3vw, 17px)" }}>
               Select your child's age and nutritional needs to generate a balanced, cute lunchbox idea and a downloadable sheet for home.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-2.5">
               {BADGES.map((b) => {
                 const Icon = b.Icon;
                 return (
-                  <div key={b.label} className="flex items-center gap-2">
-                    <span className="flex items-center justify-center rounded-full" style={{ width: 32, height: 32, background: SAGE_BG }}>
-                      <Icon size={16} style={{ color: GREEN }} />
-                    </span>
-                    <span className="text-xs font-heading font-semibold" style={{ color: INK }}>{b.label}</span>
-                  </div>
+                  <span
+                    key={b.label}
+                    className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[10px] uppercase tracking-[0.14em] font-heading font-bold"
+                    style={{ border: `1px solid ${SAGE}`, color: INK, background: OFFWHITE }}
+                  >
+                    <Icon size={12} strokeWidth={1.7} style={{ color: SAGE_DEEP }} />
+                    {b.label}
+                  </span>
                 );
               })}
             </div>
           </div>
-          {/* Bento illustration */}
+
+          {/* Annotated bento photo */}
           <div className="flex items-center justify-center">
-            <div className="relative" style={{ maxWidth: 360 }}>
-              <div className="rounded-[2rem] p-5 shadow-sm" style={{ background: "#fff", border: `1px solid ${BORDER}` }}>
-                <div className="grid grid-cols-3 gap-2.5">
-                  {COMPARTMENTS.slice(0, 5).map((c, i) => (
-                    <div key={c.key} className="rounded-2xl p-3 flex flex-col items-center text-center" style={{ background: c.bg, minHeight: i === 0 ? 96 : 72 }}>
-                      <span style={{ fontSize: 22 }}>{c.emoji}</span>
-                      <span className="text-[9px] uppercase tracking-[0.12em] font-heading font-bold mt-1" style={{ color: c.ink }}>{c.label}</span>
-                    </div>
-                  ))}
-                  <div className="rounded-2xl flex items-center justify-center" style={{ background: COMPARTMENTS[5].bg, minHeight: 72 }}>
-                    <span style={{ fontSize: 26 }}>💧</span>
-                  </div>
+            <div className="relative w-full" style={{ maxWidth: 420 }}>
+              <div className="rounded-[2rem] p-3 shadow-sm" style={{ background: OFFWHITE, border: `1px solid ${BORDER}` }}>
+                <div className="relative rounded-[1.4rem] overflow-hidden">
+                  <img src={BENTO_PHOTO} alt="A balanced children's bento lunch box" className="w-full block" />
+                  <PhotoAnnotation label="wholegrain sandwich" pos={{ top: "6%", left: "4%" }} rotate={42} />
+                  <PhotoAnnotation label="cucumber stars" pos={{ top: "8%", right: "4%" }} rotate={138} />
+                  <PhotoAnnotation label="fresh apple" pos={{ bottom: "10%", left: "5%" }} rotate={-44} />
+                  <PhotoAnnotation label="water" pos={{ bottom: "12%", right: "6%" }} rotate={-140} />
                 </div>
-                <div className="mt-3 text-center">
-                  <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[10px] uppercase tracking-[0.12em] font-heading font-bold" style={{ background: SAGE_BG, color: GREEN }}>
-                    <Sparkles size={12} /> Balanced & cute
-                  </span>
-                </div>
+                <p className="font-hand text-center mt-3 mb-1" style={{ fontSize: 24, color: INK }}>
+                  a balanced bento, made with love
+                </p>
               </div>
             </div>
           </div>
@@ -178,7 +224,7 @@ export default function LunchboxCalendar() {
                   return (
                     <button key={a} onClick={() => setAge(a)}
                       className="flex-1 py-2.5 rounded-xl text-sm font-heading font-bold transition-all"
-                      style={active ? { background: INK, color: "#fff", border: `1px solid ${INK}` } : { background: "#fff", color: INK, border: `1px solid ${BORDER}` }}>
+                      style={active ? { background: FOREST, color: "#fff", border: `1px solid ${FOREST}` } : { background: "#fff", color: INK, border: `1px solid ${BORDER}` }}>
                       {a}
                     </button>
                   );
@@ -195,7 +241,7 @@ export default function LunchboxCalendar() {
                   return (
                     <button key={d} onClick={() => toggle(d)}
                       className="px-3.5 py-1.5 rounded-full text-xs font-heading font-semibold transition-all"
-                      style={active ? { background: GREEN, color: "#fff", border: `1px solid ${GREEN}` } : { background: "#fff", color: INK, border: `1px solid ${BORDER}` }}>
+                      style={active ? { background: FOREST, color: "#fff", border: `1px solid ${FOREST}` } : { background: "#fff", color: INK, border: `1px solid ${BORDER}` }}>
                       {d}
                     </button>
                   );
@@ -213,7 +259,7 @@ export default function LunchboxCalendar() {
                 placeholder="E.g. likes carrots, doesn't like tomatoes..."
                 rows={2}
                 className="w-full rounded-xl px-4 py-3 text-sm font-heading outline-none resize-none"
-                style={{ background: SAGE_BG, border: `1px solid ${BORDER}`, color: INK }}
+                style={{ background: LIGHTSAGE, border: `1px solid ${BORDER}`, color: INK }}
               />
             </div>
 
@@ -221,19 +267,19 @@ export default function LunchboxCalendar() {
               onClick={generate}
               disabled={loading}
               className="w-full inline-flex items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-heading font-bold text-white transition-all hover:opacity-90 active:scale-95 disabled:opacity-60"
-              style={{ background: INK }}>
+              style={{ background: FOREST }}>
               {loading ? (<><Loader2 size={15} className="animate-spin" /> Generating…</>) : (<>Generate Lunch Box <ArrowRight size={15} /></>)}
             </button>
             <button
               onClick={download}
               disabled={!plan || downloading}
               className="w-full mt-3 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-heading font-bold transition-all hover:opacity-90 disabled:opacity-50"
-              style={{ background: "#fff", color: INK, border: `1.5px solid ${INK}` }}>
+              style={{ background: "#fff", color: INK, border: `1.5px solid ${FOREST}` }}>
               {downloading ? <Loader2 size={15} className="animate-spin" /> : <Download size={15} />} Download Parent Sheet
             </button>
 
             <p className="text-[11px] font-heading font-light mt-5 text-center flex items-center justify-center gap-1.5" style={{ color: MUTED }}>
-              <Heart size={11} style={{ color: GREEN }} /> Designed for parents. Backed by nutrition experts.
+              <Heart size={11} style={{ color: SAGE_DEEP }} /> Designed for parents. Backed by nutrition experts.
             </p>
           </div>
 
@@ -246,7 +292,7 @@ export default function LunchboxCalendar() {
                   {DAYS.map((d, i) => (
                     <button key={d} onClick={() => setActiveDay(i)}
                       className="px-2.5 py-1.5 rounded-lg text-[11px] font-heading font-bold transition-all"
-                      style={i === activeDay ? { background: INK, color: "#fff" } : { background: SAGE_BG, color: INK }}>
+                      style={i === activeDay ? { background: FOREST, color: "#fff" } : { background: LIGHTSAGE, color: INK }}>
                       {d.slice(0, 3)}
                     </button>
                   ))}
@@ -254,56 +300,56 @@ export default function LunchboxCalendar() {
               )}
             </div>
 
-            {/* Labels */}
+            {/* Status badges — thin-bordered pills with small line icons */}
             <div className="flex flex-wrap gap-2 mb-5">
               {diets.map((d) => (
-                <span key={d} className="inline-flex items-center rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.12em] font-heading font-bold" style={{ background: SAGE_BG, color: GREEN }}>{d}</span>
+                <span key={d} className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.14em] font-heading font-bold"
+                  style={{ border: `1px solid ${SAGE}`, color: INK, background: OFFWHITE }}>
+                  <Leaf size={11} strokeWidth={1.7} style={{ color: SAGE_DEEP }} /> {d}
+                </span>
               ))}
-              <span className="inline-flex items-center rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.12em] font-heading font-bold" style={{ background: SAGE_BG, color: GREEN }}>Age {age}</span>
-              <span className="inline-flex items-center rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.12em] font-heading font-bold" style={{ background: SAGE_BG, color: GREEN }}>Balanced</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.14em] font-heading font-bold"
+                style={{ border: `1px solid ${SAGE}`, color: INK, background: OFFWHITE }}>
+                Age {age}
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.14em] font-heading font-bold"
+                style={{ border: `1px solid ${SAGE}`, color: INK, background: OFFWHITE }}>
+                <Check size={11} strokeWidth={1.7} style={{ color: SAGE_DEEP }} /> Balanced
+              </span>
             </div>
 
             {day ? (
-              <div className="grid grid-cols-5 gap-3">
-                <div className="col-span-3 row-span-2 rounded-2xl p-4 flex flex-col justify-between" style={{ background: COMPARTMENTS[0].bg, minHeight: 180 }}>
-                  <div className="flex items-center gap-1.5">
-                    <span style={{ fontSize: 26 }}>{COMPARTMENTS[0].emoji}</span>
-                    <span className="text-[10px] uppercase tracking-[0.14em] font-heading font-bold opacity-70" style={{ color: COMPARTMENTS[0].ink }}>Main</span>
-                  </div>
-                  <div>
-                    <p className="font-heading font-bold leading-tight text-lg" style={{ color: COMPARTMENTS[0].ink }}>{day.main}</p>
-                    {day.main_desc && <p className="font-heading font-light leading-snug text-sm" style={{ color: COMPARTMENTS[0].ink, opacity: 0.8 }}>{day.main_desc}</p>}
-                  </div>
+              <>
+                {/* Bento photo header with handwritten caption */}
+                <div className="relative rounded-2xl overflow-hidden mb-5">
+                  <img src={BENTO_PHOTO} alt="Today's bento lunch box" className="w-full block" style={{ maxHeight: 240, objectFit: "cover", objectPosition: "center" }} />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(29,54,39,0.55), rgba(29,54,39,0) 55%)" }} />
+                  <p className="absolute bottom-3 left-4 font-hand leading-none" style={{ fontSize: 26, color: "#fff" }}>
+                    {day.day}'s bento
+                  </p>
                 </div>
-                {[
-                  { c: COMPARTMENTS[1], item: day.veg, desc: day.veg_desc },
-                  { c: COMPARTMENTS[2], item: day.fruit, desc: day.fruit_desc },
-                  { c: COMPARTMENTS[3], item: day.snack, desc: day.snack_desc },
-                  { c: COMPARTMENTS[4], item: day.treat, desc: null },
-                ].map(({ c, item, desc }, i) => (
-                  <div key={i} className="col-span-2 rounded-2xl p-3 flex flex-col justify-between" style={{ background: c.bg, minHeight: 86 }}>
-                    <div className="flex items-center gap-1.5">
-                      <span style={{ fontSize: 18 }}>{c.emoji}</span>
-                      <span className="text-[9px] uppercase tracking-[0.14em] font-heading font-bold opacity-70" style={{ color: c.ink }}>{c.label}</span>
+
+                {/* Editorial meal list with handwritten names + small line icons */}
+                <div className="divide-y" style={{ borderColor: BORDER }}>
+                  {meals.map(({ Icon, cat, name, desc }, i) => (
+                    <div key={i} className="flex items-start gap-3.5 py-3.5">
+                      <span className="flex items-center justify-center rounded-xl shrink-0" style={{ width: 40, height: 40, background: LIGHTSAGE }}>
+                        <Icon size={18} strokeWidth={1.6} style={{ color: SAGE_DEEP }} />
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[9px] uppercase tracking-[0.18em] font-heading font-bold" style={{ color: SAGE_DEEP }}>{cat}</p>
+                        <p className="font-hand leading-tight" style={{ fontSize: 23, color: INK }}>{name}</p>
+                        {desc && <p className="font-heading font-light text-xs leading-snug" style={{ color: MUTED }}>{desc}</p>}
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-heading font-bold leading-tight text-sm" style={{ color: c.ink }}>{item}</p>
-                      {desc && <p className="font-heading font-light leading-snug text-[11px]" style={{ color: c.ink, opacity: 0.8 }}>{desc}</p>}
-                    </div>
-                  </div>
-                ))}
-                {/* Water bottle strip */}
-                <div className="col-span-5 rounded-2xl p-4 flex items-center gap-3" style={{ background: COMPARTMENTS[5].bg }}>
-                  <span style={{ fontSize: 26 }}>💧</span>
-                  <div>
-                    <p className="font-heading font-bold text-sm" style={{ color: COMPARTMENTS[5].ink }}>{day.drink}</p>
-                    <p className="font-heading font-light text-[11px]" style={{ color: COMPARTMENTS[5].ink, opacity: 0.8 }}>Water keeps me strong!</p>
-                  </div>
+                  ))}
                 </div>
-              </div>
+              </>
             ) : (
-              <div className="rounded-2xl py-16 flex flex-col items-center justify-center text-center" style={{ background: SAGE_BG }}>
-                <div className="text-5xl mb-3">🍱</div>
+              <div className="rounded-2xl py-16 flex flex-col items-center justify-center text-center" style={{ background: LIGHTSAGE }}>
+                <span className="flex items-center justify-center rounded-full mb-4" style={{ width: 64, height: 64, background: "#fff", border: `1px solid ${SAGE}` }}>
+                  <Utensils size={26} strokeWidth={1.5} style={{ color: SAGE_DEEP }} />
+                </span>
                 <p className="font-heading font-bold text-base mb-1" style={{ color: INK }}>Your lunch box awaits</p>
                 <p className="text-sm font-heading font-light max-w-xs" style={{ color: MUTED }}>
                   Set your child's age and needs, then generate a balanced bento idea — Monday to Friday.
@@ -312,7 +358,7 @@ export default function LunchboxCalendar() {
             )}
 
             {/* Printable version box */}
-            <div className="mt-6 rounded-2xl p-5 flex flex-col md:flex-row items-start md:items-center gap-4 justify-between" style={{ background: SAGE_BG }}>
+            <div className="mt-6 rounded-2xl p-5 flex flex-col md:flex-row items-start md:items-center gap-4 justify-between" style={{ background: LIGHTSAGE }}>
               <div className="flex items-start gap-3">
                 <span className="flex items-center justify-center rounded-full shrink-0" style={{ width: 40, height: 40, background: "#fff" }}>
                   <Printer size={18} style={{ color: INK }} />
@@ -324,7 +370,7 @@ export default function LunchboxCalendar() {
               </div>
               <button onClick={download} disabled={!plan || downloading}
                 className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-heading font-bold text-white transition-all hover:opacity-90 disabled:opacity-50 shrink-0"
-                style={{ background: INK }}>
+                style={{ background: FOREST }}>
                 {downloading ? <Loader2 size={14} className="animate-spin" /> : <Download size={14} />} Download Parent Sheet
               </button>
             </div>
@@ -334,7 +380,7 @@ export default function LunchboxCalendar() {
       </section>
 
       {/* INFO BAND */}
-      <section className="py-16 md:py-20" style={{ background: INK }}>
+      <section className="py-16 md:py-20" style={{ background: FOREST }}>
         <div className="max-w-4xl mx-auto px-6 md:px-10">
           <p className="text-[11px] uppercase tracking-[0.24em] font-heading font-bold mb-4" style={{ color: SAGE }}>Why lunch boxes matter</p>
           <h2 className="font-heading font-bold text-2xl md:text-3xl mb-6 text-white">Healthy choices today. Brighter tomorrows.</h2>
@@ -359,7 +405,7 @@ export default function LunchboxCalendar() {
           <button
             onClick={() => window.location.assign("/schools")}
             className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-heading font-bold transition-all hover:opacity-90 active:scale-95"
-            style={{ background: "transparent", color: INK, border: `1.5px solid ${INK}` }}>
+            style={{ background: "transparent", color: INK, border: `1.5px solid ${FOREST}` }}>
             Explore Family Health <ArrowRight size={15} />
           </button>
         </div>
