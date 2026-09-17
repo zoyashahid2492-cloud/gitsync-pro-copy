@@ -11,7 +11,7 @@ const BENTO_PHOTO =
   "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/8a75a06c1_generated_image.png";
 
 const AGE_BANDS = ["3-5", "6-8", "9-12", "13+"];
-const DIET_NEEDS = ["Nut-free", "Dairy-free", "Gluten-free", "Vegetarian", "No sesame", "Low sugar"];
+const DIET_NEEDS = ["Halal", "Nut-free", "Dairy-free", "Gluten-free", "Vegetarian", "No sesame", "Low sugar"];
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
 const BADGES = [
@@ -73,7 +73,7 @@ function PhotoAnnotation({ label, pos, rotate }) {
 
 export default function LunchboxCalendar() {
   const [age, setAge] = useState("6-8");
-  const [diets, setDiets] = useState(["Nut-free"]);
+  const [diets, setDiets] = useState(["Halal", "Nut-free"]);
   const [likes, setLikes] = useState("");
   const [plan, setPlan] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -88,7 +88,7 @@ export default function LunchboxCalendar() {
     setLoading(true);
     try {
       const res = await base44.integrations.Core.InvokeLLM({
-        prompt: `You are a children's school lunchbox nutritionist for Abu Dhabi's Healthy Living programme. Generate a full 5-day (Monday to Friday) balanced school lunchbox plan for a child aged ${age}. All meals are Halal by default. Dietary requirements: ${diets.join(", ") || "none"}.\n\nIMPORTANT — personal preferences (MUST follow strictly):\n${likes.trim() ? `- The child LIKES or wants: ${likes.trim()}. You MUST feature these liked ingredients/flavours across the week — include them in main meals, snacks, or sides on most days.\n- If the child dislikes something, NEVER include that ingredient in any compartment. Read the dislikes carefully and exclude them entirely.` : "- No specific likes or dislikes given; use a balanced kid-friendly variety."}\n\nFor each day return 6 bento compartments: main (name + short desc), veg (name + short desc), fruit (name + short desc), snack (name + short desc), drink (name), treat (name). Keep portions kid-friendly, colourful, balanced, and varied across the week. Make food names cute (e.g. "cucumber stars"). Descriptions are one short phrase.`,
+        prompt: `You are a children's school lunchbox nutritionist for Abu Dhabi's Healthy Living programme. Generate a full 5-day (Monday to Friday) balanced school lunchbox plan for a child aged ${age}. ${diets.includes("Halal") ? "All meals must be Halal." : "No religious dietary restriction specified."} Dietary requirements: ${diets.join(", ") || "none"}.\n\nIMPORTANT — personal preferences (MUST follow strictly):\n${likes.trim() ? `- The child LIKES or wants: ${likes.trim()}. You MUST feature these liked ingredients/flavours across the week — include them in main meals, snacks, or sides on most days.\n- If the child dislikes something, NEVER include that ingredient in any compartment. Read the dislikes carefully and exclude them entirely.` : "- No specific likes or dislikes given; use a balanced kid-friendly variety."}\n\nFor each day return 6 bento compartments: main (name + short desc), veg (name + short desc), fruit (name + short desc), snack (name + short desc), drink (name), treat (name). Keep portions kid-friendly, colourful, balanced, and varied across the week. Make food names cute (e.g. "cucumber stars"). Descriptions are one short phrase.`,
         response_json_schema: {
           type: "object",
           properties: {
