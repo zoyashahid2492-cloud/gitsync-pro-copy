@@ -63,7 +63,8 @@ function NavDropdown({ label, items, align, open, setOpen, activePath }) {
             align === "right" ? "right-0" : "left-0"
           }`}
           style={{
-            background: "transparent",
+            background: "rgba(15, 37, 32, 0.72)",
+            backdropFilter: "blur(8px)",
             border: "1px solid rgba(179, 219, 187, 0.35)",
           }}
         >
