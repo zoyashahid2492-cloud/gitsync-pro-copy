@@ -47,7 +47,6 @@ export default function PartnershipTiers() {
     <section className="py-16 md:py-24" style={{ background: "#F7F6F2" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <p className="text-[11px] uppercase tracking-[0.22em] font-heading font-medium mb-3" style={{ color: GREEN }}>Partnership Tiers</p>
-        <h2 className="font-heading font-bold text-2xl md:text-3xl mb-3" style={{ color: INK }}>Choose your level of commitment.</h2>
         <p className="font-heading font-light text-sm mb-12 max-w-2xl" style={{ color: MUTED }}>
           All tiers subject to approval. Government entities may qualify for non-commercial partnerships.
         </p>
