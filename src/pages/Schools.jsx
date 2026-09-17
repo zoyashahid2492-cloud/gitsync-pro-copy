@@ -12,7 +12,6 @@ import CardGrid from "@/components/healthy-living/CardGrid";
 import FocusBand from "@/components/healthy-living/FocusBand";
 import ClosingSections from "@/components/healthy-living/ClosingSections";
 import ProgrammeInsights from "@/components/healthy-living/ProgrammeInsights";
-import SchoolChallenges from "@/components/healthy-living/SchoolChallenges";
 import LunchboxCalendar from "@/components/healthy-living/LunchboxCalendar";
 
 const CARDS = [
@@ -104,7 +103,6 @@ export default function Schools() {
       </section>
 
       <ProgrammeInsights />
-      <SchoolChallenges />
       <LunchboxCalendar />
 
       <section className="py-16 md:py-24">
