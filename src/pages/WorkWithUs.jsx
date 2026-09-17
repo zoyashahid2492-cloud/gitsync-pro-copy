@@ -3,6 +3,11 @@ import { GraduationCap, School, Landmark, Stethoscope, Building2, Users, CheckCi
 import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
+import PartnerInitiatives from "@/components/healthy-living/PartnerInitiatives";
+import ProgrammeImpact from "@/components/healthy-living/ProgrammeImpact";
+import PartnerCoalition from "@/components/healthy-living/PartnerCoalition";
+import PartnershipTiers from "@/components/healthy-living/PartnershipTiers";
+import WhoIsNext from "@/components/healthy-living/WhoIsNext";
 
 const INK = "#1f3d2a", GREEN = "#1D7945", GREEN_BG = "#E6F2EC", BG_ALT = "#F7F6F2", MUTED = "#6b7a70", BORDER = "#e0e5de";
 
@@ -56,7 +61,13 @@ export default function WorkWithUs() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24" style={{ background: BG_ALT }}>
+      <PartnerInitiatives />
+      <ProgrammeImpact />
+      <PartnerCoalition />
+      <PartnershipTiers />
+      <WhoIsNext />
+
+      <section id="partner-form" className="py-16 md:py-24" style={{ background: BG_ALT }}>
         <div className="max-w-3xl mx-auto px-6 md:px-10">
           <p className="text-[11px] uppercase tracking-[0.22em] font-heading font-medium mb-3" style={{ color: GREEN }}>Start the conversation</p>
           <h2 className="font-heading font-bold text-2xl md:text-3xl mb-10" style={{ color: INK }}>Tell us how you'd like to collaborate</h2>
