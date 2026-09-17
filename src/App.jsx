@@ -13,6 +13,11 @@ import Schools from './pages/Schools';
 import GlobalResearch from './pages/GlobalResearch';
 import WorkWithUs from './pages/WorkWithUs';
 import WellnessLab from './pages/WellnessLab';
+import OurApproach from './pages/OurApproach';
+import LatestUpdates from './pages/LatestUpdates';
+import Partners from './pages/Partners';
+import Press from './pages/Press';
+import FAQ from './pages/FAQ';
 import AskAi from './pages/AskAi';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -49,6 +54,11 @@ const AuthenticatedApp = () => {
       <Route path="/global" element={<GlobalResearch />} />
       <Route path="/work-with-us" element={<WorkWithUs />} />
       <Route path="/wellness-lab" element={<WellnessLab />} />
+      <Route path="/approach" element={<OurApproach />} />
+      <Route path="/updates" element={<LatestUpdates />} />
+      <Route path="/partners" element={<Partners />} />
+      <Route path="/press" element={<Press />} />
+      <Route path="/faq" element={<FAQ />} />
       <Route path="/ask-ai" element={<AskAi />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />

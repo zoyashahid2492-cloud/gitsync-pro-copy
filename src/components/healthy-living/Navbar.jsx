@@ -14,9 +14,13 @@ const ROUTES = {
 const NAV_LEFT = ["Healthy Living", "Schools & Children", "Global & Research"];
 const NAV_RIGHT = ["Work with us", "Wellness Lab", "More"];
 const MORE_ITEMS = [
+  ["Our Approach", "/approach"],
+  ["Updates", "/updates"],
+  ["Partners", "/partners"],
+  ["Press", "/press"],
+  ["FAQ", "/faq"],
   ["About", "/about"],
   ["Contact", "/contact"],
-  ["Latest Updates", "/"],
 ];
 
 const linkClass =
