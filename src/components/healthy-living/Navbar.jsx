@@ -111,8 +111,8 @@ export default function Navbar({ solid }) {
 
             <Link
               to="/ai"
-              className="inline-flex items-center gap-1.5 rounded-full text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-4 xl:px-5 py-2 transition-opacity hover:opacity-90 shrink-0"
-              style={{ background: "#ffffff", color: "#1A1A1A" }}
+              className="inline-flex items-center gap-1.5 rounded-full text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-4 xl:px-5 py-2 transition-colors hover:bg-white hover:text-[#0F2520] shrink-0"
+              style={{ border: "1px solid rgba(255,255,255,0.7)", color: "#ffffff" }}
             >
               <Sparkles size={12} /> ASK AI
             </Link>
@@ -170,8 +170,8 @@ export default function Navbar({ solid }) {
               <Link
                 to="/ai"
                 onClick={() => setOpen(false)}
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-6 py-3 transition-opacity hover:opacity-90"
-                style={{ background: "#ffffff", color: "#1A1A1A" }}
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-6 py-3 transition-colors hover:bg-white hover:text-[#0F2520]"
+                style={{ border: "1px solid rgba(255,255,255,0.7)", color: "#ffffff" }}
               >
                 <Sparkles size={14} /> ASK AI
               </Link>
