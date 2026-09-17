@@ -10,7 +10,7 @@ const OFFWHITE = "#FDFDFB", LIGHTSAGE = "#EAF1EB", INK = "#1D3627", MUTED = "#6b
 const BENTO_PHOTO =
   "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/8a75a06c1_generated_image.png";
 
-const AGE_BANDS = ["3-5", "6-8", "9-12"];
+const AGE_BANDS = ["3-5", "6-8", "9-12", "13+"];
 const DIET_NEEDS = ["Nut-free", "Dairy-free", "Gluten-free", "Vegetarian", "No sesame", "Low sugar"];
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
