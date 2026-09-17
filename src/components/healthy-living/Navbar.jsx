@@ -116,9 +116,9 @@ export default function Navbar({ solid }) {
           borderBottom: isSolid ? "1px solid rgba(255,255,255,0.08)" : "none",
         }}
       >
-        <div className="relative flex items-center justify-between gap-3 px-5 lg:px-6 py-3.5">
+        <div className="flex items-center justify-between gap-2 lg:gap-3 px-5 lg:px-6 py-3.5">
           {/* Left links */}
-          <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
+          <div className="hidden md:flex items-center flex-1 justify-start gap-3 lg:gap-5 xl:gap-6 min-w-0">
             <NavDropdown
               label="HEALTHY LIVING"
               items={HL_DROPDOWN}
@@ -134,8 +134,8 @@ export default function Navbar({ solid }) {
             ))}
           </div>
 
-          {/* Centered logo block */}
-          <Link to="/" className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center px-2 shrink-0">
+          {/* Centered logo block (reserved space, no overlap) */}
+          <Link to="/" className="hidden md:flex shrink-0 items-center justify-center px-3 lg:px-4">
             <img
               src={LOGO}
               alt="Healthy Living"
@@ -144,7 +144,7 @@ export default function Navbar({ solid }) {
           </Link>
 
           {/* Right links + MORE + ASK AI */}
-          <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
+          <div className="hidden md:flex items-center flex-1 justify-end gap-3 lg:gap-5 xl:gap-6 min-w-0">
             {RIGHT.map(([label, to]) => (
               <Link key={label} to={to} className={`${linkBase} text-[10px] lg:text-[11px] xl:text-[12px]`}>
                 {label}
