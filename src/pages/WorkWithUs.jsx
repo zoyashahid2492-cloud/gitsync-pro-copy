@@ -6,7 +6,6 @@ import PageHero from "@/components/healthy-living/PageHero";
 import PartnerInitiatives from "@/components/healthy-living/PartnerInitiatives";
 import ProgrammeImpact from "@/components/healthy-living/ProgrammeImpact";
 import PartnerCoalition from "@/components/healthy-living/PartnerCoalition";
-import PartnershipTiers from "@/components/healthy-living/PartnershipTiers";
 import WhoIsNext from "@/components/healthy-living/WhoIsNext";
 
 const INK = "#1f3d2a", GREEN = "#1D7945", GREEN_BG = "#E6F2EC", BG_ALT = "#F7F6F2", MUTED = "#6b7a70", BORDER = "#e0e5de";
@@ -41,7 +40,6 @@ export default function WorkWithUs() {
       <PartnerInitiatives />
       <ProgrammeImpact />
       <PartnerCoalition />
-      <PartnershipTiers />
       <WhoIsNext />
 
       <section className="py-16 md:py-24">
