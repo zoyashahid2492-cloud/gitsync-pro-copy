@@ -20,6 +20,7 @@ import FAQ from './pages/FAQ';
 import AskAi from './pages/AskAi';
 import About from './pages/About';
 import AiChatBubble from './components/healthy-living/AiChatBubble';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -72,9 +73,11 @@ function App() {
     <AuthProvider>
       <QueryClientProvider client={queryClientInstance}>
         <Router>
-          <ScrollToTop />
-          <AuthenticatedApp />
-          <AiChatBubble />
+          <ErrorBoundary>
+            <ScrollToTop />
+            <AuthenticatedApp />
+            <AiChatBubble />
+          </ErrorBoundary>
         </Router>
         <Toaster />
       </QueryClientProvider>
