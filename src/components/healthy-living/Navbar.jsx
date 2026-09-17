@@ -112,7 +112,8 @@ export default function Navbar({ solid }) {
       <nav
         className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300"
         style={{
-          background: isSolid ? "#0F2520" : "transparent",
+          background: isSolid ? "rgba(15, 37, 32, 0.72)" : "transparent",
+          backdropFilter: isSolid ? "blur(8px)" : "none",
           borderBottom: isSolid ? "1px solid rgba(255,255,255,0.08)" : "none",
         }}
       >
