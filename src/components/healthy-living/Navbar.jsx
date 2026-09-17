@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Sparkles } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
 
 const LOGO =
   "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/750736f69_image.png";
@@ -84,19 +84,23 @@ export default function Navbar({ solid }) {
                 onBlur={() => setTimeout(() => setMore(false), 150)}
                 className={`${linkBase} text-[10px] xl:text-[11px] flex items-center gap-1`}
               >
-                MORE <ChevronDown size={12} />
+                MORE {more ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
               </button>
               {more && (
                 <div
-                  className="absolute right-0 top-full mt-2 w-48 rounded-xl py-2"
-                  style={{ background: "#fff", border: "1px solid #e5e5e5", boxShadow: "0 10px 30px rgba(0,0,0,0.12)" }}
+                  className="absolute right-0 top-full mt-2 w-52 rounded-lg overflow-hidden"
+                  style={{ background: "#fff", boxShadow: "0 12px 32px rgba(0,0,0,0.14)" }}
                 >
-                  {MORE.map(([label, to]) => (
+                  {MORE.map(([label, to], i) => (
                     <Link
                       key={label}
                       to={to}
                       onClick={() => setMore(false)}
-                      className="block px-4 py-2 text-[12px] font-heading font-medium text-[#1A1A1A] hover:bg-[#f5f5f5]"
+                      className="block px-5 py-3 text-[12px] font-heading font-medium uppercase tracking-[0.14em] transition-colors hover:text-[#1b5e20]"
+                      style={{
+                        color: "#757575",
+                        borderTop: i > 0 ? "1px solid #eef0ec" : "none",
+                      }}
                     >
                       {label}
                     </Link>
