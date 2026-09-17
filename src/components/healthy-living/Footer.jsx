@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 
 const COLS = [
   {
@@ -31,40 +32,62 @@ const COLS = [
   },
 ];
 
-function Logo() {
-  return (
-    <div className="leading-none">
-      <div className="font-heading font-bold text-white text-[13px] tracking-[0.16em]">HEALTHY LIVING</div>
-      <div className="font-heading font-medium text-white/80 text-[11px] tracking-[0.08em] mt-0.5" dir="rtl">الحياة الصحية</div>
-    </div>
-  );
-}
+const INK = "#1A1A1A";
+const MUTED = "#6b7a70";
+const HEAD = "#9aa39c";
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#0F1914" }} className="text-white">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 pt-16 pb-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          <div>
-            <Logo />
-            <p className="font-heading font-light text-sm text-white/70 leading-relaxed max-w-xs mt-4">
-              Making healthier choices easier, more accessible and part of everyday life across Abu Dhabi.
+    <footer style={{ background: "#F6F7F2" }}>
+      <div className="max-w-6xl mx-auto px-6 md:px-10 pt-16 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+          {/* Brand column */}
+          <div className="md:pr-6">
+            <div className="leading-none">
+              <div className="font-heading font-bold tracking-[0.14em] text-[14px]" style={{ color: INK }}>
+                HEALTHY LIVING
+              </div>
+              <div
+                className="font-heading font-medium tracking-[0.08em] mt-1 text-[11px]"
+                style={{ color: INK, opacity: 0.7 }}
+                dir="rtl"
+              >
+                الحياة الصحية
+              </div>
+            </div>
+            <p className="font-heading font-light text-sm leading-relaxed mt-5" style={{ color: MUTED }}>
+              Healthy Living is led by the Abu Dhabi Department of Health. It brings together government entities, partners, and communities to make healthier choices easier, more accessible, and part of daily life.
             </p>
+            <p className="font-heading font-medium text-sm mt-4" style={{ color: INK }}>
+              Making healthy living the easy choice for all.
+            </p>
+            <a
+              href="https://sahatna.gov.ae"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-heading font-bold text-white mt-6 transition-opacity hover:opacity-90 active:scale-95"
+              style={{ background: "#2E7D5C" }}
+            >
+              Connect to Sahatna <ArrowUpRight size={15} />
+            </a>
           </div>
+
+          {/* Link columns */}
           {COLS.map((c) => (
-            <div key={c.title}>
+            <div key={c.title} className="md:pl-4">
               <p
-                className="text-[11px] uppercase tracking-[0.18em] font-heading font-bold mb-4"
-                style={{ color: "#82D1A3" }}
+                className="text-[11px] uppercase tracking-[0.18em] font-heading font-bold mb-5"
+                style={{ color: HEAD }}
               >
                 {c.title}
               </p>
-              <ul className="space-y-2.5">
+              <ul className="space-y-3">
                 {c.links.map(([label, href]) => (
                   <li key={label}>
                     <Link
                       to={href}
-                      className="text-sm font-heading font-light text-white/75 hover:text-white transition-colors"
+                      className="text-sm font-heading font-light transition-colors hover:opacity-70"
+                      style={{ color: INK }}
                     >
                       {label}
                     </Link>
@@ -75,13 +98,15 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className="border-t border-white/10">
+
+      {/* Bottom bar */}
+      <div className="border-t" style={{ borderColor: "#e2e6dc" }}>
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
-          <p className="text-[11px] font-heading font-light text-white/55">
-            © 2026 Healthy Living
+          <p className="text-[11px] font-heading font-light" style={{ color: HEAD }}>
+            © 2026 Healthy Living. Led by the Abu Dhabi Department of Health.
           </p>
-          <p className="text-[11px] font-heading font-light text-white/55">
-            Privacy policy <span className="mx-2 text-white/30">|</span> Terms &amp; conditions
+          <p className="text-[11px] font-heading font-medium tracking-[0.14em] uppercase" style={{ color: HEAD }}>
+            HEALTHYLIVING.ABU
           </p>
         </div>
       </div>
