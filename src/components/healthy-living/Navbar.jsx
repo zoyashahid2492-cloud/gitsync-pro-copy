@@ -63,9 +63,10 @@ function NavDropdown({ label, items, align, open, setOpen, activePath }) {
             align === "right" ? "right-0" : "left-0"
           }`}
           style={{
-            background: "#fff",
-            border: "1px solid #e2e6dc",
-            boxShadow: "0 12px 32px rgba(0,0,0,0.14)",
+            background: "rgba(15, 37, 32, 0.96)",
+            backdropFilter: "blur(8px)",
+            border: "1px solid rgba(179, 219, 187, 0.18)",
+            boxShadow: "0 12px 32px rgba(0,0,0,0.28)",
           }}
         >
           {items.map(([itemLabel, to], i) => {
@@ -75,11 +76,11 @@ function NavDropdown({ label, items, align, open, setOpen, activePath }) {
                 key={itemLabel}
                 to={to}
                 onClick={() => setOpen(false)}
-                className="block px-5 py-3 text-[12px] font-heading uppercase tracking-[0.14em] transition-colors hover:text-[#365e49]"
+                className="block px-5 py-3 text-[9px] lg:text-[10px] xl:text-[11px] font-heading uppercase tracking-[0.14em] transition-colors hover:opacity-70"
                 style={{
-                  color: active ? "#365e49" : "#a0a0a0",
+                  color: active ? "#b3dbbb" : "#ffffff",
                   fontWeight: active ? 700 : 500,
-                  borderTop: i > 0 ? "1px solid #eef0ec" : "none",
+                  borderTop: i > 0 ? "1px solid rgba(179, 219, 187, 0.12)" : "none",
                 }}
               >
                 {itemLabel}
