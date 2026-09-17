@@ -1,7 +1,5 @@
 import React from "react";
 import { Play, ArrowRight } from "lucide-react";
-import "./marquee.css";
-
 const INK = "#1f3d2a", GREEN = "#1D7945", MUTED = "#6b7a70", BORDER = "#e0e5de";
 
 const HERO_STATS = [
@@ -14,11 +12,6 @@ const STORIES = [
   { title: "Healthy Living — Our Story", time: "3 min 42 sec", img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&h=600&fit=crop&auto=format" },
   { title: "Festival of Health 2025", time: "2 min 18 sec", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=900&h=600&fit=crop&auto=format" },
   { title: "The Degayeg Initiative", time: "1 min 55 sec", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&h=600&fit=crop&auto=format" },
-];
-
-const MARQUEE = [
-  "Degayeg Initiative", "Festival of Health", "Nutri-Mark Label", "OOH Healthy Policy",
-  "25 Strategic Initiatives", "120,000 Residents Connected",
 ];
 
 const INITIATIVES = [
@@ -94,17 +87,6 @@ export default function PartnerInitiatives() {
               </a>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Marquee */}
-      <section className="py-10 mt-8 overflow-hidden" style={{ background: "#1f3d2a" }}>
-        <div className="flex whitespace-nowrap animate-marquee">
-          {[...MARQUEE, ...MARQUEE].map((m, i) => (
-            <span key={i} className="mx-6 inline-flex items-center gap-6 text-base md:text-lg font-heading font-bold tracking-wide" style={{ color: "#E6F2EC" }}>
-              {m} <span style={{ color: GREEN }}>◆</span>
-            </span>
-          ))}
         </div>
       </section>
 
