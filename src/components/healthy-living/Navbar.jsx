@@ -52,7 +52,7 @@ export default function Navbar({ solid }) {
       >
         <div className="relative flex items-center justify-between gap-3 px-5 lg:px-6 py-3.5">
           {/* Left links */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
+          <div className="hidden md:flex items-center gap-5 xl:gap-6">
             {PRIMARY.map(([label, to]) => (
               <Link key={label} to={to} className={`${linkBase} text-[10px] xl:text-[11px]`}>
                 {label}
@@ -61,7 +61,7 @@ export default function Navbar({ solid }) {
           </div>
 
           {/* Centered logo block */}
-          <Link to="/" className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center px-2 shrink-0">
+          <Link to="/" className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center px-2 shrink-0">
             <img
               src={LOGO}
               alt="Healthy Living"
@@ -70,7 +70,7 @@ export default function Navbar({ solid }) {
           </Link>
 
           {/* Right links + ASK AI */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
+          <div className="hidden md:flex items-center gap-5 xl:gap-6">
             {RIGHT.map(([label, to]) => (
               <Link key={label} to={to} className={`${linkBase} text-[10px] xl:text-[11px]`}>
                 {label}
@@ -121,12 +121,12 @@ export default function Navbar({ solid }) {
           {/* Mobile / tablet: hamburger + centered logo */}
           <button
             onClick={() => setOpen(true)}
-            className="lg:hidden text-white p-1 shrink-0"
+            className="md:hidden text-white p-1 shrink-0"
             aria-label="Open menu"
           >
             <Menu size={22} />
           </button>
-          <Link to="/" className="lg:hidden absolute left-[56%] -translate-x-1/2 shrink-0">
+          <Link to="/" className="md:hidden absolute left-[56%] -translate-x-1/2 shrink-0">
             <img
               src={LOGO}
               alt="Healthy Living"
@@ -134,13 +134,13 @@ export default function Navbar({ solid }) {
             />
           </Link>
           {/* spacer to balance hamburger on the right */}
-          <div className="lg:hidden w-6 shrink-0" />
+          <div className="md:hidden w-6 shrink-0" />
         </div>
       </nav>
 
       {/* Mobile / tablet drawer */}
       {open && (
-        <div className="fixed inset-0 z-[60] lg:hidden">
+        <div className="fixed inset-0 z-[60] md:hidden">
           <div className="absolute inset-0 bg-black/50" onClick={() => setOpen(false)} />
           <div
             className="absolute right-0 top-0 h-full w-[82%] max-w-sm overflow-y-auto px-6 py-6"
