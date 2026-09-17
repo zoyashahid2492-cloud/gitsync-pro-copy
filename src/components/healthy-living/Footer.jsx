@@ -8,38 +8,29 @@ const COLS = [
   {
     title: "Explore",
     links: [
-      ["Healthy Living", "/"],
+      ["Home", "/"],
+      ["Our Approach", "/approach"],
       ["Schools & Children", "/schools"],
       ["Global & Research", "/global"],
-      ["Work With Us", "/work-with-us"],
     ],
   },
   {
-    title: "Tools",
+    title: "Focus Areas",
     links: [
+      ["Collaborate With Us", "/work-with-us"],
       ["Wellness Lab", "/wellness-lab"],
-      ["Wellness Tools", "/tools"],
-      ["Meal Plan", "/meal-plans"],
-      ["Workout Plan", "/workout"],
-      ["Wellness Check", "/wellness-check"],
+      ["Updates", "/updates"],
+      ["About Us", "/about"],
+    ],
+  },
+  {
+    title: "Connect",
+    links: [
+      ["Partners", "/partners"],
+      ["Press", "/press"],
+      ["FAQ", "/faq"],
       ["Ask AI", "/ask-ai"],
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      ["Rewards", "/rewards"],
-      ["Communities", "/communities"],
-      ["Food Scanner", "/scanner"],
       ["Sahatna", "https://sahatna.ae"],
-    ],
-  },
-  {
-    title: "More",
-    links: [
-      ["About", "/about"],
-      ["Contact", "/contact"],
-      ["Latest Updates", "/"],
     ],
   },
 ];
@@ -48,7 +39,7 @@ export default function Footer() {
   return (
     <footer style={{ background: "#0F1914" }} className="text-white">
       <div className="max-w-6xl mx-auto px-6 md:px-10 pt-16 pb-10">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <div>
             <img src={imgLogo} alt="Healthy Living" className="h-10 object-contain mb-4" />
             <p className="font-heading font-light text-sm text-white/70 leading-relaxed max-w-xs">

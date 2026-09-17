@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import React from "react";
+import { Activity, Apple, ShieldCheck, Search, PenTool, Handshake, LineChart } from "lucide-react";
 import Navbar from "@/components/healthy-living/Navbar";
 import Footer from "@/components/healthy-living/Footer";
 import PageHero from "@/components/healthy-living/PageHero";
@@ -8,81 +7,102 @@ import ClosingSections from "@/components/healthy-living/ClosingSections";
 
 const INK = "#1f3d2a", GREEN = "#1D7945", GREEN_BG = "#E6F2EC", BG_ALT = "#F7F6F2", MUTED = "#6b7a70", BORDER = "#e0e5de";
 
-const ITEMS = [
-  { title: "Health Beyond Healthcare", body: "Health outcomes are shaped long before people enter healthcare settings — through the environments where they live, work, learn, and move. Healthy Living focuses on prevention by making healthier choices easier and shaping the conditions of daily life, rather than placing responsibility on individuals alone." },
-  { title: "Movement in Everyday Life", body: "Healthy Living is shifting movement beyond just sport by embedding physical activity into daily routines, neighbourhoods, workplaces, schools, and public spaces. The Degayeg initiative has delivered 724 fitness activations across 19 districts, reaching over 11,000 attendees. New integrated fitness infrastructure is being rolled out across 20 priority districts identified through data." },
-  { title: "A Healthier Food Environment", body: "Healthy Living is reshaping food environments so healthier choices are more visible and accessible. Key actions include mandatory healthy meals in schools (466+ schools, 455,000+ students), front-of-pack Nutri-Mark labelling, banning unhealthy F&B advertising on out-of-home media, supermarket layout policies, calorie labels on restaurant menus, and mandatory product reformulation targets for the 6 highest-priority food categories." },
-  { title: "Cross-Sector Collaboration", body: "Healthy Living brings together 14+ government entities, the private sector, schools, businesses, and communities to deliver 28 active initiatives across infrastructure, programming, regulations, promotion, and medical care — all coordinated under a single cross-sectoral strategy endorsed by Abu Dhabi's Executive Council in November 2025." },
+const FOCUS = [
+  { Icon: Activity, n: "01", title: "Active Lifestyles", desc: "Embedding movement into daily routines — at home, at work, in schools and across public spaces — so being active is the easy choice." },
+  { Icon: Apple, n: "02", title: "Healthy Eating", desc: "Reshaping food environments so healthier options are more visible, affordable and clearly understood — from school meals to supermarket shelves." },
+  { Icon: ShieldCheck, n: "03", title: "Prevention-First", desc: "Focusing on the everyday conditions that influence health over time, preventing disease before it starts rather than treating it later." },
 ];
 
-const PRINCIPLES = ["Intelligence-Led", "Prevention-First", "System-Enabled", "Measurable Impact"];
+const PROCESS = [
+  { Icon: Search, title: "Understand", desc: "Use data and behavioural science to find where everyday choices are hardest." },
+  { Icon: PenTool, title: "Design", desc: "Shape policy, environments and programmes that make the healthier choice the default." },
+  { Icon: Handshake, title: "Partner", desc: "Work across government, private sector and communities to deliver at scale." },
+  { Icon: LineChart, title: "Measure", desc: "Track outcomes and share evidence so what works can scale beyond Abu Dhabi." },
+];
 
 export default function OurApproach() {
-  const [open, setOpen] = useState(0);
-
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       <Navbar solid />
       <PageHero
-        eyebrow="Healthy Living"
+        eyebrow="Our Approach"
         title="Our Approach."
-        subtitle="Healthy Living enables healthier lives through everyday choices and conditions — led by the Abu Dhabi Department of Health, guided by data-backed evidence, and built through collaboration across government, partners, and communities."
+        subtitle="Healthy Living enables healthier lives through everyday choices and conditions — led by the Abu Dhabi Department of Health, guided by evidence, and built through collaboration across government, partners and communities."
       />
 
-      <section className="py-20">
+      <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-6 md:px-10">
-          <div>
-            {ITEMS.map((it, i) => (
-              <div key={it.title} style={{ borderTop: `1px solid ${BORDER}` }}>
-                <button
-                  onClick={() => setOpen(open === i ? null : i)}
-                  className="w-full flex items-center justify-between py-6 text-left"
-                >
-                  <span className="font-heading font-bold tracking-tight" style={{ fontSize: "clamp(1.2rem,2.5vw,1.6rem)", color: INK }}>{it.title}</span>
-                  <ChevronDown
-                    size={18}
-                    style={{ color: MUTED, transform: open === i ? "rotate(180deg)" : "none", transition: "transform .2s", flexShrink: 0, marginLeft: 16 }}
-                  />
-                </button>
-                <AnimatePresence initial={false}>
-                  {open === i && (
-                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                      <p className="pb-8 font-heading font-light leading-relaxed max-w-3xl" style={{ color: MUTED }}>{it.body}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-            <div style={{ borderTop: `1px solid ${BORDER}` }} />
-          </div>
+          <p className="font-heading font-light max-w-3xl leading-relaxed mb-14" style={{ color: MUTED, fontSize: "clamp(15px,1.3vw,18px)" }}>
+            We focus on three connected areas of everyday life — moving more, eating better and preventing
+            disease before it starts — and follow a clear process to turn evidence into practical change.
+          </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
-            {PRINCIPLES.map((s, i) => (
-              <div key={s} className="p-6 rounded-2xl" style={{ background: BG_ALT }}>
-                <div className="text-3xl font-heading font-black mb-4" style={{ color: GREEN_BG === GREEN_BG ? "#cdd9c4" : GREEN_BG }}>0{i + 1}</div>
-                <div className="font-heading font-bold" style={{ fontSize: "1.05rem", color: INK }}>{s}</div>
-              </div>
-            ))}
+          <div className="space-y-5">
+            {FOCUS.map((f) => {
+              const Icon = f.Icon;
+              return (
+                <div key={f.n} className="flex items-start gap-6 rounded-2xl p-7" style={{ background: "#fff", border: `1px solid ${BORDER}` }}>
+                  <span className="font-heading font-black shrink-0" style={{ color: GREEN_BG, fontSize: "2.4rem", lineHeight: 1, width: 48 }}>{f.n}</span>
+                  <span className="flex items-center justify-center rounded-full shrink-0" style={{ width: 52, height: 52, background: GREEN_BG }}>
+                    <Icon size={24} strokeWidth={1.5} style={{ color: GREEN }} />
+                  </span>
+                  <div>
+                    <h3 className="font-heading font-bold text-lg mb-1.5" style={{ color: INK }}>{f.title}</h3>
+                    <p className="font-heading font-light text-sm leading-relaxed max-w-2xl" style={{ color: MUTED }}>{f.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
+        </div>
+      </section>
 
-          <div className="p-8 rounded-2xl mt-12" style={{ background: GREEN_BG }}>
+      <section className="py-16 md:py-24" style={{ background: BG_ALT }}>
+        <div className="max-w-6xl mx-auto px-6 md:px-10">
+          <p className="text-[11px] uppercase tracking-[0.22em] font-heading font-medium mb-3" style={{ color: GREEN }}>Our process</p>
+          <h2 className="font-heading font-bold text-2xl md:text-3xl mb-12" style={{ color: INK }}>How we turn evidence into change</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {PROCESS.map((p, i) => {
+              const Icon = p.Icon;
+              return (
+                <div key={p.title} className="rounded-2xl p-6" style={{ background: "#fff", border: `1px solid ${BORDER}` }}>
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="flex items-center justify-center rounded-full" style={{ width: 44, height: 44, background: GREEN_BG }}>
+                      <Icon size={20} strokeWidth={1.5} style={{ color: GREEN }} />
+                    </span>
+                    <span className="font-heading font-black" style={{ color: "#cdd9c4", fontSize: "1.6rem" }}>{String(i + 1).padStart(2, "0")}</span>
+                  </div>
+                  <h3 className="font-heading font-bold text-base mb-1.5" style={{ color: INK }}>{p.title}</h3>
+                  <p className="font-heading font-light text-sm leading-relaxed" style={{ color: MUTED }}>{p.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-6 md:px-10">
+          <div className="p-8 md:p-10 rounded-2xl" style={{ background: GREEN_BG }}>
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
-                <h2 className="font-heading font-bold tracking-tight mb-4" style={{ fontSize: "clamp(1.6rem,3vw,2.4rem)", color: INK }}>
-                  Our purpose: to enable longer, healthier, more fulfilling lives.
+                <h2 className="font-heading font-bold tracking-tight mb-4" style={{ fontSize: "clamp(1.5rem,2.6vw,2.2rem)", color: INK }}>
+                  Healthy Living complements Sahatna
                 </h2>
                 <p className="font-heading font-light text-sm leading-relaxed" style={{ color: MUTED }}>
-                  Health is a shared responsibility. Healthy Living works to make healthier choices the easy choice for all — embedding prevention and wellbeing into everyday life through evidence-informed policy, partnerships, and community action.
+                  Healthy Living focuses on discovery, education and engagement — making healthier choices
+                  easier. Sahatna focuses on personalisation, tracking and management — helping you monitor
+                  your health over time. Together they support the whole journey.
                 </p>
               </div>
               <div className="space-y-3">
                 <div className="p-5 rounded-xl" style={{ background: "#fff" }}>
                   <div className="text-xs uppercase tracking-[0.12em] font-heading font-bold mb-2" style={{ color: GREEN }}>Healthy Living</div>
-                  <div className="text-xs font-heading font-light" style={{ color: MUTED }}>Discover → Learn → Generate → Participate → Collaborate</div>
+                  <div className="text-sm font-heading font-light" style={{ color: MUTED }}>Discovery → Education → Engagement</div>
                 </div>
                 <div className="p-5 rounded-xl" style={{ background: "#fff" }}>
                   <div className="text-xs uppercase tracking-[0.12em] font-heading font-bold mb-2" style={{ color: MUTED }}>Sahatna</div>
-                  <div className="text-xs font-heading font-light" style={{ color: MUTED }}>Personalize → Track → Monitor → Manage</div>
+                  <div className="text-sm font-heading font-light" style={{ color: MUTED }}>Personalize → Track → Monitor → Manage</div>
                 </div>
               </div>
             </div>

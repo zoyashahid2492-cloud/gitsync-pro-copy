@@ -19,6 +19,14 @@ const FAQ_DATA = [
     ],
   },
   {
+    cat: "Tools",
+    qa: [
+      ["What is the Wellness Lab?", "The Wellness Lab is your daily wellness companion — answer three quick questions about sleep, energy and stress to generate a personalised plan across mindfulness, nutrition, hydration and movement."],
+      ["What is Ask AI?", "Ask AI is a conversational wellness assistant that answers questions about nutrition, movement, sleep and stress in plain, practical language — any time you need it."],
+      ["Is the Wellness Lab a substitute for medical advice?", "No. The Wellness Lab and Ask AI offer general, evidence-based wellbeing guidance. For personal medical advice, diagnosis or treatment, please consult a qualified healthcare professional."],
+    ],
+  },
+  {
     cat: "Research & Collaboration",
     qa: [
       ["How do I access research publications?", "Visit the Global & Research section to browse peer-reviewed papers, policy briefs, and case studies by topic. Most are available as free PDF downloads."],

@@ -20,14 +20,8 @@ import Press from './pages/Press';
 import FAQ from './pages/FAQ';
 import AskAi from './pages/AskAi';
 import About from './pages/About';
-import Contact from './pages/Contact';
-import WellnessTools from './pages/WellnessTools';
-import MealPlanGenerator from './pages/MealPlanGenerator';
-import WorkoutPlanner from './pages/WorkoutPlanner';
-import WellnessCheck from './pages/WellnessCheck';
-import Rewards from './pages/Rewards';
-import Communities from './pages/Communities';
-import FoodScanner from './pages/FoodScanner';
+import Phase2 from './pages/Phase2';
+import AiChatBubble from './components/healthy-living/AiChatBubble';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -68,15 +62,14 @@ const AuthenticatedApp = () => {
       <Route path="/faq" element={<FAQ />} />
       <Route path="/ask-ai" element={<AskAi />} />
       <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
       <Route path="/repo-import" element={<RepoImport />} />
-      <Route path="/tools" element={<WellnessTools />} />
-      <Route path="/meal-plans" element={<MealPlanGenerator />} />
-      <Route path="/workout" element={<WorkoutPlanner />} />
-      <Route path="/wellness-check" element={<WellnessCheck />} />
-      <Route path="/rewards" element={<Rewards />} />
-      <Route path="/communities" element={<Communities />} />
-      <Route path="/scanner" element={<FoodScanner />} />
+      <Route path="/tools" element={<Phase2 />} />
+      <Route path="/meal-plans" element={<Phase2 />} />
+      <Route path="/workout" element={<Phase2 />} />
+      <Route path="/wellness-check" element={<Phase2 />} />
+      <Route path="/rewards" element={<Phase2 />} />
+      <Route path="/communities" element={<Phase2 />} />
+      <Route path="/scanner" element={<Phase2 />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
@@ -91,6 +84,7 @@ function App() {
         <Router>
           <ScrollToTop />
           <AuthenticatedApp />
+          <AiChatBubble />
         </Router>
         <Toaster />
       </QueryClientProvider>

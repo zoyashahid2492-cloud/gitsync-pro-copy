@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import SahatnaSignInModal from "./SahatnaSignInModal";
 
 const imgHeroBg =
   "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/d8cd6fd09_welnessinADshore.png";
 
 export default function Hero() {
+  const [sahatnaOpen, setSahatnaOpen] = useState(false);
   return (
     <section className="relative flex flex-col bg-[#1a2a1a] overflow-hidden" style={{ minHeight: "100svh" }}>
       <img
@@ -14,7 +17,6 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/60" />
 
-      {/* Hero content — centered in the torso gap, below the subjects' faces */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-start text-center px-10 pt-[33vh]">
         <h1
           className="font-heading font-black text-white leading-[1.05] tracking-tight"
@@ -26,12 +28,19 @@ export default function Hero() {
         </h1>
 
         <div className="flex flex-wrap items-center justify-center gap-3 mt-7">
-          <button className="bg-transparent text-white font-heading font-medium px-5 py-2 rounded-full text-[12px] border border-white hover:bg-white/10 active:scale-95 transition-all">
+          <Link
+            to="/wellness-lab"
+            className="bg-transparent text-white font-heading font-medium px-5 py-2 rounded-full text-[12px] border border-white hover:bg-white/10 active:scale-95 transition-all"
+          >
             Choose healthier, every day
-          </button>
-          <button className="bg-transparent font-heading font-medium px-5 py-2 rounded-full text-[12px] border border-white hover:bg-white/10 active:scale-95 transition-all" style={{ color: "#B0D0B5" }}>
+          </Link>
+          <Link
+            to="/approach"
+            className="bg-transparent font-heading font-medium px-5 py-2 rounded-full text-[12px] border border-white hover:bg-white/10 active:scale-95 transition-all"
+            style={{ color: "#B0D0B5" }}
+          >
             How we work
-          </button>
+          </Link>
         </div>
 
         <p className="text-white text-[11px] uppercase tracking-[0.25em] mt-10 font-heading font-light">
@@ -39,7 +48,6 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Divider + Sahatna footer bar */}
       <div className="relative z-10 px-10">
         <div className="h-px w-full bg-white/25 max-w-3xl mx-auto" />
       </div>
@@ -50,7 +58,7 @@ export default function Hero() {
           <span className="font-bold">Sahatna</span>
         </p>
         <button
-          onClick={() => window.open("https://sahatna.ae", "_blank")}
+          onClick={() => setSahatnaOpen(true)}
           className="flex items-center gap-2 bg-[#B0D5B5] text-[#1A1A1A] font-heading font-bold text-sm px-6 py-2.5 rounded-full hover:bg-[#a3c9a8] active:scale-95 transition-all whitespace-nowrap"
         >
           Connect to Sahatna
@@ -59,6 +67,8 @@ export default function Hero() {
           </svg>
         </button>
       </div>
+
+      <SahatnaSignInModal open={sahatnaOpen} onClose={() => setSahatnaOpen(false)} />
     </section>
   );
 }

@@ -8,6 +8,8 @@ import { base44 } from "@/api/base44Client";
 const WELCOME =
   "Hi! I'm your Healthy Living wellness assistant. Ask me anything about nutrition, movement, sleep or stress — or how to build healthier habits into your day.";
 
+const TOPICS = ["Research", "Schools", "Tools", "Collaborate"];
+
 export default function AskAi() {
   const [messages, setMessages] = useState([{ role: "assistant", content: WELCOME }]);
   const [input, setInput] = useState("");
@@ -97,6 +99,18 @@ export default function AskAi() {
             </div>
 
             <div className="p-4 border-t border-[#e0e5de]">
+              <div className="flex flex-wrap gap-2 mb-3">
+                {TOPICS.map((t) => (
+                  <button
+                    key={t}
+                    onClick={() => setInput((s) => (s ? `${s} ${t}` : `Tell me about ${t}`))}
+                    className="text-[11px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full font-heading font-bold transition-all"
+                    style={{ background: "#eef3e8", color: "#1D7945" }}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
               <div className="flex items-center gap-2">
                 <input
                   value={input}
@@ -119,6 +133,9 @@ export default function AskAi() {
               </div>
             </div>
           </div>
+          <p className="text-center text-[11px] font-heading font-light mt-5" style={{ color: "#9aa39c" }}>
+            Not a substitute for medical advice. For diagnosis or treatment, please consult a qualified healthcare professional.
+          </p>
         </div>
       </section>
 
