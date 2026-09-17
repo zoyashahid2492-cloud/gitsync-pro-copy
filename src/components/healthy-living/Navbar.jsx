@@ -52,9 +52,9 @@ export default function Navbar({ solid }) {
       >
         <div className="relative flex items-center justify-between gap-3 px-5 lg:px-6 py-3.5">
           {/* Left links */}
-          <div className="hidden md:flex items-center gap-5 xl:gap-6">
+          <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
             {PRIMARY.map(([label, to]) => (
-              <Link key={label} to={to} className={`${linkBase} text-[10px] xl:text-[11px]`}>
+              <Link key={label} to={to} className={`${linkBase} text-[9px] lg:text-[10px] xl:text-[11px]`}>
                 {label}
               </Link>
             ))}
@@ -65,14 +65,14 @@ export default function Navbar({ solid }) {
             <img
               src={LOGO}
               alt="Healthy Living"
-              className="h-9 xl:h-10 w-auto object-contain"
+              className="h-7 lg:h-9 xl:h-10 w-auto object-contain"
             />
           </Link>
 
           {/* Right links + ASK AI */}
-          <div className="hidden md:flex items-center gap-5 xl:gap-6">
+          <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
             {RIGHT.map(([label, to]) => (
-              <Link key={label} to={to} className={`${linkBase} text-[10px] xl:text-[11px]`}>
+              <Link key={label} to={to} className={`${linkBase} text-[9px] lg:text-[10px] xl:text-[11px]`}>
                 {label}
               </Link>
             ))}
@@ -82,7 +82,7 @@ export default function Navbar({ solid }) {
               <button
                 onClick={() => setMore((v) => !v)}
                 onBlur={() => setTimeout(() => setMore(false), 150)}
-                className={`${linkBase} text-[10px] xl:text-[11px] flex items-center gap-1`}
+                className={`${linkBase} text-[9px] lg:text-[10px] xl:text-[11px] flex items-center gap-1`}
               >
                 MORE {more ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
               </button>
@@ -111,7 +111,7 @@ export default function Navbar({ solid }) {
 
             <Link
               to="/ai"
-              className="inline-flex items-center gap-1.5 rounded-full text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-4 xl:px-5 py-2 transition-colors hover:bg-white hover:text-[#0F2520] shrink-0"
+              className="inline-flex items-center gap-1.5 rounded-full text-[10px] lg:text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-3 lg:px-4 xl:px-5 py-1.5 lg:py-2 transition-colors hover:bg-white hover:text-[#0F2520] shrink-0"
               style={{ border: "1px solid rgba(255,255,255,0.7)", color: "#ffffff" }}
             >
               <Sparkles size={12} /> ASK AI
