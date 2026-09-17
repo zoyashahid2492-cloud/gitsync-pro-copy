@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, Sparkles } from "lucide-react";
 
+const LOGO =
+  "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/750736f69_image.png";
+
 const PRIMARY = [
   ["HEALTHY LIVING", "/"],
   ["SCHOOLS & CHILDREN", "/schools"],
@@ -23,7 +26,7 @@ const MORE = [
 ];
 
 const linkBase =
-  "font-heading font-medium uppercase tracking-[0.14em] whitespace-nowrap transition-opacity hover:opacity-60";
+  "font-heading font-medium uppercase tracking-[0.14em] whitespace-nowrap transition-opacity hover:opacity-60 text-white";
 
 export default function Navbar({ solid }) {
   const [scrolled, setScrolled] = useState(false);
@@ -47,9 +50,9 @@ export default function Navbar({ solid }) {
           borderBottom: isSolid ? "1px solid rgba(255,255,255,0.08)" : "none",
         }}
       >
-        <div className="relative flex items-center justify-between gap-4 px-6 py-3.5">
+        <div className="relative flex items-center justify-between gap-3 px-5 lg:px-6 py-3.5">
           {/* Left links */}
-          <div className="hidden md:flex items-center gap-6 text-white">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
             {PRIMARY.map(([label, to]) => (
               <Link key={label} to={to} className={`${linkBase} text-[10px] xl:text-[11px]`}>
                 {label}
@@ -58,16 +61,16 @@ export default function Navbar({ solid }) {
           </div>
 
           {/* Centered logo block */}
-          <Link to="/" className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center px-2">
+          <Link to="/" className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center px-2 shrink-0">
             <img
-              src="https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/db958f855_image.png"
+              src={LOGO}
               alt="Healthy Living"
-              className="h-10 w-auto object-contain"
+              className="h-9 xl:h-10 w-auto object-contain"
             />
           </Link>
 
           {/* Right links + ASK AI */}
-          <div className="hidden md:flex items-center gap-6 text-white">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
             {RIGHT.map(([label, to]) => (
               <Link key={label} to={to} className={`${linkBase} text-[10px] xl:text-[11px]`}>
                 {label}
@@ -79,7 +82,7 @@ export default function Navbar({ solid }) {
               <button
                 onClick={() => setMore((v) => !v)}
                 onBlur={() => setTimeout(() => setMore(false), 150)}
-                className={`${linkBase} text-[10px] xl:text-[11px] flex items-center gap-1 text-white`}
+                className={`${linkBase} text-[10px] xl:text-[11px] flex items-center gap-1`}
               >
                 MORE <ChevronDown size={12} />
               </button>
@@ -104,34 +107,36 @@ export default function Navbar({ solid }) {
 
             <Link
               to="/ai"
-              className="inline-flex items-center gap-1.5 rounded-full text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-5 py-2 transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-1.5 rounded-full text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-4 xl:px-5 py-2 transition-opacity hover:opacity-90 shrink-0"
               style={{ background: "#ffffff", color: "#1A1A1A" }}
             >
               <Sparkles size={12} /> ASK AI
             </Link>
           </div>
 
-          {/* Mobile: hamburger + centered logo */}
+          {/* Mobile / tablet: hamburger + centered logo */}
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden text-white p-1"
+            className="lg:hidden text-white p-1 shrink-0"
             aria-label="Open menu"
           >
             <Menu size={22} />
           </button>
-          <Link to="/" className="md:hidden absolute left-1/2 -translate-x-1/2">
+          <Link to="/" className="lg:hidden absolute left-1/2 -translate-x-1/2 shrink-0">
             <img
-              src="https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/db958f855_image.png"
+              src={LOGO}
               alt="Healthy Living"
               className="h-8 w-auto object-contain"
             />
           </Link>
+          {/* spacer to balance hamburger on the right */}
+          <div className="lg:hidden w-6 shrink-0" />
         </div>
       </nav>
 
       {/* Mobile / tablet drawer */}
       {open && (
-        <div className="fixed inset-0 z-[60] md:hidden">
+        <div className="fixed inset-0 z-[60] lg:hidden">
           <div className="absolute inset-0 bg-black/50" onClick={() => setOpen(false)} />
           <div
             className="absolute right-0 top-0 h-full w-[82%] max-w-sm overflow-y-auto px-6 py-6"
@@ -139,9 +144,9 @@ export default function Navbar({ solid }) {
           >
             <div className="flex items-center justify-between mb-8">
               <img
-                src="https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/db958f855_image.png"
+                src={LOGO}
                 alt="Healthy Living"
-                className="h-9 w-auto object-contain"
+                className="h-8 w-auto object-contain"
               />
               <button onClick={() => setOpen(false)} className="text-white p-1" aria-label="Close menu">
                 <X size={22} />
