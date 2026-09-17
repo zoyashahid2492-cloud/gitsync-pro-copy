@@ -16,7 +16,6 @@ const NAV_RIGHT = ["Work with us", "Wellness Lab", "More"];
 const MORE_ITEMS = [
   ["About", "/about"],
   ["Contact", "/contact"],
-  ["Tools", "/tools"],
   ["Latest Updates", "/"],
 ];
 
