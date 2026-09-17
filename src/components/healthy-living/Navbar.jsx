@@ -52,7 +52,7 @@ function NavDropdown({ label, items, align, open, setOpen, activePath }) {
       <button
         onClick={() => setOpen((v) => !v)}
         onBlur={() => setTimeout(() => setOpen(false), 150)}
-        className={`${linkBase} text-[9px] lg:text-[10px] xl:text-[11px] flex items-center gap-1 pb-1`}
+        className={`${linkBase} text-[10px] lg:text-[11px] xl:text-[12px] flex items-center gap-1 pb-1`}
         style={{ borderBottom: `2px solid ${open ? UNDERLINE : "transparent"}` }}
       >
         {label} {open ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
@@ -128,7 +128,7 @@ export default function Navbar({ solid }) {
               activePath={location.pathname}
             />
             {LEFT_LINKS.map(([label, to]) => (
-              <Link key={label} to={to} className={`${linkBase} text-[9px] lg:text-[10px] xl:text-[11px]`}>
+              <Link key={label} to={to} className={`${linkBase} text-[10px] lg:text-[11px] xl:text-[12px]`}>
                 {label}
               </Link>
             ))}
@@ -139,14 +139,14 @@ export default function Navbar({ solid }) {
             <img
               src={LOGO}
               alt="Healthy Living"
-              className="h-7 lg:h-9 xl:h-10 w-auto object-contain"
+              className="h-8 lg:h-10 xl:h-11 w-auto object-contain"
             />
           </Link>
 
           {/* Right links + MORE + ASK AI */}
           <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
             {RIGHT.map(([label, to]) => (
-              <Link key={label} to={to} className={`${linkBase} text-[9px] lg:text-[10px] xl:text-[11px]`}>
+              <Link key={label} to={to} className={`${linkBase} text-[10px] lg:text-[11px] xl:text-[12px]`}>
                 {label}
               </Link>
             ))}
@@ -162,7 +162,7 @@ export default function Navbar({ solid }) {
 
             <Link
               to="/ai"
-              className="inline-flex items-center gap-1.5 rounded-full text-[10px] lg:text-[11px] font-heading font-bold tracking-[0.16em] uppercase px-3 lg:px-4 xl:px-5 py-1.5 lg:py-2 transition-colors hover:bg-white hover:text-[#0F2520] shrink-0"
+              className="inline-flex items-center gap-1.5 rounded-full text-[11px] lg:text-[12px] font-heading font-bold tracking-[0.16em] uppercase px-4 lg:px-5 xl:px-6 py-1.5 lg:py-2 transition-colors hover:bg-white hover:text-[#0F2520] shrink-0"
               style={{ border: "1px solid rgba(255,255,255,0.7)", color: "#ffffff" }}
             >
               <Sparkles size={12} /> ASK AI
