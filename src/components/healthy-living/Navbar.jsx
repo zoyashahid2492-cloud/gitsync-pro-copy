@@ -5,11 +5,15 @@ import { Menu, X, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
 const LOGO =
   "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/750736f69_image.png";
 
-const LINKS = [
-  ["Schools & Children", "/schools"],
-  ["Global & Research", "/research"],
-  ["Work With Us", "/collaborate"],
-  ["Wellness Lab", "/lab"],
+const PRIMARY = [
+  ["HEALTHY LIVING", "/"],
+  ["SCHOOLS & CHILDREN", "/schools"],
+  ["GLOBAL & RESEARCH", "/research"],
+];
+
+const RIGHT = [
+  ["WORK WITH US", "/collaborate"],
+  ["WELLNESS LAB", "/lab"],
 ];
 
 const MORE = [
@@ -46,9 +50,18 @@ export default function Navbar({ solid }) {
           borderBottom: isSolid ? "1px solid rgba(255,255,255,0.08)" : "none",
         }}
       >
-        <div className="flex items-center justify-between gap-4 px-5 md:px-6 py-3.5">
-          {/* Logo (tablet / desktop): left */}
-          <Link to="/" className="hidden md:flex items-center shrink-0">
+        <div className="relative flex items-center justify-between gap-3 px-5 lg:px-6 py-3.5">
+          {/* Left links */}
+          <div className="hidden md:flex items-center gap-5 xl:gap-6">
+            {PRIMARY.map(([label, to]) => (
+              <Link key={label} to={to} className={`${linkBase} text-[10px] xl:text-[11px]`}>
+                {label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Centered logo block */}
+          <Link to="/" className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center px-2 shrink-0">
             <img
               src={LOGO}
               alt="Healthy Living"
@@ -56,9 +69,9 @@ export default function Navbar({ solid }) {
             />
           </Link>
 
-          {/* Links (tablet / desktop): right */}
-          <div className="hidden md:flex items-center gap-4 xl:gap-6">
-            {LINKS.map(([label, to]) => (
+          {/* Right links + ASK AI */}
+          <div className="hidden md:flex items-center gap-5 xl:gap-6">
+            {RIGHT.map(([label, to]) => (
               <Link key={label} to={to} className={`${linkBase} text-[10px] xl:text-[11px]`}>
                 {label}
               </Link>
@@ -105,7 +118,7 @@ export default function Navbar({ solid }) {
             </Link>
           </div>
 
-          {/* Mobile: hamburger + centered logo */}
+          {/* Mobile / tablet: hamburger + centered logo */}
           <button
             onClick={() => setOpen(true)}
             className="md:hidden text-white p-1 shrink-0"
@@ -125,7 +138,7 @@ export default function Navbar({ solid }) {
         </div>
       </nav>
 
-      {/* Mobile drawer */}
+      {/* Mobile / tablet drawer */}
       {open && (
         <div className="fixed inset-0 z-[60] md:hidden">
           <div className="absolute inset-0 bg-black/50" onClick={() => setOpen(false)} />
@@ -144,7 +157,7 @@ export default function Navbar({ solid }) {
               </button>
             </div>
             <nav className="flex flex-col">
-              {[["Healthy Living", "/"], ...LINKS, ...MORE].map(([label, to]) => (
+              {[...PRIMARY, ...RIGHT, ...MORE].map(([label, to]) => (
                 <Link
                   key={label}
                   to={to}
