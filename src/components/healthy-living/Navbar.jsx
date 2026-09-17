@@ -126,7 +126,7 @@ export default function Navbar({ solid }) {
           >
             <Menu size={22} />
           </button>
-          <Link to="/" className="lg:hidden absolute left-1/2 -translate-x-1/2 shrink-0">
+          <Link to="/" className="lg:hidden absolute left-[56%] -translate-x-1/2 shrink-0">
             <img
               src={LOGO}
               alt="Healthy Living"
