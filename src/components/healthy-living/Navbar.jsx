@@ -38,8 +38,6 @@ export default function Navbar({ solid }) {
     return () => window.removeEventListener("scroll", h);
   }, []);
 
-  const logoText = isSolid ? "#1A1A1A" : "#ffffff";
-
   return (
     <>
       <nav
@@ -60,23 +58,12 @@ export default function Navbar({ solid }) {
           </div>
 
           {/* Centered logo block */}
-          <Link
-            to="/"
-            className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center rounded-md px-4 py-1.5 transition-colors duration-300"
-            style={{ background: isSolid ? "#EFEFEF" : "transparent" }}
-          >
-            <div className="leading-none text-center">
-              <div className="font-heading font-bold tracking-[0.14em] text-[12px]" style={{ color: logoText }}>
-                HEALTHY LIVING
-              </div>
-              <div
-                className="font-heading font-medium tracking-[0.08em] mt-0.5 text-[10px]"
-                style={{ color: logoText, opacity: 0.75 }}
-                dir="rtl"
-              >
-                الحياة الصحية
-              </div>
-            </div>
+          <Link to="/" className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center px-2">
+            <img
+              src="https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/db958f855_image.png"
+              alt="Healthy Living"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Right links + ASK AI */}
@@ -133,16 +120,11 @@ export default function Navbar({ solid }) {
             <Menu size={22} />
           </button>
           <Link to="/" className="md:hidden absolute left-1/2 -translate-x-1/2">
-            <div className="leading-none text-center">
-              <div className="font-heading font-bold text-white tracking-[0.14em] text-[11px]">HEALTHY LIVING</div>
-              <div
-                className="font-heading font-medium tracking-[0.08em] mt-0.5 text-[9px]"
-                style={{ color: "#ffffff", opacity: 0.75 }}
-                dir="rtl"
-              >
-                الحياة الصحية
-              </div>
-            </div>
+            <img
+              src="https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/db958f855_image.png"
+              alt="Healthy Living"
+              className="h-8 w-auto object-contain"
+            />
           </Link>
         </div>
       </nav>
@@ -156,16 +138,11 @@ export default function Navbar({ solid }) {
             style={{ background: "#0F2520" }}
           >
             <div className="flex items-center justify-between mb-8">
-              <div className="leading-none text-center">
-                <div className="font-heading font-bold text-white tracking-[0.14em] text-[12px]">HEALTHY LIVING</div>
-                <div
-                  className="font-heading font-medium tracking-[0.08em] mt-0.5 text-[10px]"
-                  style={{ color: "#ffffff", opacity: 0.75 }}
-                  dir="rtl"
-                >
-                  الحياة الصحية
-                </div>
-              </div>
+              <img
+                src="https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/db958f855_image.png"
+                alt="Healthy Living"
+                className="h-9 w-auto object-contain"
+              />
               <button onClick={() => setOpen(false)} className="text-white p-1" aria-label="Close menu">
                 <X size={22} />
               </button>
