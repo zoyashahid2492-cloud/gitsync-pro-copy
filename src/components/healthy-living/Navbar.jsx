@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
 
 const LOGO =
   "https://media.base44.com/images/public/6aa3a64fa8d590a56698abe0/750736f69_image.png";
 
-const PRIMARY = [
-  ["HEALTHY LIVING", "/"],
+const HL_DROPDOWN = [
+  ["Our Approach", "/approach"],
+  ["Updates", "/updates"],
+  ["About Us", "/about"],
+];
+
+const LEFT_LINKS = [
   ["SCHOOLS & CHILDREN", "/schools"],
   ["GLOBAL & RESEARCH", "/research"],
 ];
@@ -17,9 +22,20 @@ const RIGHT = [
 ];
 
 const MORE = [
+  ["Partners", "/partners"],
+  ["Press", "/press"],
+  ["FAQ", "/faq"],
+];
+
+const MOBILE_LIST = [
+  ["Home", "/"],
   ["Our Approach", "/approach"],
   ["Updates", "/updates"],
   ["About Us", "/about"],
+  ["Schools & Children", "/schools"],
+  ["Global & Research", "/research"],
+  ["Work With Us", "/collaborate"],
+  ["Wellness Lab", "/lab"],
   ["Partners", "/partners"],
   ["Press", "/press"],
   ["FAQ", "/faq"],
@@ -28,8 +44,58 @@ const MORE = [
 const linkBase =
   "font-heading font-medium uppercase tracking-[0.14em] whitespace-nowrap transition-opacity hover:opacity-60 text-white";
 
+const UNDERLINE = "#b3dbbb";
+
+function NavDropdown({ label, items, align, open, setOpen, activePath }) {
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        onBlur={() => setTimeout(() => setOpen(false), 150)}
+        className={`${linkBase} text-[9px] lg:text-[10px] xl:text-[11px] flex items-center gap-1 pb-1`}
+        style={{ borderBottom: `2px solid ${open ? UNDERLINE : "transparent"}` }}
+      >
+        {label} {open ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+      </button>
+      {open && (
+        <div
+          className={`absolute top-full mt-2 min-w-[176px] rounded-b-lg overflow-hidden ${
+            align === "right" ? "right-0" : "left-0"
+          }`}
+          style={{
+            background: "#fff",
+            border: "1px solid #e2e6dc",
+            boxShadow: "0 12px 32px rgba(0,0,0,0.14)",
+          }}
+        >
+          {items.map(([itemLabel, to], i) => {
+            const active = to === activePath;
+            return (
+              <Link
+                key={itemLabel}
+                to={to}
+                onClick={() => setOpen(false)}
+                className="block px-5 py-3 text-[12px] font-heading uppercase tracking-[0.14em] transition-colors hover:text-[#365e49]"
+                style={{
+                  color: active ? "#365e49" : "#a0a0a0",
+                  fontWeight: active ? 700 : 500,
+                  borderTop: i > 0 ? "1px solid #eef0ec" : "none",
+                }}
+              >
+                {itemLabel}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Navbar({ solid }) {
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [hl, setHl] = useState(false);
   const [more, setMore] = useState(false);
   const [open, setOpen] = useState(false);
   const isSolid = solid || scrolled;
@@ -53,7 +119,15 @@ export default function Navbar({ solid }) {
         <div className="relative flex items-center justify-between gap-3 px-5 lg:px-6 py-3.5">
           {/* Left links */}
           <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
-            {PRIMARY.map(([label, to]) => (
+            <NavDropdown
+              label="HEALTHY LIVING"
+              items={HL_DROPDOWN}
+              align="left"
+              open={hl}
+              setOpen={setHl}
+              activePath={location.pathname}
+            />
+            {LEFT_LINKS.map(([label, to]) => (
               <Link key={label} to={to} className={`${linkBase} text-[9px] lg:text-[10px] xl:text-[11px]`}>
                 {label}
               </Link>
@@ -69,7 +143,7 @@ export default function Navbar({ solid }) {
             />
           </Link>
 
-          {/* Right links + ASK AI */}
+          {/* Right links + MORE + ASK AI */}
           <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
             {RIGHT.map(([label, to]) => (
               <Link key={label} to={to} className={`${linkBase} text-[9px] lg:text-[10px] xl:text-[11px]`}>
@@ -77,37 +151,14 @@ export default function Navbar({ solid }) {
               </Link>
             ))}
 
-            {/* MORE dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setMore((v) => !v)}
-                onBlur={() => setTimeout(() => setMore(false), 150)}
-                className={`${linkBase} text-[9px] lg:text-[10px] xl:text-[11px] flex items-center gap-1`}
-              >
-                MORE {more ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
-              </button>
-              {more && (
-                <div
-                  className="absolute right-0 top-full mt-2 w-52 rounded-lg overflow-hidden"
-                  style={{ background: "#fff", boxShadow: "0 12px 32px rgba(0,0,0,0.14)" }}
-                >
-                  {MORE.map(([label, to], i) => (
-                    <Link
-                      key={label}
-                      to={to}
-                      onClick={() => setMore(false)}
-                      className="block px-5 py-3 text-[12px] font-heading font-medium uppercase tracking-[0.14em] transition-colors hover:text-[#1b5e20]"
-                      style={{
-                        color: "#757575",
-                        borderTop: i > 0 ? "1px solid #eef0ec" : "none",
-                      }}
-                    >
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            <NavDropdown
+              label="MORE"
+              items={MORE}
+              align="right"
+              open={more}
+              setOpen={setMore}
+              activePath={location.pathname}
+            />
 
             <Link
               to="/ai"
@@ -157,7 +208,7 @@ export default function Navbar({ solid }) {
               </button>
             </div>
             <nav className="flex flex-col">
-              {[...PRIMARY, ...RIGHT, ...MORE].map(([label, to]) => (
+              {MOBILE_LIST.map(([label, to]) => (
                 <Link
                   key={label}
                   to={to}
