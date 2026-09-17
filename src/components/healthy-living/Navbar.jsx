@@ -42,7 +42,7 @@ const MOBILE_LIST = [
 ];
 
 const linkBase =
-  "font-heading font-medium uppercase tracking-[0.14em] whitespace-nowrap transition-opacity hover:opacity-60 text-white";
+  "font-heading font-medium uppercase tracking-[0.14em] whitespace-nowrap transition-opacity hover:opacity-60 text-white pb-1 border-b-2 border-transparent";
 
 const UNDERLINE = "#b3dbbb";
 
